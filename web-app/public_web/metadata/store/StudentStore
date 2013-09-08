@@ -1,0 +1,59 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "autoSync": true,
+        "model": "Student",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "StudentStore"
+    },
+    "designerId": "7705efd9-7bbb-4e78-a3a3-007f4497355a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": [
+                    " {",
+                    "    update  : '/students/apiUpdate',",
+                    "    read  : '/students/apiView',",
+                    "     \t",
+                    "}"
+                ]
+            },
+            "designerId": "2667fe7c-ad20-4455-b953-639c2d742a13",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "a4063652-c932-41b9-a2cd-50672f52d0ad"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "1771a2f4-d88b-4063-9147-5a42fcbd5e17"
+                }
+            ]
+        }
+    ]
+}
