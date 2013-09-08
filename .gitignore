@@ -2,3 +2,5 @@ web-app/assets/
 web-app/protected/runtime/
 web-app/themes/classic/views/
 logs/
+*.swp
+*~
