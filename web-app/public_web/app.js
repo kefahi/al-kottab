@@ -20,21 +20,23 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'Student',
-        'Score',
-        'FinancialReport',
-        'Gender'
+        
     ],
     stores: [
-        'StudentStore',
-        'ScoreChart',
-        'StoreFinTree',
-        'StoreFinReport'
+
     ],
-    views: [
-        'MyViewport',
-        'MyPanel5'
+
+     views: [
+    
+     ],
+
+    
+    controllers: [
+         'Sites'
     ],
+
+
     autoCreateViewport: true,
-    name: 'School'
+    name: 'School',
+    
 });
