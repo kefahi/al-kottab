@@ -1,3 +1,4 @@
+
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 
@@ -9,6 +10,7 @@ BEGIN TRANSACTION;
 -- قوالب للمناهج التعليمية على مستوى الدولة أو منهجية التدريس
 CREATE TABLE users ( -- مستخدمين
   id               INTEGER PRIMARY KEY,
+  user_name         TEXT    NOT NULL,
   created_at       INTEGER NOT NULL,
   updated_at       INTEGER NOT NULL,
   first_name       TEXT    NOT NULL,
@@ -24,13 +26,13 @@ CREATE TABLE users ( -- مستخدمين
   national_id      TEXT        NULL,
 -- 1:هوية، 2:جواز سفر، 3:وثيقة، 4:أخرى-غيرموجودة
   national_id_type INTEGER NOT NULL, -- 1: ID , 2: passport, 3:document, 4:other/none 
-  school_id        INTEGER NOT NULL, -- Current
+  school_id        INTEGER     NULL, -- Current
   password         TEXT        NULL,
 -- النوع: 1:مدرس، 2:ولي أمر، 3:طالب، 4:مدير
   type             INTEGER NOT NULL, -- 1:teacher, 2:guardian, 4: student, 8: admin
   guardian_id      INTEGER     NULL, -- student
-  class_id         INTEGER NOT NULL, -- Current : student / guardian
-  grade_id         INTEGER NOT NULL, -- Current : student / guardian
+  class_id         INTEGER     NULL, -- Current : student / guardian
+  grade_id         INTEGER    NULL, -- Current : student / guardian
   student_data     TEXT        NULL,
   CONSTRAINT fk_user_guardian FOREIGN KEY (guardian_id) REFERENCES users (id),
   CONSTRAINT fk_user_school   FOREIGN KEY (school_id)   REFERENCES schools (id)

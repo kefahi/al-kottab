@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'الكتاب',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -41,7 +41,7 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'api/<action:\w+>/<model:\w+>'=>'api/<action>',
+				'api/<controller:\w+>/<action:\w+>' => array ( '<controller>/<action>/', 'defaultParams'=>array('isApi' => true)  ) ,
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
@@ -50,7 +50,7 @@ return array(
 		
 	
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/school.db',
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/al-kottab.db',
 		), 
 		// uncomment the following to use a MySQL database
 		/*
@@ -71,7 +71,7 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, info',
 				),
 				// uncomment the following to show log messages on web pages
 				/*
