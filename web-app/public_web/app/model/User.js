@@ -13,7 +13,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('School.model.Student', {
+Ext.define('School.model.User', {
     extend: 'Ext.data.Model',
 
     fields: [
@@ -24,25 +24,27 @@ Ext.define('School.model.Student', {
             name: 'password'
         },
         {
-            name: 'employee_id_fk'
+            name: 'user_name'
         },
         {
-            name: 'customer_id_fk'
+            name: 'first_name'
         },
         {
-            name: 'active_flg'
+            name: 'second_name'
         },
         {
-            name: 'lastname'
+            name: 'fourth_name'
         },
         {
-            name: 'firstname'
+            name: 'gender'
         },
+
         {
-            name: 'middlename'
+            name: 'birth_date'
         },
+        
         {
-            name: 'prefix_name'
+            name: 'birth_location'
         },
         {
             name: 'suffix_name'

@@ -178,7 +178,7 @@ Ext.define('School.view.MyViewport', {
 
         me.callParent(arguments);
     },
-    onMenuitemManageUsers: function(editor, e, eOpts) {
+    onMenuitemManageUser: function(editor, e, eOpts) {
         alert("you need to save");
       
     },

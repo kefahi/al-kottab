@@ -19,11 +19,13 @@ Ext.Loader.setConfig({
 });
 
 Ext.application({
-    models: [
+    // models: [
+    // 'User'
         
-    ],
+    // ],
+    
     stores: [
-
+        'UserStore'
     ],
     
     controllers: [

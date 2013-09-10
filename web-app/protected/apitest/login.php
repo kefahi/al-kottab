@@ -8,16 +8,16 @@ class TestOfAlKottab extends WebTestCase {
     function testRegistration() {
     	$result = $this->post('http://al-kottab.net/index.php/api/users/create' , array ( 
     		'data' =>array(
-    			'first_name'=> 'أمين',
-    			'second_name'=> 'مصطفى',
-    			'fourth_name'=> 'صرصور',
+    			'first_name'=> 'جعفر',
+    			'second_name'=> 'تحسين',
+    			'fourth_name'=> 'حسان',
 		    	'gender'=> '1',
-		    	'birth_date'=> '1989/12/29',
+		    	'birth_date'=> '1985/5/25',
 		    	'birth_location'=> 'Amman, Jordan',
 		    	'address'=> 'Amman, Jordan',
 		    	'national_id_type'=> '1',
-		    	'national_id'=> '9891025194',
-		    	'type'=> '8',
+		    	'national_id'=> '9851025050',
+		    	'type'=> '4',
 		    	'school_id'=> '0',
 		    	'password'=> 'asd',
 		    	'isApi'=> true,
