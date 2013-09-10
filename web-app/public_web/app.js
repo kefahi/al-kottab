@@ -25,18 +25,16 @@ Ext.application({
     stores: [
 
     ],
-
-     views: [
-    
-     ],
-
     
     controllers: [
          'Sites'
     ],
 
-
-    autoCreateViewport: true,
     name: 'School',
+
+    launch: function() {
+        Ext.create('School.view.MyViewport', {
+        });
+    }
     
 });

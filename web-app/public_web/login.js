@@ -47,13 +47,10 @@ Ext.onReady(function(){
 			// you define as redirect. 
  
                         success:function(){ 
-                        	Ext.Msg.alert('Status', 'Login Successful!', function(btn, text){
-				   if (btn == 'ok'){
-		                        var redirect = '/'; 
-		                        window.location = redirect;
-                                   }
-			        });
-                        },
+                            var redirect = '/'; 
+                            window.location = redirect;
+                        
+                    },
  
 			// Failure function, see comment above re: success and failure. 
 			// You can see here, if login fails, it throws a messagebox

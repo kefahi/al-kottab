@@ -16,6 +16,8 @@
 Ext.define('School.view.MyViewport', {
     extend: 'Ext.container.Viewport',
     // requires: [  'School.view.ViewportItems' ],
+    alias: 'widget.manageMenu',
+
     rtl: true,
     layout: {
         type: 'border'
@@ -134,18 +136,14 @@ Ext.define('School.view.MyViewport', {
                             icon: 'images/bricks.png',
                             text: 'اداريات',
                             rtl:false,
+                            id: 'manageMenu',
                             menu: {
                                 xtype: 'menu',
                                 items: [
                                     {
                                         xtype: 'menuitem',
-                                        text: 'المستخدمون',
-                                        listeners: {
-                                            click: {
-                                                fn: me.onMenuitemManageUsers,
-                                                scope: me
-                                            }
-                                        }
+                                        text: 'المستخدمون'
+                                        
                                     }
                                 ]
                             }
@@ -164,9 +162,7 @@ Ext.define('School.view.MyViewport', {
                     titleCollapse: false,
                     maxTabWidth: 100,
                     minTabWidth: 20
-                    
-
-                },
+                },  
                 {
                     xtype: 'panel',
                     region: 'west',
@@ -183,8 +179,6 @@ Ext.define('School.view.MyViewport', {
 
         me.callParent(arguments);
     },
-
-    
     onMenuitemManageUsers: function(editor, e, eOpts) {
         alert("you need to save");
       
