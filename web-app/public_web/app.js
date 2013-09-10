@@ -33,8 +33,7 @@ Ext.application({
     name: 'School',
 
     launch: function() {
-        Ext.create('School.view.MyViewport', {
-        });
+        Ext.create('School.view.MyViewport', { });
     }
     
 });

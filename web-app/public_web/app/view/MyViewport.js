@@ -16,7 +16,6 @@
 Ext.define('School.view.MyViewport', {
     extend: 'Ext.container.Viewport',
     // requires: [  'School.view.ViewportItems' ],
-    alias: 'widget.manageMenu',
 
     rtl: true,
     layout: {
