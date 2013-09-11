@@ -6,7 +6,7 @@ class MessagesController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='//layouts/api';
 
 	/**
 	 * @return array action filters
@@ -28,18 +28,6 @@ class MessagesController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
@@ -66,17 +54,19 @@ class MessagesController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Messages']))
+print_r($_POST) ; 
+		if(isset($_POST['data']))
 		{
-			$model->attributes=$_POST['Messages'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['data'];
+			if($model->save()){
+				echo 'Yes' ;
+				//$this->redirect(array('view','id'=>$model->id));
+			}else print_r($model->errors);
 		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
+			echo 'No' ;
+		// $this->render('create',array(
+		// 	'model'=>$model,
+		// ));
 	}
 
 	/**
