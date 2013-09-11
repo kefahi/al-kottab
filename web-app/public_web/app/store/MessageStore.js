@@ -1,18 +1,17 @@
-Ext.define('School.store.UserStore', {
+Ext.define('School.store.MessageStore', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'School.model.User'
+        'School.model.Message'
     ],
-    model: 'School.model.User',
+    model: 'School.model.Message',
     autoLoad: true,
     autoSync: true,
     storeId: 'MyJsonStore',
     proxy: {
         type: 'ajax',
         api: {
-            //update: 'api/users/list'
-            read: '/api/users/list', 
+            read: '/api/messages/list', 
         },
         reader: {
             type: 'json'

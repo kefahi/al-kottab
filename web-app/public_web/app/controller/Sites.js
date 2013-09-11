@@ -1,28 +1,25 @@
 Ext.define('School.controller.Sites', {
     extend: 'Ext.app.Controller',    
 
-    
     init: function() {
         this.control({
             'viewport  > #userListMenu ': {
                 click: this.onClickMenu
             },'viewport  > #messageBoxMenu': {
-                click: function(){alert('d');   }
+                click: this.onClickInboxMenu
             }
-
-            
         });
     },
-
     
     onClickMenu: function (menuitem) {
         var m = Ext.create('School.view.users.manage' )  ;
         var tabs = Ext.getCmp('pnl_tab_main');
-        var tabs = Ext.getCmp('pnl_tab_main');
-        
-        //console.log(m);
         tabs.add(m);
-        Ext.getCmp('pnl_tab_main');
-        
-}
+    },
+    
+    onClickInboxMenu: function (menuitem) {
+        var m = Ext.create('School.view.messages.messagesList' )  ;
+        var tabs = Ext.getCmp('pnl_tab_main');
+        tabs.add(m);
+    }
 });

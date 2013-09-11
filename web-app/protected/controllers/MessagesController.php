@@ -33,6 +33,51 @@ class MessagesController extends Controller
 		);
 	}
 
+
+	public function convertModelToArray($models , $rec =true) {
+        if (is_array($models))
+            $arrayMode = TRUE;
+        else {
+            $models = array($models);
+            $arrayMode = FALSE;
+        }
+
+        $result = array();
+        foreach ($models as $model) {
+            $attributes = $model->getAttributes();
+
+
+            $attributes['updated_at'] =  Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ',$attributes['updated_at']);
+            $attributes['created_at'] =  Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ',$attributes['created_at']);
+            $attributes['sender'] = $model->sender->user_name;
+            $attributes['recipient'] = $model->recipient->user_name;
+
+            $relations = array();
+            
+            $all = array_merge($attributes, $relations);
+            
+            if ($arrayMode)
+                array_push($result, $all);
+            else
+                $result = $all;
+        }
+        return $result;
+    }
+
+	/**
+	 * Lists all Message.
+	 */
+	public function actionList()
+	{
+		$dataProvider=new CActiveDataProvider('Messages'  , array(    'criteria'=>array('condition'=> 'recipient_id='.Yii::app()->user->id) ) );
+
+		if( isset($_GET['isApi'] ) && $_GET['isApi']==true   ){
+	    	echo json_encode(   $this->convertModelToArray($dataProvider->data) ) ; 
+		}	
+	}
+
+
+
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

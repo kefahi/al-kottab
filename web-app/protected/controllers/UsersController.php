@@ -59,7 +59,7 @@ class UsersController extends Controller
 	}
 
 
-	    public function convertModelToArray($models) {
+	public function convertModelToArray($models) {
         if (is_array($models))
             $arrayMode = TRUE;
         else {
