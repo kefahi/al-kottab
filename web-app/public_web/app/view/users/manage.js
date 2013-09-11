@@ -1,6 +1,6 @@
 Ext.define('School.view.users.manage',{
     extend: 'Ext.Panel',
-    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel' ] ,  
+    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'  , 'School.view.users.popup'] ,  
     
     xtype: 'panel',
     id: 'pnl_area_student',
@@ -100,7 +100,12 @@ Ext.define('School.view.users.manage',{
             padding: '0 0 0 5'
         },
         listeners: {
-            select:  function(){alert('dd');}     
+            select:  function(record){
+                var view = Ext.widget('userpopup');
+                var data = record.selected.items[0].data ;
+                //view.down('form').loadRecord(record);
+                view.setTitle(data.first_name + '  ' + data.fourth_name);
+            }     
         },
         columns: [{
 
