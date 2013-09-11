@@ -141,7 +141,7 @@ Ext.define('School.view.MyViewport', {
                                 items: [
                                     {
                                         xtype: 'menuitem',
-                                        text: 'المستخدمون'
+                                        text: 'المستخدم'
                                         
                                     }
                                 ]
