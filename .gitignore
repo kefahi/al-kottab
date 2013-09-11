@@ -1,3 +1,7 @@
-assets/
-protected/runtime/
-themes/classic/views/
+web-app/assets/
+web-app/protected/runtime/
+web-app/themes/classic/views/
+web-app/public_web/assets/*
+logs/
+*.swp
+*~
