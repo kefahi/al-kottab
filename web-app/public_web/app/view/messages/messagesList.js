@@ -1,0 +1,1 @@
+Ext.define('School.view.users.messagesList',{    extend: 'Ext.Panel'});

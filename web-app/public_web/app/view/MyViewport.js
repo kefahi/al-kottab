@@ -117,6 +117,7 @@ Ext.define('School.view.MyViewport', {
                                     {
                                         xtype: 'menuitem',
                                         text: 'ادخال طالب جديد',
+
                                         listeners: {
                                             click: {
                                                 fn: me.onMenuitemClick2,
@@ -138,10 +139,35 @@ Ext.define('School.view.MyViewport', {
                             id: 'manageMenu',
                             menu: {
                                 xtype: 'menu',
+
+                                items: [
+                                    {
+
+                                        xtype: 'menuitem',
+                                        id:'userListMenu',
+                                        text: 'المستخدم'
+
+                                        
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            xtype: 'tbseparator'
+                        },
+                        {
+                            xtype: 'splitbutton',
+                            icon: 'images/bricks.png',
+                            text: 'الرسائل',
+                            rtl:false,
+                            id: 'messageMenu',
+                            menu: {
+                                xtype: 'menu',
+                                id: 'messageBoxMenu',
                                 items: [
                                     {
                                         xtype: 'menuitem',
-                                        text: 'المستخدم'
+                                        text: 'البريد الوارد'
                                         
                                     }
                                 ]

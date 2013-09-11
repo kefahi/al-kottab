@@ -4,9 +4,13 @@ Ext.define('School.controller.Sites', {
     
     init: function() {
         this.control({
-            'viewport  > menu ': {
+            'viewport  > #userListMenu ': {
                 click: this.onClickMenu
+            },'viewport  > #messageBoxMenu': {
+                click: function(){alert('d');   }
             }
+
+            
         });
     },
 

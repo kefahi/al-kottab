@@ -3,8 +3,7 @@ Ext.define('School.view.users.manage',{
     requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'  , 'School.view.users.popup'] ,  
     
     xtype: 'panel',
-    id: 'pnl_area_student',
-    itemId: 'pnl_area_student',
+
     rtl: true,
     width: 754,
     layout: {
