@@ -2,7 +2,7 @@ Ext.define('School.view.messages.messagesList',{
     extend: 'Ext.Panel',
     requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel' ] ,  
     xtype: 'panel',
-    
+    id:"messageListView",
     rtl: true,
     
     layout: {
@@ -16,9 +16,9 @@ Ext.define('School.view.messages.messagesList',{
     
     items:[{
         xtype: 'gridpanel',
-        width: '100%',
+        width: '50%',
         store: 'MessageStore',
-        
+    
         columns: [   {            xtype: 'gridcolumn',
             dataIndex: 'subject',
             text: 'العنوان'
@@ -31,5 +31,25 @@ Ext.define('School.view.messages.messagesList',{
             dataIndex: 'created_at',
             text: 'التاريخ'
         }]
-    }]
+    } ,{
+        xtype: 'panel',
+        layout:  'vbox'     ,
+        id:'messagePanel',
+        rtl:true,
+        width: '50%',
+        items:[{
+            xtype:'label',
+            rtl:true,
+            id:'messageBodyArea'
+        },{
+            xtype: 'textarea',
+            width:'100%',
+            id: 'messageReplayBox'
+        },{
+            xtype: 'button',
+            width:60,
+            id: 'messageReplayButton',
+            text:'إرسال'
+        }]
+    } ]
 });

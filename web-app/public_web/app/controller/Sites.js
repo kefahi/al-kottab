@@ -7,6 +7,8 @@ Ext.define('School.controller.Sites', {
                 click: this.onClickMenu
             },'viewport  > #messageBoxMenu': {
                 click: this.onClickInboxMenu
+            } , '#messageListView > gridpanel ':{
+                itemclick: this.onClickMessage
             }
         });
     },
@@ -21,5 +23,9 @@ Ext.define('School.controller.Sites', {
         var m = Ext.create('School.view.messages.messagesList' )  ;
         var tabs = Ext.getCmp('pnl_tab_main');
         tabs.add(m);
+    },
+    onClickMessage:function(record , v){
+        Ext.getCmp('messageBodyArea').update(v.data.body);  
+        Ext.getCmp('messageReplayBox').show();
     }
 });
