@@ -3,6 +3,7 @@ Ext.define('School.view.schools.manage',{
     requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'   ,'School.view.schools.popup'],  
     xtype: 'panel',
     id: 'schoolManagePanel',
+    closable: true,
     rtl: true,
     title:'إدارة المدارس',
     width: 754,

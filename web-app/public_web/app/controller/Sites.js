@@ -24,7 +24,7 @@ Ext.define('School.controller.Sites', {
         
         var m = Ext.create('School.view.users.manage' )  ;
         var tabs = Ext.getCmp('pnl_tab_main');
-        //console.log(m.getComponent('userGridView').store.filter( "school" ,'مدرسة حنين'  ));
+        m.getComponent('userGridView').store.clearFilter();
         tabs.setActiveTab(tabs.add(m) );
     },
     onSchoolMenuClick: function (menuitem) {

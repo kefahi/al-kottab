@@ -15,6 +15,10 @@ Ext.define('School.view.schools.popup',{
                 var tabs = Ext.getCmp('pnl_tab_main');
                 m.getComponent('userGridView').store.filter( "school" ,Ext.getCmp('schoolspopupPanel').title );
                 tabs.setActiveTab(tabs.add(m) );
+                m.getComponent('userGridView').setTitle( m.title  +" > "+ Ext.getCmp('schoolspopupPanel').title)
+                Ext.widget('schoolspopup').destroy();
+                Ext.widget('schoolspopup').remove();
+                this.destroy();
             }
         }
     } ]

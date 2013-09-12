@@ -5,6 +5,8 @@ Ext.define('School.view.users.manage',{
     title:'صندوق المستخدم',
     id: 'pnl_area_student',
     itemId: 'pnl_area_student',
+    closable: true,
+    
     rtl: true,
     width: 754,
     layout: {
@@ -37,7 +39,7 @@ Ext.define('School.view.users.manage',{
             xtype: 'textfield',
             margin: '10 ',
             width: 200,
-            fieldLabel: 'اسم الطلاب',
+            fieldLabel: 'اسم ',
             labelWidth: 70
         },
         {
@@ -83,38 +85,14 @@ Ext.define('School.view.users.manage',{
     }] ,
     items : [
     {
-        xtype: 'toolbar',
-                    region: 'north',
-                    border: false,
-                    height: 40,
-                    rtl: true,
-                    layout: {
-                        defaultMargins: {
-                            top: 0,
-                            right: 0,
-                            bottom: 5,
-                            left: 0
-                        },
-                        type: 'hbox'
-                    },
-                    items: [{
-                        xtype: 'splitbutton',
-                        rtl: false,
-                        text: 'الطلاب',
-                    } ]
-                
-    } ,
-    {
         xtype: 'gridpanel',
         store: 'UserStore',
         height: 181,
         width: '100%',
         id: "userGridView",
-        
         collapseDirection: 'left',
         collapsed: false,
         collapsible: true,
-        title: 'كل الطلاب',
         titleCollapse: true,
         
         //  store: 'UserStudent' ,
