@@ -25,7 +25,7 @@ Ext.application({
     // ],
     
     stores: [
-        'UserStore' , 'MessageStore'
+        'UserStore' , 'MessageStore' ,'SchoolStore'
     ],
     
     controllers: [

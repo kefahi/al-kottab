@@ -124,15 +124,15 @@ Ext.define('School.view.MyViewport', {
                             id: 'manageMenu',
                             menu: {
                                 xtype: 'menu',
-
                                 items: [
                                     {
-
-                                        xtype: 'menuitem',
+                                       xtype: 'menuitem',
                                         id:'userListMenu',
                                         text: 'المستخدم'
-
-                                        
+                                    },{
+                                       xtype: 'menuitem',
+                                        id:'userSchoolMenu',
+                                        text: 'المدارس'
                                     }
                                 ]
                             }
