@@ -1,8 +1,8 @@
 Ext.define('School.view.users.manage',{
     extend: 'Ext.Panel',
-    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'  , 'School.view.users.popup'] ,  
-    
+    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'  , 'School.view.users.popup'],  
     xtype: 'panel',
+    title:'صندوق المستخدم',
     id: 'pnl_area_student',
     itemId: 'pnl_area_student',
     rtl: true,
@@ -15,8 +15,7 @@ Ext.define('School.view.users.manage',{
         xtype: 'tab',
         flex: 1
     },
-    dockedItems: [
-    {
+    dockedItems: [{
         xtype: 'form',
         flex: 1,
         margins: '10',

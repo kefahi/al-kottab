@@ -2,6 +2,7 @@ Ext.define('School.view.messages.messagesList',{
     extend: 'Ext.Panel',
     requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel' ] ,  
     xtype: 'panel',
+    title:'صندوق الرسائ',
     id:"messageListView",
     rtl: true,
     
