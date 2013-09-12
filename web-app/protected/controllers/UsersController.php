@@ -70,18 +70,20 @@ class UsersController extends Controller
         $result = array();
         foreach ($models as $model) {
             $attributes = $model->getAttributes();
-            $relations = array();
-            foreach ($model->relations() as $key => $related) {
-                if ($model->hasRelated($key)) {
-                    $relations[$key] = convertModelToArray($model->$key);
-                }
-            }
-            $all = array_merge($attributes, $relations);
+            if(isset($model->school->name))
+            	$attributes['school']= $model->school->name;
 
+
+            $relations = array();
+            
+            $all = array_merge($attributes, $relations);
+            
             if ($arrayMode)
                 array_push($result, $all);
             else
                 $result = $all;
+            
+            //store.filter("email", /\.com$/);
         }
         return $result;
     }

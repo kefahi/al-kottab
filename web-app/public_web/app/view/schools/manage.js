@@ -15,8 +15,7 @@ Ext.define('School.view.schools.manage',{
         flex: 1
     },
      
-    items : [
-    {
+    items : [{
         xtype: 'gridpanel',
         store: 'SchoolStore',
         height: 181,
@@ -29,6 +28,10 @@ Ext.define('School.view.schools.manage',{
         
         viewConfig: {
             padding: '0 0 0 5'
+        },
+        listeners: {
+            itemclick:function(){
+            }
         },
         columns: [{
             xtype: 'gridcolumn',

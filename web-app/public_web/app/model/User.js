@@ -96,6 +96,9 @@ Ext.define('School.model.User', {
         },
         {
             name: 'employee_inactivating'
+        },
+        {
+            name: 'school'
         }
     ]
 });

@@ -26,4 +26,5 @@ Ext.define('School.model.Message', {
             name: 'delivery_method'
         }
     ]
+
 });

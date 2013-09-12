@@ -9,7 +9,7 @@ Ext.define('School.view.users.manage',{
     width: 754,
     layout: {
         align: 'stretch',
-        type: 'hbox'
+        type: 'vbox'
     },
     tabConfig: {
         xtype: 'tab',
@@ -83,10 +83,33 @@ Ext.define('School.view.users.manage',{
     }] ,
     items : [
     {
+        xtype: 'toolbar',
+                    region: 'north',
+                    border: false,
+                    height: 40,
+                    rtl: true,
+                    layout: {
+                        defaultMargins: {
+                            top: 0,
+                            right: 0,
+                            bottom: 5,
+                            left: 0
+                        },
+                        type: 'hbox'
+                    },
+                    items: [{
+                        xtype: 'splitbutton',
+                        rtl: false,
+                        text: 'الطلاب',
+                    } ]
+                
+    } ,
+    {
         xtype: 'gridpanel',
         store: 'UserStore',
         height: 181,
         width: '100%',
+        id: "userGridView",
         
         collapseDirection: 'left',
         collapsed: false,
@@ -100,10 +123,11 @@ Ext.define('School.view.users.manage',{
         },
         listeners: {
             select:  function(record){
-                var view = Ext.widget('userpopup');
-                var data = record.selected.items[0].data ;
-                //view.down('form').loadRecord(record);
-                view.setTitle(data.first_name + '  ' + data.fourth_name);
+                this.store.filter( "school" ,'مدرسة حنين'  ) ;//'school' , 'حنين');
+                // var view = Ext.widget('userpopup');
+                // var data = record.selected.items[0].data ;
+                // //view.down('form').loadRecord(record);
+                // view.setTitle(data.first_name + '  ' + data.fourth_name);
             }     
         },
         columns: [{
