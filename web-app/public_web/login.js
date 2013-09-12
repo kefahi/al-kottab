@@ -58,7 +58,6 @@ Ext.onReady(function(){
  
                         failure:function(form, action){ 
                             if(action.failureType == 'server'){ 
-                                console.log(action.response);
                                 var response = action.response.responseText ;
                                 obj = Ext.util.JSON.decode(response); 
                                 Ext.Msg.alert('Login Failed!', obj.errors.reason); 

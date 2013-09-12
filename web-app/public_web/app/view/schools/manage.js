@@ -1,8 +1,8 @@
 Ext.define('School.view.schools.manage',{
     extend: 'Ext.Panel',
-    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'   ],  
+    requires: [ 'Ext.grid.GridPanel'  , 'Ext.Panel'   ,'School.view.schools.popup'],  
     xtype: 'panel',
-    id: 'schoolManage',
+    id: 'schoolManagePanel',
     rtl: true,
     title:'إدارة المدارس',
     width: 754,
@@ -14,7 +14,8 @@ Ext.define('School.view.schools.manage',{
         xtype: 'tab',
         flex: 1
     },
-     
+
+
     items : [{
         xtype: 'gridpanel',
         store: 'SchoolStore',
@@ -30,9 +31,14 @@ Ext.define('School.view.schools.manage',{
             padding: '0 0 0 5'
         },
         listeners: {
-            itemclick:function(){
-            }
+            select:  function(record){
+                var view = Ext.widget('schoolspopup');
+                var data = record.selected.items[0].data ;
+                //view.down('form').loadRecord(record);
+                view.setTitle(data.name );
+            }     
         },
+    
         columns: [{
             xtype: 'gridcolumn',
             dataIndex: 'name',

@@ -13,7 +13,6 @@ Ext.define('School.view.users.popup',{
             click:function(){
                 Ext.getCmp('userpopupPanel').setHeight(200);
                var panel = Ext.getCmp('replaypop').show();
-                    
             }
         }
     },{

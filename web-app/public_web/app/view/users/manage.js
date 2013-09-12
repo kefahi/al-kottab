@@ -123,11 +123,10 @@ Ext.define('School.view.users.manage',{
         },
         listeners: {
             select:  function(record){
-                this.store.filter( "school" ,'مدرسة حنين'  ) ;//'school' , 'حنين');
-                // var view = Ext.widget('userpopup');
-                // var data = record.selected.items[0].data ;
-                // //view.down('form').loadRecord(record);
-                // view.setTitle(data.first_name + '  ' + data.fourth_name);
+                 var view = Ext.widget('userpopup');
+                 var data = record.selected.items[0].data ;
+                 //view.down('form').loadRecord(record);
+                 view.setTitle(data.first_name + '  ' + data.fourth_name);
             }     
         },
         columns: [{
