@@ -1,0 +1,19 @@
+{
+financhal: [{
+      "name": "Registeration",
+      "create_date" : "21/5/1999",
+     text : "رسوم التسجيل",
+amount : 10
+      } , {
+      "name": "Mmm",
+      "create_date" : "21/5/1999",
+     text : "نصب",
+amount : 10
+      } 
+
+
+]
+,
+gender :  [  { text:'male' , value:1  }
+]
+}
