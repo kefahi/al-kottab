@@ -1,18 +1,18 @@
 <?php
-/* @var $this SchoolsController */
+/* @var $this MessagesController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Schools',
+	'Messages',
 );
 
 $this->menu=array(
-	array('label'=>'Create Schools', 'url'=>array('create')),
-	array('label'=>'Manage Schools', 'url'=>array('admin')),
+	array('label'=>'Create Messages', 'url'=>array('create')),
+	array('label'=>'Manage Messages', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Schools</h1>
+<h1>Messages</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
