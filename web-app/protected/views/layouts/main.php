@@ -8,29 +8,21 @@
 
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
-	
-	
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
 
-	<script src="/bootstrap/js/jquery.js"></script>
-	<script src="/bootstrap/js/bootstrap.js"></script>
-	<script src="/bootstrap/js/tooltip.js"></script>
-	<script src="/bootstrap/js/popover.js"></script>
+	
+
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<style>  body {   padding-top: 40px;  } </style>
 </head>
 
 <body dir=rtl >
 
 <div class="container" id="page">
 
-	<div id="header">
-		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div id="mainmenu" class="collapse navbar-collapse navbar-ex1-collapse">
+<nav class="navbar navbar-default navbar-fixed-top ">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'htmlOptions'=>array('class'=>'nav navbar-nav'),
 
@@ -43,25 +35,16 @@
 				array('label'=>'خروج', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 			),
 		)); ?>
-	</div> </nav>
+	 </nav>
 	<!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+	</div>
+	<div class="clearfix visible-xs"></div>
+	<div class="container bs-docs-container" >
+			<?php  echo $content; ?>
+		
+	</div>
 
-	<?php echo $content; ?>
-
-	<div class="clear"></div>
-
-	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
-		<?php echo Yii::powered(); ?>
-	</div><!-- footer -->
-
+	
 </div><!-- page -->
-
 </body>
 </html>

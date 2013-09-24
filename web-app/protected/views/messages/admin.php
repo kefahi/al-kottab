@@ -28,10 +28,7 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Messages</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+<body dir=rtl
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -39,18 +36,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
-
+<div class="panel panel-default">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'messages-grid',
 	'dataProvider'=>$model->search(),
+	'htmlOptions'=>array('class'=>'table'),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'created_at',
-		'updated_at',
 		'priority',
-		'severity',
 		'sender_id',
+		'subject',
 		/*
 		'recipient_id',
 		'body',
@@ -63,3 +59,5 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+
+</div>

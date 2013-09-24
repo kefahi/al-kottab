@@ -56,8 +56,9 @@ $('.search-form form').submit(function(){
 )); ?>
 </div>
 
-	<script src="/bootstrap/js/tooltip.js"></script>
-	<script src="/bootstrap/js/popover.js"></script>
+
+<script src="/bootstrap/js/tooltip.js"></script>
+<script src="/bootstrap/js/popover.js"></script>
 
 <script>
 $('.glyphicon-new-window').popover(
@@ -65,6 +66,7 @@ $('.glyphicon-new-window').popover(
 	trigger: 'click',
 	html: true,
 	placement: 'left',
+	// container: this,
 	content:function(){
 		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school_id='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
 		return html;

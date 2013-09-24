@@ -18,41 +18,16 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-		<?php echo $form->error($model,'created_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
-		<?php echo $form->error($model,'updated_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'priority'); ?>
-		<?php echo $form->textField($model,'priority'); ?>
-		<?php echo $form->error($model,'priority'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'severity'); ?>
-		<?php echo $form->textField($model,'severity'); ?>
-		<?php echo $form->error($model,'severity'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'sender_id'); ?>
-		<?php echo $form->textField($model,'sender_id'); ?>
-		<?php echo $form->error($model,'sender_id'); ?>
-	</div>
-
 	<div class="row">
 		<?php echo $form->labelEx($model,'recipient_id'); ?>
-		<?php echo $form->textField($model,'recipient_id'); ?>
+		<?php echo $form->textArea($model,'recipient_id'); ?>
 		<?php echo $form->error($model,'recipient_id'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'subject'); ?>
+		<?php echo $form->textField($model,'subject',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->error($model,'subject'); ?>
 	</div>
 
 	<div class="row">
@@ -61,21 +36,10 @@
 		<?php echo $form->error($model,'body'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textArea($model,'subject',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'delivery_status'); ?>
-		<?php echo $form->textField($model,'delivery_status'); ?>
-		<?php echo $form->error($model,'delivery_status'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'delivery_method'); ?>
-		<?php echo $form->textField($model,'delivery_method'); ?>
+		<?php echo $form->dropDownList($model,'delivery_method' , array(1=>'رسالة قصيرة' , 4=>'البريد الإلكتروني' , 2=>'رسالة خاص' , )); ?>
 		<?php echo $form->error($model,'delivery_method'); ?>
 	</div>
 
