@@ -66,7 +66,7 @@ $('.glyphicon-new-window').popover(
 	html: true,
 	placement: 'left',
 	content:function(){
-		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
+		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school_id='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
 		return html;
 	} 
 });
