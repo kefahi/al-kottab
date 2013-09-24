@@ -7,10 +7,6 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Schools', 'url'=>array('index')),
-	array('label'=>'Create Schools', 'url'=>array('create')),
-);
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -28,24 +24,17 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Schools</h1>
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 
+<div class="panel panel-default">
+<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
+	'htmlOptions'=>array('class'=>'table'),
+	//''=>'table' ,
 	'id'=>'schools-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
 		'created_at',
 		'updated_at',
 		'name',
@@ -57,7 +46,28 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'admin_id',
 		*/
 		array(
-			'class'=>'CButtonColumn',
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"school_{$data->id}"' , 'data-original-id'=>'$data->id', 'data-original-title'=>'$data->name','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
 		),
+
 	),
 )); ?>
+</div>
+
+	<script src="/bootstrap/js/tooltip.js"></script>
+	<script src="/bootstrap/js/popover.js"></script>
+
+<script>
+$('.glyphicon-new-window').popover(
+{
+	trigger: 'click',
+	html: true,
+	placement: 'left',
+	content:function(){
+		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
+		return html;
+	} 
+});
+</script>
