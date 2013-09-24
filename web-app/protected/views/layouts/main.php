@@ -5,15 +5,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
+
+
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	
 	
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 
+
+	<script src="/bootstrap/js/jquery.js"></script>
+	<script src="/bootstrap/js/bootstrap.js"></script>
+	<script src="/bootstrap/js/tooltip.js"></script>
+	<script src="/bootstrap/js/popover.js"></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<body>
+<body dir=rtl >
 
 <div class="container" id="page">
 
@@ -25,7 +33,7 @@
 	<div id="mainmenu" class="collapse navbar-collapse navbar-ex1-collapse">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'htmlOptions'=>array('class'=>'nav navbar-nav'),
-			'itemCssClass'=>'nav navbar-nav',
+
 			'items'=>array(
 				array('label'=>'الرئيسية', 'url'=>array('/site/index') ),
 				array('label'=>'المدرسة', 'url'=>array('/schools') ),
