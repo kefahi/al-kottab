@@ -48,17 +48,37 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'user_name',
 		'first_name',
 		'second_name',
 		array(
 			'name'=>'school_id',
 			'value'=>'isset($data->school->name)?$data->school->name:""',
 		),
-
 		array(
-			'class'=>'CButtonColumn',
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"student_{$data->id}"' , 'data-original-id'=>'$data->id', 'data-original-title'=>' $data->first_name . "	" . $data->fourth_name ','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
 		),
 	),
 )); ?>
 </div>
+	<script src="/bootstrap/js/tooltip.js"></script>
+	<script src="/bootstrap/js/popover.js"></script>
+<script>
+$('.glyphicon-new-window').popover(
+{
+	trigger: 'click',
+	html: true,
+	placement: 'left',
+	width:'100px',
+	content:function(){
+		$('.glyphicon-new-window').popover("hide");
+		var html = '<a class="btn  " href=/message/?recipient_id='+  $(this).attr('data-original-id') +' > إرسال رسالة </a>'    ;
+		html += '<br/> <a class="btn " href=/marks/?student_id='+  $(this).attr('data-original-id') +' > العلامات </a>'    ;
+		html += '<br/> <a class="btn " href=/student/academicStat/?student_id='+  $(this).attr('data-original-id') +' > الوضع المالي </a>'    ;
+		html += '<br/> <a class="btn " href=/student/financialStat/?student_id='+  $(this).attr('data-original-id') +' > الوضع الأكاديمي	 </a>'    ;
+		return html;
+	} 
+});
+</script>
