@@ -66,14 +66,14 @@ class Schools extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'name' => 'Name',
-			'description' => 'Description',
-			'address' => 'Address',
-			'phones' => 'Phones',
-			'notes' => 'Notes',
+			'id' => 'الرقم الفريد',
+			'created_at' => 'تاريخ التسجيل',
+			'updated_at' => 'اخر تحديث',
+			'name' => 'الإسم',
+			'description' => 'الوصف',
+			'address' => 'العنوان',
+			'phones' => 'الهاتف',
+			'notes' => 'ملاحظات',
 			'admin_id' => 'Admin',
 		);
 	}
