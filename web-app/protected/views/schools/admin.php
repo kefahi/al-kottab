@@ -22,8 +22,6 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Schools</h1>
-
 
 
 <div class="panel panel-default">

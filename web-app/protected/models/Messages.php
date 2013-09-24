@@ -66,16 +66,16 @@ class Messages extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'priority' => 'Priority',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تعديل',
+			'priority' => 'الأهمية',
 			'severity' => 'Severity',
-			'sender_id' => 'Sender',
-			'recipient_id' => 'Recipient',
-			'body' => 'Body',
-			'subject' => 'Subject',
-			'delivery_status' => 'Delivery Status',
-			'delivery_method' => 'Delivery Method',
+			'sender_id' => 'المرسل',
+			'recipient_id' => 'المستقبل',
+			'body' => 'النص',
+			'subject' => 'العنوان',
+			'delivery_status' => 'اشعار',
+			'delivery_method' => 'طريقة الإرسال',
 		);
 	}
 

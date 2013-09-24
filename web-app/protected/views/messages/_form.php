@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
+<div class="form hero-unit">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'messages-form',
@@ -15,9 +15,15 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'delivery_method'); ?>
+		<?php echo $form->dropDownList($model,'delivery_method' , array(1=>'رسالة قصيرة' , 4=>'البريد الإلكتروني' , 2=>'رسالة خاص' , )); ?>
+		<?php echo $form->error($model,'delivery_method'); ?>
+	</div>
+
+
 	<div class="row">
 		<?php echo $form->labelEx($model,'recipient_id'); ?>
 		<?php echo $form->textArea($model,'recipient_id'); ?>
@@ -32,15 +38,9 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+		<?php $this->renderPartial('/site/wysiwyg' ); ?>
+		<script> $('#editor').attr('name' , 'Messages[body]');</script>
 		<?php echo $form->error($model,'body'); ?>
-	</div>
-
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'delivery_method'); ?>
-		<?php echo $form->dropDownList($model,'delivery_method' , array(1=>'رسالة قصيرة' , 4=>'البريد الإلكتروني' , 2=>'رسالة خاص' , )); ?>
-		<?php echo $form->error($model,'delivery_method'); ?>
 	</div>
 
 	<div class="row buttons">

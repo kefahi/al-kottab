@@ -12,30 +12,10 @@ $this->menu=array(
 	array('label'=>'Create Student', 'url'=>array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#student-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
 ?>
 
-<h1>Manage Students</h1>
 
-<body dir=rtl
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
 <div class="panel panel-default">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
@@ -71,7 +51,7 @@ $('.glyphicon-new-window').popover(
 	width:'100px',
 	content:function(){
 		$('.glyphicon-new-window').popover("hide");
-		var html = '<a class="btn  " href=/message/?recipient_id='+  $(this).attr('data-original-id') +' > إرسال رسالة </a>'    ;
+		var html = '<a class="btn  " href=/messages/create/?recipient_id='+  $(this).attr('data-original-id') +' > إرسال رسالة </a>'    ;
 		html += '<br/> <a class="btn " href=/marks/?student_id='+  $(this).attr('data-original-id') +' > العلامات </a>'    ;
 		html += '<br/> <a class="btn " href=/student/academicStat/?student_id='+  $(this).attr('data-original-id') +' > الوضع المالي </a>'    ;
 		html += '<br/> <a class="btn " href=/student/financialStat/?student_id='+  $(this).attr('data-original-id') +' > الوضع الأكاديمي	 </a>'    ;
