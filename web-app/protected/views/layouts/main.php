@@ -37,10 +37,10 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       <li class="active"><?php echo CHtml::link('الإدارة', '/site/index' ) ; ?></li>
-      <li ><?php echo CHtml::link('الرسائل', '/site/index' ) ; ?></li>
+      <li ><?php echo CHtml::link('الرسائل', '/messages' ) ; ?></li>
       <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li>
       <li ><?php echo CHtml::link('الطالب', '/student/home' ) ; ?></li>
-      <li ><?php echo CHtml::link('الصف', '/class/home' ) ; ?></li>
+      <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li>
       <li ><?php echo CHtml::link('المدارس', '/schools/' ) ; ?></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">إدارة <b class="caret"></b></a>
