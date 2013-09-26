@@ -39,6 +39,9 @@
       <li class="active"><?php echo CHtml::link('الإدارة', '/site/index' ) ; ?></li>
       <li ><?php echo CHtml::link('الرسائل', '/site/index' ) ; ?></li>
       <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li>
+      <li ><?php echo CHtml::link('الطالب', '/student/home' ) ; ?></li>
+      <li ><?php echo CHtml::link('الصف', '/class/home' ) ; ?></li>
+      <li ><?php echo CHtml::link('المدارس', '/schools/' ) ; ?></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">إدارة <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -47,6 +50,10 @@
           <li><a href="#">الطلاب</a></li>
         </ul>
       </li>
+      <li>
+	      <a href="#">الإشعارات <span class="badge">12</span></a>
+      </li>
+      <li><a href="#">الرسائل <span class="badge">2</span></a></li>
     </ul>    
 
     <ul class="nav navbar-nav navbar-left">
@@ -54,7 +61,9 @@
       <li><a href="#">خروج</a></li>
 
     </ul>
+
   </div><!-- /.navbar-collapse -->
+
 </nav>
 <?php
  // <nav class="navbar navbar-default navbar-fixed-top " >

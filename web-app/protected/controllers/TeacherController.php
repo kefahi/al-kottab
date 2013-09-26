@@ -135,9 +135,7 @@ class TeacherController extends Controller
 	public function actionHome()
 	{
 		$dataProvider=new CActiveDataProvider('Teacher');
-		$this->render('home',array(
-			'dataProvider'=>$dataProvider,
-		));
+		$this->render('home',array(	) );
 	}
 
 

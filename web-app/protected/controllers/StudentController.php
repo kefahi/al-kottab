@@ -36,7 +36,7 @@ class StudentController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete' ,'home'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -175,5 +175,14 @@ class StudentController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionHome()
+	{
+		$dataProvider=new CActiveDataProvider('Teacher');
+		$this->render('home',array(	) );
 	}
 }
