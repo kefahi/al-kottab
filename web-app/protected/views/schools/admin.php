@@ -55,9 +55,9 @@ $('.search-form form').submit(function(){
 </div>
 
 
-<script src="/bootstrap/js/tooltip.js"></script>
+<!-- <script src="/bootstrap/js/tooltip.js"></script>
 <script src="/bootstrap/js/popover.js"></script>
-
+ -->
 <script>
 $('.glyphicon-new-window').popover(
 {
