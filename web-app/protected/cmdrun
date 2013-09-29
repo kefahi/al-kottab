@@ -3,7 +3,7 @@
 
 //defined('YII DEBUG') or define('YII DEBUG',true);
 
-require_once(dirname(__FILE__).'/../../framework/yii.php');
+require_once(dirname(__FILE__).'/../yii/framework/yii.php');
 
 $main_config = require (dirname(__FILE__).'/config/main.php');
 $local_config= require (dirname(__FILE__).'/config/local.php');

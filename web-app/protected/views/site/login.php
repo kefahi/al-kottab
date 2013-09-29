@@ -15,33 +15,34 @@ $this->breadcrumbs=array(
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
+	'htmlOptions' => array('role'=>"form"),
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
 
-	<div class="row">
+	<div class="row form-group">
 		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username'); ?>
+		<?php echo $form->textField($model,'username' , array('class'=>'form-control' , 'placeholder'=>$model->attributeLabels()['username'] )); ?>
 		<?php echo $form->error($model,'username'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row form-group">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password' , array('class'=>'form-control' , 'placeholder'=>$model->attributeLabels()['password'] )); ?>
 		<?php echo $form->error($model,'password'); ?>
 		
 	</div>
 
-	<div class="row rememberMe">
+	<div class="row rememberMe  checkbox">
 		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe'); ?>
+		<?php echo $form->label($model,'rememberMe' ) ; ?>
 		<?php echo $form->error($model,'rememberMe'); ?>
 	</div>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Login'); ?>
+	<div class="row ">
+		<?php echo CHtml::submitButton('تسجيل الدخول' , array('class'=>'btn btn-default')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

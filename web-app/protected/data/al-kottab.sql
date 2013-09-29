@@ -113,8 +113,7 @@ CREATE TABLE subjects ( -- مقررات
   updated_at       INTEGER NOT NULL,
   name             TEXT    NOT NULL,
   description      TEXT,
-  class_id         INTEGER NOT NULL
-  
+  class_id         INTEGER NOT NULL  
 );
 
 CREATE TABLE student_classes ( -- شعب الطالب

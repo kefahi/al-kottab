@@ -59,9 +59,9 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_name, created_at, updated_at, first_name, second_name, fourth_name, gender, birth_date, birth_location, address, national_id_type,  type,password,  ', 'required'),
+			array('user_name,id_string , created_at, updated_at, first_name, second_name, fourth_name, gender, birth_date, birth_location, address, national_id_type,  type,password,  ', 'required'),
 			array('created_at, updated_at, gender, birth_date, national_id_type, school_id, type, guardian_id, class_id, grade_id', 'numerical', 'integerOnly'=>true),
-			array('third_name, mobiles, land_line, national_id, password, student_data', 'safe'),
+			array('id_string, third_name, mobiles, land_line, national_id, password, student_data', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, created_at, updated_at, first_name, second_name, third_name, fourth_name, gender, birth_date, birth_location, address, mobiles, land_line, national_id, national_id_type, school_id, password, type, guardian_id, class_id, grade_id, student_data', 'safe', 'on'=>'search'),
@@ -239,28 +239,22 @@ class Users extends CActiveRecord
         {
             if($this->_identity===null)
             {
-            	Yii::log('0000000000');
                     $this->_identity=new UserIdentity($this->user_name,$this->password);
                     $this->_identity->authenticate();
-                    Yii::log('11111111111');
             }
-            Yii::log('11111111111.1111111111');
             var_dump($this->_identity->errorCode) ; 
             var_dump(UserIdentity::ERROR_NONE  ) ;
             exit;
             if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
             {
-            	Yii::log('2222222222222222');
-                    $duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+            	    $duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
                     Yii::app()->user->login($this->_identity,$duration);
-                    Yii::log('333333333333');
                     return true;
 
             }
             else
             {
-            	Yii::log('11111111111');
-                    return false;
+                return false;
             }
         }
 

@@ -12,6 +12,7 @@ $this->menu=array(
 	array('label'=>'Create Student', 'url'=>array('create')),
 );
 
+
 ?>
 
 
