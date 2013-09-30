@@ -23,8 +23,6 @@ class DataColumn extends CDataColumn
 
                 foreach($this->htmlOptions as $key=>$value) {
                     
-                    print_r(( strpos($value,'data') !== false )) ;
-                    
                     if( strpos($value,'data') !== false ){
                         $options[$key] = $this->evaluateExpression($value,array('row'=>$row,'data'=>$data));
                     } else { $options[$key]=$value; }

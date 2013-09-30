@@ -70,6 +70,8 @@ class SchoolsController extends Controller
 		if(isset($_POST['Schools']))
 		{
 			$model->attributes=$_POST['Schools'];
+			$model->updated_at = $model->created_at = time();
+			$model->admin_id = Yii::app()->user->getId();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

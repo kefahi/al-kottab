@@ -23,15 +23,15 @@ $('.search-form form').submit(function(){
 ?>
 
 
-
 <div class="panel panel-default">
 <div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'htmlOptions'=>array('class'=>'table'),
+	'htmlOptions'=>array('class'=>'table table-hover'),
 	//''=>'table' ,
 	'id'=>'schools-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/schools/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		'created_at',
 		'updated_at',
@@ -61,13 +61,13 @@ $('.search-form form').submit(function(){
 <script>
 $('.glyphicon-new-window').popover(
 {
-	trigger: 'click',
+	trigger: 'hover',
 	html: true,
 	placement: 'left',
-	// container: this,
 	content:function(){
 		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school_id='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
 		return html;
 	} 
 });
+$('#schools-grid table').addClass('table table-hover' );
 </script>

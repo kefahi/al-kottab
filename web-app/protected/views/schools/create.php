@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Schools</h1>
+<h1>إنشاء مدرسة جديدة</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

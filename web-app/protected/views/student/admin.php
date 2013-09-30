@@ -21,7 +21,6 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
 	'htmlOptions'=>array('class'=>'table'),
-
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
@@ -59,4 +58,5 @@ $('.glyphicon-new-window').popover(
 		return html;
 	} 
 });
+$('#student-grid table').addClass('table table-hover' );
 </script>

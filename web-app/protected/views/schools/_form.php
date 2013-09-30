@@ -13,63 +13,60 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=>false,
+	'htmlOptions'=>array('role'=>'form' , 'class'=>'form-horizontal')
 )); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+	<br />
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-		<?php echo $form->error($model,'created_at'); ?>
+	
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'name' ,  array('class'=>'col-lg-1 control-label'  )); ?>
+		<div class='col-lg-5' >
+			<?php echo $form->textField($model,'name', array('class'=>'form-control '  ) ) ; ?>
+			<?php echo $form->error($model,'name'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
-		<?php echo $form->error($model,'updated_at'); ?>
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'description' ,  array('class'=>'col-lg-1 control-label'  )); ?>
+		<div class='col-lg-5' >
+			<?php echo $form->textArea($model,'description',array('rows'=>3, 'cols'=>50 , 'class'=>'form-control')); ?>
+			<?php echo $form->error($model,'description'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textArea($model,'name',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'name'); ?>
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'address' ,  array('class'=>'col-lg-1 control-label'  )); ?>
+		<div class='col-lg-5' >
+			<?php echo $form->textField($model,'address',array( 'class'=>'form-control')); ?>
+			<?php echo $form->error($model,'address'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'description'); ?>
-		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'description'); ?>
+
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'phones' ,  array('class'=>'col-lg-1 control-label'  )); ?>
+		<div class='col-lg-5' >
+			<?php echo $form->textField($model,'phones',array( 'class'=>'form-control')); ?>
+			<?php echo $form->error($model,'phones'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'address'); ?>
-		<?php echo $form->textArea($model,'address',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'address'); ?>
+
+	<div class="form-group">
+		<?php echo $form->labelEx($model,'notes' ,  array('class'=>'col-lg-1 control-label'  )); ?>
+		<div class='col-lg-5' >
+			<?php echo $form->textArea($model,'notes',array( 'class'=>'form-control')); ?>
+			<?php echo $form->error($model,'notes'); ?>
+		</div>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'phones'); ?>
-		<?php echo $form->textArea($model,'phones',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'phones'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'notes'); ?>
-		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'notes'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'admin_id'); ?>
-		<?php echo $form->textField($model,'admin_id'); ?>
-		<?php echo $form->error($model,'admin_id'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+  <div class="form-group">
+    <div class="col-lg-offset-5 col-lg-10">
+    <?php echo  CHtml::submitButton('حفظ'  , array('class'=>"btn btn-default") ); ?>
+    </div>
+  </div>
+	
 
 <?php $this->endWidget(); ?>
 

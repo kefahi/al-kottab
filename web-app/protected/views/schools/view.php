@@ -16,19 +16,40 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Schools #<?php echo $model->id; ?></h1>
+<h1><?php echo $model->name; ?></h1>
+<p class=lead ><?php echo  $model->description  ; ?> </p>
+<div class="jumbotron">
+  <div class="container">
+  <div class="col-md-8">
+    
+ 
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'created_at',
-		'updated_at',
-		'name',
-		'description',
-		'address',
-		'phones',
-		'notes',
-		'admin_id',
-	),
-)); ?>
+		<?php
+		
+
+		 $this->widget('zii.widgets.CDetailView', array(
+			'data'=>$model,
+			'htmlOptions' =>array('class'=>''	),
+			'attributes'=>array(
+				'address',
+				'phones',
+				'notes',
+				array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
+				array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+				array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),
+				
+			),
+		)); ?>
+	</div>
+	<div class="col-md-2" >
+		<p>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/student/?school_id=<?php echo $model->id?>';"  >الطلاب </button>
+		 </p><p>
+		  <button type="button" class="btn btn-info">المعلمين</button>
+		</p><p>
+		  <button type="button" class="btn btn-info">الإداريين</button>
+		</p>
+	</div>
+
+ </div> 
+</div>

@@ -54,7 +54,8 @@ class Schools extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'users' => array(self::HAS_MANY, 'Users', 'school_id'),
+		'users' => array(self::HAS_MANY, 'Users', 'school_id'),
+	'admin' => array(self::BELONGS_TO, 'Users', 'admin_id'),
 			'marks' => array(self::HAS_MANY, 'Marks', 'school_id'),
 			'classes' => array(self::HAS_MANY, 'Classes', 'school_id'),
 		);
