@@ -5,6 +5,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
+  <link rel="stylesheet" type="text/css" href="/bootstrap-pl/bootstrap-select.css">
     
  	<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; ?>
  	<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ; ?>
@@ -123,6 +124,8 @@
  Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
  Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
-  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > input').addClass('form-control');");
+ Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > input').addClass('form-control');");
+ Yii::app()->clientScript->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ; 
 
 
+        

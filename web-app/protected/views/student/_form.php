@@ -20,7 +20,7 @@
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'school_id'); ?>
-		<?php echo $form->dropDownList($model,'school_id' , Schools::getList()); ?>
+		<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array('class'=>'selectpicker'  , 'data-live-search'=>"true")); ?>
 		<?php echo $form->error($model,'school_id'); ?>
 	</div>
 
@@ -57,7 +57,7 @@
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->dropDownList($model,'gender' , array( 1=>'ذكر' ,2=>'انثى' )); ?>
+		<?php echo $form->dropDownList($model,'gender' , array( 1=>'ذكر' ,2=>'انثى' ) ,array('class'=>'selectpicker'   )); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 
@@ -116,4 +116,8 @@
 
 <script>
  $(function() { $( ".date" ).datepicker();  } );
- </script>
+                $('.selectpicker').selectpicker({
+                'selectedText': 'cat'
+            });
+
+    </script>
