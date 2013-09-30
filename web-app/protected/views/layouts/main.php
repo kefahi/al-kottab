@@ -41,7 +41,13 @@
       <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li>
       <li ><?php echo CHtml::link('الطالب', '/student/home' ) ; ?></li>
       <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li>
-      <li ><?php echo CHtml::link('المدارس', '/schools/' ) ; ?></li>
+      <li class="dropdown"> 
+      <?php echo CHtml::link('المدارس<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
+      <ul class="dropdown-menu">
+          <li ><?php echo CHtml::link('استعراض', '/schools' ) ; ?></li>
+          <li ><?php echo CHtml::link('ادخال', '/schools/create' ) ; ?></li>
+      </ul> 
+      </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">إدارة <b class="caret"></b></a>
         <ul class="dropdown-menu">
@@ -105,3 +111,8 @@
 </div><!-- page -->
 </body>
 </html>
+
+
+<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; ?>
+<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ; ?>
+<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; ?>

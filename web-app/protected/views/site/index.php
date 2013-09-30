@@ -72,6 +72,3 @@ $this->pageTitle=Yii::app()->name;
 </div>
 
 
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; ?>
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ; ?>
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; ?>
