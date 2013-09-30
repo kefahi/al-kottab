@@ -23,6 +23,13 @@ $this->menu=array(
 	'htmlOptions'=>array('class'=>'table'),
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'pager'=>array(
+		'class'=>'CLinkPager',
+		'htmlOptions'=>array('class'=>'CLinkPager'),
+		
+		'header'=>'',
+		),
+
 	'columns'=>array(
 		'id',
 		'first_name',
