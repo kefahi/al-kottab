@@ -39,14 +39,21 @@
       <li class="active"><?php echo CHtml::link('الإدارة', '/site/index' ) ; ?></li>
       <li ><?php echo CHtml::link('الرسائل', '/messages' ) ; ?></li>
       <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li>
-      <li ><?php echo CHtml::link('الطالب', '/student/home' ) ; ?></li>
+      <li class="dropdown"> 
+        <?php echo CHtml::link('الطلاب<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
+        <ul class="dropdown-menu">
+            <li ><?php echo CHtml::link('استعراض', '/student/admin' ) ; ?></li>
+            <li ><?php echo CHtml::link('ادخال', '/student/create' ) ; ?></li>
+        </ul> 
+      </li>
+
       <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li>
       <li class="dropdown"> 
-      <?php echo CHtml::link('المدارس<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
-      <ul class="dropdown-menu">
-          <li ><?php echo CHtml::link('استعراض', '/schools' ) ; ?></li>
-          <li ><?php echo CHtml::link('ادخال', '/schools/create' ) ; ?></li>
-      </ul> 
+        <?php echo CHtml::link('المدارس<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
+        <ul class="dropdown-menu">
+            <li ><?php echo CHtml::link('استعراض', '/schools' ) ; ?></li>
+            <li ><?php echo CHtml::link('ادخال', '/schools/create' ) ; ?></li>
+        </ul> 
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">إدارة <b class="caret"></b></a>
@@ -113,4 +120,9 @@
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/collapse.js') ; 
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; 
- Yii::app()->clientScript->registerScript('search', "$('input').addClass('form-control');");
+ Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
+ Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
+ Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
+  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > input').addClass('form-control');");
+
+

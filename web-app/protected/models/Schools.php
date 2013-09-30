@@ -122,4 +122,15 @@ class Schools extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
+	public static function getList()
+	{
+		$data = self::model()->search()->data;
+		$result = array();
+		foreach ($data as $value) {
+			$result[$value->id] = $value->name ;			
+		}
+		return $result ;
+	}
 }
