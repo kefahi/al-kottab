@@ -1,28 +1,31 @@
 <?php
 
 /**
- * This is the model class for table "student_requisits".
+ * This is the model class for table "requisits".
  *
- * The followings are the available columns in table 'student_requisits':
- * @property integer $student_id
- * @property integer $requisit_id
- * @property integer $created_at
- * @property integer $updated_at
- * @property integer $earned_marks
+ * The followings are the available columns in table 'requisits':
+ * @property integer $id
+ * @property integer $teacher_id
+ * @property integer $grade_id
+ * @property integer $marks_credit
+ * @property integer $due_date
+ * @property string $title
+ * @property string $description
+ * @property integer $type
  * @property string $attachements
  *
  * The followings are the available model relations:
- * @property Requisits $requisit
- * @property Users $student
+ * @property Users $teacher
+ * @property StudentRequisits[] $studentRequisits
  */
-class StudentRequisits extends CActiveRecord
+class Requisits extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'student_requisits';
+		return 'requisits';
 	}
 
 	/**
@@ -33,12 +36,12 @@ class StudentRequisits extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('student_id, requisit_id, created_at, updated_at', 'required'),
-			array('student_id, requisit_id, created_at, updated_at, earned_marks', 'numerical', 'integerOnly'=>true),
-			array('attachements', 'safe'),
+			array('teacher_id, grade_id, due_date, type', 'required'),
+			array('teacher_id, grade_id, marks_credit, due_date, type', 'numerical', 'integerOnly'=>true),
+			array('title, description, attachements', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('student_id, requisit_id, created_at, updated_at, earned_marks, attachements', 'safe', 'on'=>'search'),
+			array('id, teacher_id, grade_id, marks_credit, due_date, title, description, type, attachements', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -50,8 +53,8 @@ class StudentRequisits extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'requisit' => array(self::BELONGS_TO, 'Requisits', 'requisit_id'),
-			'student' => array(self::BELONGS_TO, 'Users', 'student_id'),
+			'teacher' => array(self::BELONGS_TO, 'Users', 'teacher_id'),
+			'studentRequisits' => array(self::HAS_MANY, 'StudentRequisits', 'requisit_id'),
 		);
 	}
 
@@ -61,11 +64,14 @@ class StudentRequisits extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'student_id' => 'Student',
-			'requisit_id' => 'Requisit',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'earned_marks' => 'Earned Marks',
+			'id' => 'ID',
+			'teacher_id' => 'Teacher',
+			'grade_id' => 'Grade',
+			'marks_credit' => 'Marks Credit',
+			'due_date' => 'Due Date',
+			'title' => 'Title',
+			'description' => 'Description',
+			'type' => 'Type',
 			'attachements' => 'Attachements',
 		);
 	}
@@ -88,11 +94,14 @@ class StudentRequisits extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('student_id',$this->student_id);
-		$criteria->compare('requisit_id',$this->requisit_id);
-		$criteria->compare('created_at',$this->created_at);
-		$criteria->compare('updated_at',$this->updated_at);
-		$criteria->compare('earned_marks',$this->earned_marks);
+		$criteria->compare('id',$this->id);
+		$criteria->compare('teacher_id',$this->teacher_id);
+		$criteria->compare('grade_id',$this->grade_id);
+		$criteria->compare('marks_credit',$this->marks_credit);
+		$criteria->compare('due_date',$this->due_date);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('type',$this->type);
 		$criteria->compare('attachements',$this->attachements,true);
 
 		return new CActiveDataProvider($this, array(
@@ -104,7 +113,7 @@ class StudentRequisits extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return StudentRequisits the static model class
+	 * @return Requisits the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

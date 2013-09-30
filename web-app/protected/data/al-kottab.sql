@@ -175,7 +175,8 @@ CREATE TABLE requisits ( -- متطلبات
   title            TEXT        NULL, 
   description      TEXT        NULL,
   type             INTEGER NOT NULL, -- 1:exam, 2:homework, 4:research, 8:open, 16:extra-curriculam
-  attachements     BLOB        NULL
+  attachements     BLOB        NULL,
+  CONSTRAINT fk_requisits_teacher FOREIGN KEY ( teacher_id ) REFERENCES users(id)
 );
 
 CREATE TABLE student_requisits (
@@ -184,7 +185,9 @@ CREATE TABLE student_requisits (
   created_at       INTEGER NOT NULL,
   updated_at       INTEGER NOT NULL,
   earned_marks     INTEGER     NULL,
-  attachements     BLOB        NULL  
+  attachements     BLOB        NULL ,
+  CONSTRAINT fk_student_requisits_student FOREIGN KEY ( student_id ) REFERENCES users(id) ,
+  CONSTRAINT fk_student_requisits_requisit FOREIGN KEY ( requisit_id) REFERENCES requisits(id) 
 );
 
 CREATE TABLE notifications ( -- إشعارات

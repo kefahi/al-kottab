@@ -65,11 +65,8 @@
     <ul class="nav navbar-nav navbar-left">
       <li><a href="#">الملف الشخصي</a></li>
       <li><a href="#">خروج</a></li>
-
     </ul>
-
   </div><!-- /.navbar-collapse -->
-
 </nav>
 <?php
  // <nav class="navbar navbar-default navbar-fixed-top " >
@@ -98,7 +95,6 @@
 	// 			array('label'=>'خروج', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 	// 		),
 	// 	));
-
 	// </nav> 
    ?>
 	<!-- mainmenu -->
@@ -112,7 +108,9 @@
 </body>
 </html>
 
-
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; ?>
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ; ?>
-<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; ?>
+<?php
+ Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; 
+ Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
+ Yii::app()->clientScript->registerScriptFile('/bootstrap/js/collapse.js') ; 
+ Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; 
+ Yii::app()->clientScript->registerScript('search', "$('input').addClass('form-control');");

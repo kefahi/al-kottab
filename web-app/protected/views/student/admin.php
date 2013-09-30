@@ -25,11 +25,10 @@ $this->menu=array(
 	'filter'=>$model,
 	'pager'=>array(
 		'class'=>'CLinkPager',
-		'htmlOptions'=>array('class'=>'CLinkPager'),
-		
+		'htmlOptions'=>array('class'=>'pagination'),
 		'header'=>'',
 		),
-
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/student/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		'id',
 		'first_name',
@@ -66,4 +65,5 @@ $('.glyphicon-new-window').popover(
 	} 
 });
 $('#student-grid table').addClass('table table-hover' );
+$('div > .pager').removeClass('pager ');
 </script>
