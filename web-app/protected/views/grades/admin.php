@@ -42,7 +42,7 @@ $('.search-form form').submit(function(){
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'htmlOptions'=>array('class'=>'table table-hover'),
-	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/grades/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
+	'selectionChanged'=>'function(id){alert("s"); location.href = "'.$this->createUrl('/grades/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		'id',
 		'created_at',
@@ -53,5 +53,11 @@ $('.search-form form').submit(function(){
 	),
 )); ?>
 
-<script>	 $('#grades-grid table').addClass('table table-hover' ); </script>
+<script>	 $('#grades-grid table').addClass('table table-hover' ); 
+
+$('#student-grid table').addClass('table table-hover' );
+$('div > .pager').removeClass('pager ');
+
+</script>
+
 

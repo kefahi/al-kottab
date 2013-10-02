@@ -103,6 +103,7 @@
 	<!-- mainmenu -->
 	</div>
 	<div class="clearfix visible-xs"></div>
+  
 	<div class="container bs-docs-container" >
 			<?php  echo $content; ?>		
 	</div>

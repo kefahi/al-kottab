@@ -10,12 +10,7 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Student', 'url'=>array('index')),
 	array('label'=>'Create Student', 'url'=>array('create')),
-);
-
-
-?>
-
-
+); ?>
 
 <div class="panel panel-default">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
@@ -23,12 +18,13 @@ $this->menu=array(
 	'htmlOptions'=>array('class'=>'table'),
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'selectionChanged'=>'',
 	'pager'=>array(
 		'class'=>'CLinkPager',
 		'htmlOptions'=>array('class'=>'pagination'),
 		'header'=>'',
 		),
-	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/student/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
+	
 	'columns'=>array(
 		'id',
 		'first_name',
@@ -46,8 +42,7 @@ $this->menu=array(
 	),
 )); ?>
 </div>
-	<script src="/bootstrap/js/tooltip.js"></script>
-	<script src="/bootstrap/js/popover.js"></script>
+	
 <script>
 $('.glyphicon-new-window').popover(
 {

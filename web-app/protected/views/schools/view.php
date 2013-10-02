@@ -16,8 +16,8 @@ $this->menu=array(
 );
 ?>
 
-<h1><?php echo $model->name; ?></h1>
-<p class=lead ><?php echo  $model->description  ; ?> </p>
+<!-- <h1><?php echo $model->name; ?></h1>
+<p class=lead ><?php echo  $model->description  ; ?> </p> -->
 <div class="jumbotron">
   <div class="container">
   <div class="col-md-8">
@@ -35,13 +35,13 @@ $this->menu=array(
 	</div>
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/student/?school_id=<?php echo $model->id?>';"  >الطلاب </button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
 		 </p><p>
 		  <button type="button" class="btn btn-info disabled ">المعلمين</button>
 		</p><p>
 		  <button type="button" class="btn btn-info disabled">الإداريين</button>
 		</p><p>
-		  <button type="button" class="btn btn-info " onclick="location.href ='/grades/?school_id=<?php echo $model->id?>';" >الصفوف</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف</button>
 		</p>
 	</div>
 	
@@ -62,3 +62,11 @@ $this->menu=array(
 
 <div id='data-area' >
 </div>
+
+<script>
+function move_to_div(){
+	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
+	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
+
+}
+</script>

@@ -32,7 +32,7 @@ class StudentController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update' , 'adminGrid'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -150,6 +150,13 @@ class StudentController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
+	}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
