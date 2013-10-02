@@ -1,6 +1,6 @@
 <?php
 
-class StudentController extends Controller
+class GradesController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -36,7 +36,7 @@ class StudentController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete' ,'home'),
+				'actions'=>array('admin','delete'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -62,14 +62,15 @@ class StudentController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Student;
+		$model=new Grades;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Student']))
+		if(isset($_POST['Grades']))
 		{
-			$model->attributes=$_POST['Student'];
+			$model->attributes=$_POST['Grades'];
+			$model->created_at = $model->updated_at = time();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		} else 	if(isset($_GET['Student']))	{
@@ -93,9 +94,9 @@ class StudentController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Student']))
+		if(isset($_POST['Grades']))
 		{
-			$model->attributes=$_POST['Student'];
+			$model->attributes=$_POST['Grades'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -124,7 +125,7 @@ class StudentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Student');
+		$dataProvider=new CActiveDataProvider('Grades');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -135,16 +136,10 @@ class StudentController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Student('search');
+		$model=new Grades('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Student']))
-			$model->attributes=$_GET['Student'];
-		else foreach ($_GET as $key => $value) {
-			$key = strtolower($key);
-			if($model->hasAttribute( $key ) )
-				$model->$key  = $value;
-			
-		}  
+		if(isset($_GET['Grades']))
+			$model->attributes=$_GET['Grades'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -155,12 +150,12 @@ class StudentController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Student the loaded model
+	 * @return Grades the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Student::model()->findByPk($id);
+		$model=Grades::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -168,23 +163,14 @@ class StudentController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Student $model the model to be validated
+	 * @param Grades $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='student-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='grades-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionHome()
-	{
-		$dataProvider=new CActiveDataProvider('Teacher');
-		$this->render('home',array(	) );
 	}
 }

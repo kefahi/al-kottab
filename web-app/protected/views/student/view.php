@@ -43,30 +43,63 @@ $this->menu=array(
 
 
 <div class="panel-group" id="accordion">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
+          معلومات الإتصال
+        </a>
+      </h4>
+    </div>
+    <div id="collapseInfo" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <?php $this->widget('zii.widgets.CDetailView', array(
+    'data'=>$model,
+    'htmlOptions' =>array('class'=>'' ),
+    'attributes'=>array(
+      'address',
+      'mobiles',
+      'land_line',
+      array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
+      array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+    ),
+  )); ?>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          معلومات الإتصال
+          معلومات عامة
         </a>
       </h4>
     </div>
     <div id="collapseOne" class="panel-collapse collapse in">
       <div class="panel-body">
         <?php $this->widget('zii.widgets.CDetailView', array(
-		'data'=>$model,
-		'htmlOptions' =>array('class'=>''	),
-		'attributes'=>array(
-			'address',
-			'mobiles',
-			'land_line',
-			array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
-			array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
-		),
-	)); ?>
+    'data'=>$model,
+    'htmlOptions' =>array('class'=>'' ),
+    'attributes'=>array(
+      'first_name',
+      'second_name',
+      'third_name',
+      'fourth_name',
+      'address',
+      array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
+      array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+
+    ),
+  )); ?>
       </div>
     </div>
   </div>
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -86,8 +119,7 @@ $this->menu=array(
 			'address',
 			'mobiles',
 			'land_line',
-			array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
-			array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+			
 		),
 	)); ?>
       </div>

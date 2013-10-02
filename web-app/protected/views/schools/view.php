@@ -21,13 +21,7 @@ $this->menu=array(
 <div class="jumbotron">
   <div class="container">
   <div class="col-md-8">
-    
- 
-
-		<?php
-		
-
-		 $this->widget('zii.widgets.CDetailView', array(
+		<?php $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$model,
 			'htmlOptions' =>array('class'=>''	),
 			'attributes'=>array(
@@ -36,20 +30,35 @@ $this->menu=array(
 				'notes',
 				array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
 				array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
-				array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),
-				
-			),
-		)); ?>
+				array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),				
+			))); ?>
 	</div>
 	<div class="col-md-2" >
 		<p>
 		  <button type="button" class="btn btn-info" onclick="location.href ='/student/?school_id=<?php echo $model->id?>';"  >الطلاب </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info">المعلمين</button>
+		  <button type="button" class="btn btn-info disabled ">المعلمين</button>
 		</p><p>
-		  <button type="button" class="btn btn-info">الإداريين</button>
+		  <button type="button" class="btn btn-info disabled">الإداريين</button>
+		</p><p>
+		  <button type="button" class="btn btn-info " onclick="location.href ='/grades/?school_id=<?php echo $model->id?>';" >الصفوف</button>
 		</p>
 	</div>
+	
+
+	<div class="col-md-2" >
+		<p>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create?Student[school_id]=<?php echo $model->id?>';"  > ادخال طالب جديد </button>
+		 </p><p>
+		  <button type="button" class="btn btn-info disabled ">ادخال معلم</button>
+		</p><p>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create?Student[school_id]=<?php echo $model->id?>';">ادخال فصل</button>
+		</p>
+	</div>
+	<hr />
 
  </div> 
+</div>
+
+<div id='data-area' >
 </div>

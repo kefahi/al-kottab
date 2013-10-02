@@ -5,13 +5,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
-  <link rel="stylesheet" type="text/css" href="/bootstrap-pl/bootstrap-select.css">
-    
- 	<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; ?>
- 	<?php Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ; ?>
- 	<script src="/bootstrap/js/jquery.js" ></script>
- 	<script src="/bootstrap/js/bootstrap.js" ></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
+  
+ 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<style>  body {   padding-top: 80px;  } </style>
@@ -117,15 +112,13 @@
 </html>
 
 <?php
- Yii::app()->clientScript->registerScriptFile('/bootstrap/js/jquery.js') ; 
+ 
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
- Yii::app()->clientScript->registerScriptFile('/bootstrap/js/collapse.js') ; 
- Yii::app()->clientScript->registerScriptFile('/bootstrap/js/dropdown.js') ; 
  Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
  Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
- Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > input').addClass('form-control');");
- Yii::app()->clientScript->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ; 
+ Yii::app()->clientScript->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
+
 
 
         

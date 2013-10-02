@@ -22,9 +22,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-
-<div class="panel panel-default">
-<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>
+<h1 > المددارس </h1>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'htmlOptions'=>array('class'=>'table table-hover'),
 	//''=>'table' ,
@@ -49,10 +47,8 @@ $('.search-form form').submit(function(){
  			'value'=>'',
 			'htmlOptions'=>array('id'=> '"school_{$data->id}"' , 'data-original-id'=>'$data->id', 'data-original-title'=>'$data->name','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
 		),
-
 	),
 )); ?>
-</div>
 
 
 <!-- <script src="/bootstrap/js/tooltip.js"></script>

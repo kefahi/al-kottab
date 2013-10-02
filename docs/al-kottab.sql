@@ -103,10 +103,12 @@ CREATE TABLE grades ( -- صفوف
   id               INTEGER PRIMARY KEY,
   created_at       INTEGER NOT NULL,
   updated_at       INTEGER NOT NULL,
+  school_id        INTEGER NOT NULL,
   name             TEXT    NOT NULL,
   ordinal          INTEGER NOT NULL, -- The progressive order of grades, 1st, 2nd, ...etc
   -- 1:حضانة، 2:روضة، 3: ابتدائي، 4:إعدادي، 5:ثانوي
-  cgroup            INTEGER NOT NULL -- 1:pre-school, 2:elementary, 4:prepatary, 8:secondary
+  cgroup            INTEGER NOT NULL, -- 1:pre-school, 2:elementary, 4:prepatary, 8:secondary
+  CONSTRAINT fk_grades_school  FOREIGN KEY ( school_id )  REFERENCES schools(id)
 );
 
 CREATE TABLE subjects ( -- مقررات
