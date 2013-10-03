@@ -116,8 +116,6 @@
 
 <script>
  $(function() { $( ".date" ).datepicker();  } );
-                $('.selectpicker').selectpicker({
-                'selectedText': 'cat'
-            });
+                $('.selectpicker').selectpicker();
 
     </script>

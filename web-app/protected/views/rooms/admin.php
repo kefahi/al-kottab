@@ -45,12 +45,9 @@ $('.search-form form').submit(function(){
 		'id',
 		'created_at',
 		'updated_at',
-		'grade_id',
-		'class_id',
 		'school_id',
-		/*
-		'school_year',
 		'capacity',
+		/*
 		'details',
 		*/
 		array(

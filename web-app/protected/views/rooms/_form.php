@@ -20,40 +20,11 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'created_at'); ?>
-		<?php echo $form->textField($model,'created_at'); ?>
-		<?php echo $form->error($model,'created_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'updated_at'); ?>
-		<?php echo $form->textField($model,'updated_at'); ?>
-		<?php echo $form->error($model,'updated_at'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'grade_id'); ?>
-		<?php echo $form->textField($model,'grade_id'); ?>
-		<?php echo $form->error($model,'grade_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'class_id'); ?>
-		<?php echo $form->textField($model,'class_id'); ?>
-		<?php echo $form->error($model,'class_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'school_id'); ?>
-		<?php echo $form->textField($model,'school_id'); ?>
+		<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array('class'=>'selectpicker'  )); ?>
 		<?php echo $form->error($model,'school_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'school_year'); ?>
-		<?php echo $form->textField($model,'school_year'); ?>
-		<?php echo $form->error($model,'school_year'); ?>
-	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'capacity'); ?>
@@ -74,3 +45,6 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+
+<script> $(function(){ $('.selectpicker').selectpicker({}); } ) ;</script>

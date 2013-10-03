@@ -20,7 +20,11 @@ $this->menu=array(
 <p class=lead ><?php echo  $model->description  ; ?> </p> -->
 <div class="jumbotron">
   <div class="container">
+
   <div class="col-md-8">
+  <h1>  <?php echo $model->name ;?> </h1>
+    <p><?php echo $model->description ;?> </p>
+  
 		<?php $this->widget('zii.widgets.CDetailView', array(
 			'data'=>$model,
 			'htmlOptions' =>array('class'=>''	),
@@ -30,7 +34,7 @@ $this->menu=array(
 				'notes',
 				array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
 				array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
-				array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),				
+				// array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),				
 			))); ?>
 	</div>
 	<div class="col-md-2" >
@@ -42,6 +46,8 @@ $this->menu=array(
 		  <button type="button" class="btn btn-info disabled">الإداريين</button>
 		</p><p>
 		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف</button>
+		</p><p>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
 		</p>
 	</div>
 	
@@ -66,7 +72,11 @@ $this->menu=array(
 <script>
 function move_to_div(){
 	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
+	$('.form-group > label').addClass('control-label');
+	$('extarea').addClass('form-control');
+	$('input').addClass('form-control');
+	
 	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
-
+	
 }
 </script>

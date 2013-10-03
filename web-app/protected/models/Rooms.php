@@ -7,10 +7,7 @@
  * @property integer $id
  * @property integer $created_at
  * @property integer $updated_at
- * @property integer $grade_id
- * @property integer $class_id
  * @property integer $school_id
- * @property integer $school_year
  * @property integer $capacity
  * @property string $details
  *
@@ -35,12 +32,12 @@ class Rooms extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('created_at, updated_at, grade_id, class_id, school_id, school_year, capacity', 'required'),
-			array('created_at, updated_at, grade_id, class_id, school_id, school_year, capacity', 'numerical', 'integerOnly'=>true),
+			array('created_at, updated_at, school_id, capacity', 'required'),
+			array('created_at, updated_at, school_id, capacity', 'numerical', 'integerOnly'=>true),
 			array('details', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, created_at, updated_at, grade_id, class_id, school_id, school_year, capacity, details', 'safe', 'on'=>'search'),
+			array('id, created_at, updated_at, school_id, capacity, details', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,10 +62,7 @@ class Rooms extends CActiveRecord
 			'id' => 'ID',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
-			'grade_id' => 'Grade',
-			'class_id' => 'Class',
 			'school_id' => 'School',
-			'school_year' => 'School Year',
 			'capacity' => 'Capacity',
 			'details' => 'Details',
 		);
@@ -95,10 +89,7 @@ class Rooms extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('created_at',$this->created_at);
 		$criteria->compare('updated_at',$this->updated_at);
-		$criteria->compare('grade_id',$this->grade_id);
-		$criteria->compare('class_id',$this->class_id);
 		$criteria->compare('school_id',$this->school_id);
-		$criteria->compare('school_year',$this->school_year);
 		$criteria->compare('capacity',$this->capacity);
 		$criteria->compare('details',$this->details,true);
 

@@ -17,14 +17,6 @@
 	<?php echo CHtml::encode($data->updated_at); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('grade_id')); ?>:</b>
-	<?php echo CHtml::encode($data->grade_id); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('class_id')); ?>:</b>
-	<?php echo CHtml::encode($data->class_id); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('school_id')); ?>:</b>
 	<?php echo CHtml::encode($data->school_id); ?>
 	<br />
@@ -33,7 +25,6 @@
 	<?php echo CHtml::encode($data->school_year); ?>
 	<br />
 
-	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('capacity')); ?>:</b>
 	<?php echo CHtml::encode($data->capacity); ?>
 	<br />
@@ -42,6 +33,5 @@
 	<?php echo CHtml::encode($data->details); ?>
 	<br />
 
-	*/ ?>
 
 </div>

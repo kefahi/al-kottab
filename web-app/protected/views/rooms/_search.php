@@ -27,23 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'grade_id'); ?>
-		<?php echo $form->textField($model,'grade_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'class_id'); ?>
-		<?php echo $form->textField($model,'class_id'); ?>
-	</div>
-
-	<div class="row">
 		<?php echo $form->label($model,'school_id'); ?>
 		<?php echo $form->textField($model,'school_id'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->label($model,'school_year'); ?>
-		<?php echo $form->textField($model,'school_year'); ?>
 	</div>
 
 	<div class="row">

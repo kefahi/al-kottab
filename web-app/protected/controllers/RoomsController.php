@@ -32,12 +32,12 @@ class RoomsController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update' , 'adminGrid'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -70,6 +70,7 @@ class RoomsController extends Controller
 		if(isset($_POST['Rooms']))
 		{
 			$model->attributes=$_POST['Rooms'];
+			$model->created_at = $model->updated_at = time();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -137,11 +138,23 @@ class RoomsController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Rooms']))
 			$model->attributes=$_GET['Rooms'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
+	}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

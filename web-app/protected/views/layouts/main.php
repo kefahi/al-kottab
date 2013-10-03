@@ -32,18 +32,18 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-      <li class="active"><?php echo CHtml::link('الإدارة', '/site/index' ) ; ?></li>
+<!--       <li class="active"><?php echo CHtml::link('الإدارة', '/site/index' ) ; ?></li>
       <li ><?php echo CHtml::link('الرسائل', '/messages' ) ; ?></li>
-      <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li>
-      <li class="dropdown"> 
+      <li ><?php echo CHtml::link('المعلم', '/teacher/home' ) ; ?></li> -->
+      <!-- <li class="dropdown"> 
         <?php echo CHtml::link('الطلاب<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
         <ul class="dropdown-menu">
             <li ><?php echo CHtml::link('استعراض', '/student/admin' ) ; ?></li>
             <li ><?php echo CHtml::link('ادخال', '/student/create' ) ; ?></li>
         </ul> 
-      </li>
+      </li> -->
 
-      <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li>
+      <!-- <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li> -->
       <li class="dropdown"> 
         <?php echo CHtml::link('المدارس<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
         <ul class="dropdown-menu">
@@ -60,14 +60,18 @@
         </ul>
       </li>
       <li>
-	      <a href="#">الإشعارات <span class="badge">12</span></a>
+	      <a href="#">الإشعارات <span class="badge"></span></a>
       </li>
-      <li><a href="#">الرسائل <span class="badge">2</span></a></li>
+      <li><a href="#">الرسائل <span class="badge"></span></a></li>
     </ul>    
 
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="#">الملف الشخصي</a></li>
-      <li><a href="#">خروج</a></li>
+      
+      <?php 
+      if(Yii::app()->user->isGuest)
+        echo '<li><a href="/site/login">تسجيل الدخول</a></li>' ;
+      else echo '<li><a href="#">الملف الشخصي</a></li><li><a href="/site/logout">خروج</a></li>' ;
+      ?>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -115,11 +119,10 @@
 <?php
  
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
+ Yii::app()->clientScript->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ;
+ Yii::app()->clientScript->registerCssFile('/bootstrap-pl/bootstrap-select.css') ;
  Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
  Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
  Yii::app()->clientScript->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
-
-
-
-        
+ 

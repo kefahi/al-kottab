@@ -5,7 +5,7 @@
 		<?php  echo $content; ?>
 	</div>
 
-	<div class="affix  left pull-left col-md-2" style="float:left;">
+	<div class="affix  col-md-offset-9 col-md-2" style="float:left;">
 <ul class=" list-group"  >
   <li class="list-group-item" >
     <a href="#">

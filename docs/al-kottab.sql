@@ -91,10 +91,7 @@ CREATE TABLE rooms ( -- غُرَف
   id               INTEGER PRIMARY KEY,
   created_at       INTEGER NOT NULL,
   updated_at       INTEGER NOT NULL,
-  grade_id         INTEGER NOT NULL,
-  class_id         INTEGER NOT NULL,
   school_id        INTEGER NOT NULL,
-  school_year      INTEGER NOT NULL,
   capacity         INTEGER NOT NULL,
   details          TEXT        NULL -- building, floor, section, name, description, size
 );

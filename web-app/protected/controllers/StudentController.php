@@ -143,7 +143,6 @@ class StudentController extends Controller
 			$key = strtolower($key);
 			if($model->hasAttribute( $key ) )
 				$model->$key  = $value;
-			
 		}  
 
 		$this->render('admin',array(
