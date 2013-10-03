@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Grades</h1>
+<h1>إدارة الصفوف</h1>
 
 <body dir=rtl >
 
@@ -50,13 +50,19 @@ $('.search-form form').submit(function(){
 		'name',
 		'ordinal',
 		'cgroup',
+		array(
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"student_{$data->id}"' , 'data-original-id'=>'$data->id', 'class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+		)
 	),
 )); ?>
 
-<script>	 $('#grades-grid table').addClass('table table-hover' ); 
-
-$('#student-grid table').addClass('table table-hover' );
-$('div > .pager').removeClass('pager ');
+<script>
+$('#grades-grid table').addClass('table table-hover' ); 
+$('.pager').removeClass('pager ');
+$('.glyphicon-new-window').click(function(id){ location.href = "/gradesManage Rooms/view/"+$(this).attr('data-original-id');} ) ;
 
 </script>
 

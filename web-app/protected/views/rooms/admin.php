@@ -10,33 +10,9 @@ $this->breadcrumbs=array(
 $this->menu=array(
 	array('label'=>'List Rooms', 'url'=>array('index')),
 	array('label'=>'Create Rooms', 'url'=>array('create')),
-);
+); ?>
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#rooms-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Manage Rooms</h1>
-
-<body dir=rtl
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
+<h1>الغرف الصفية</h1>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'rooms-grid',
 	'dataProvider'=>$model->search(),
@@ -54,4 +30,4 @@ $('.search-form form').submit(function(){
 			'class'=>'CButtonColumn',
 		),
 	),
-)); ?>
+)); 
