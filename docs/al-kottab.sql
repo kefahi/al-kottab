@@ -47,7 +47,18 @@ CREATE TABLE schools ( -- مدارس
   address          TEXT    NOT NULL,
   phones           TEXT    NOT NULL,
   notes            TEXT        NULL,
-  admin_id         INTEGER NOT NULL
+  admin_id         INTEGER NOT NULL,
+  longitude        FLOAT   NOT NULL,
+  latitude         FLOAT   NOT NULL,
+  levels           INTEGER NOT NULL, -- 1: Pre-school, 2: Elementary, 4: Intermediate/Middle, 8: Secondary, 16: Vocational, 32: Special Education, 64: 
+  gender           INTEGER NOT NULL, -- 1: Male, 2: Female, 3: Both, 4: Special Education
+  status           INTEGER NOT NULL, -- 0: inactive, 1: active
+  website          TEXT        NULL,
+  first_principal  INTEGER NOT NULL,
+  second_principal INTEGER NOT NULL,
+  third_principal  INTEGER NOT NULL
+
+  
 );
 
 CREATE TABLE marks ( -- علامات
