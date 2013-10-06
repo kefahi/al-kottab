@@ -1,6 +1,5 @@
-<?php /* @var $this Controller */ ?>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html  lang="ar">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
@@ -63,12 +62,14 @@
 	      <a href="#">الإشعارات <span class="badge"></span></a>
       </li>
       <li><a href="#">الرسائل <span class="badge"></span></a></li>
+
+      
     </ul>    
 
     <ul class="nav navbar-nav navbar-left">
       
       <?php 
-      if(Yii::app()->user->isGuest)
+      if(Yii::app()->user->isGuest) 
         echo '<li><a href="/site/login">تسجيل الدخول</a></li>' ;
       else echo '<li><a href="#">الملف الشخصي</a></li><li><a href="/site/logout">خروج</a></li>' ;
       ?>

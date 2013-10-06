@@ -23,6 +23,12 @@ $this->breadcrumbs=array(
 )); ?>
 
 	<div class="row form-group">
+		<?php echo $form->labelEx($model,'school_id'); ?>
+		<?php echo $form->dropDownList($model,'school_id' ,  Schools::model()->getList() ); ?>
+		<?php echo $form->error($model,'school_id'); ?>
+	</div>
+
+	<div class="row form-group">
 		<?php echo $form->labelEx($model,'username'); ?>
 		<?php echo $form->textField($model,'username' , array('class'=>'form-control' , 'placeholder'=>$model->attributeLabels()['username'] )); ?>
 		<?php echo $form->error($model,'username'); ?>

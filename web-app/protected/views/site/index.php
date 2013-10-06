@@ -5,8 +5,6 @@ $this->pageTitle=Yii::app()->name;
 
 <!-- Split button -->
 
-
-
 <div   class='jumbotron'  >
 	<div class="container">
 
@@ -21,7 +19,6 @@ $this->pageTitle=Yii::app()->name;
 				<li > <a href=# > رأفت </a> </li>
 			</ul>
 		</div>
-
 
 		<div class="btn-group">
 			<button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
@@ -47,9 +44,6 @@ $this->pageTitle=Yii::app()->name;
 				<li > <a href=# > تنبيه 4 </a> </li>
 			</ul>
 		</div>
-
-
-
 		<!-- <div id="chart_div" class="col-md-offset-2" ></div> -->
 	</div>
 </div>
@@ -57,9 +51,7 @@ $this->pageTitle=Yii::app()->name;
 <div class=col-md-2 >
 	<div class="panel panel-default  ">
 		<!-- Default panel contents -->
-		<div class="panel-heading"> ملاحظاتي	 	</div>
-
-
+		<div class="panel-heading"> ملاحظاتي</div>
 		<!-- List group -->
 		<ul class="list-group">
 			<li class="list-group-item"><a class='button' href=# >  معرض العلوم <a></li>

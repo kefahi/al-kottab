@@ -18,16 +18,6 @@
 	<br/>
 	<?php echo $form->errorSummary($model); ?>
 
-
-	<div class="form-group row">
-		<?php echo $form->labelEx($model,'school_id',  array('class'=>'col-lg-1 control-label'  )); ?>
-		<div class='col-lg-5' >
-			<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array( 'class'=>'selectpicker '  , 'data-live-search'=>"true")); ?>
-			<?php echo $form->error($model,'school_id'); ?>
-		</div>
-		
-	</div>
-
 	<div class="form-group row">
 		<?php echo $form->labelEx($model,'user_name',  array('class'=>'col-lg-1 control-label '  )); ?>
 		<div class="col-lg-5">
