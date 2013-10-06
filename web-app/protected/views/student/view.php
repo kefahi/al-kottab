@@ -26,7 +26,7 @@ $this->menu=array(
 		'attributes'=>array(
 			'mobiles',
 			'land_line',
-			array('label'=>'الصف' , 'value' => $model->class_id  .'-' . $model->grade_id),
+			array('label'=>'مرحلة صفية' , 'value' => $model->class_id  .'-' . $model->grade_id),
 			array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
 			array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
 	

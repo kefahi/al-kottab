@@ -59,7 +59,7 @@ class Users extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_name, created_at, updated_at, first_name, second_name, fourth_name, gender, birth_date, birth_location, address, national_id_type,  type,password,  ', 'required'),
+			array('user_name, created_at, updated_at, first_name, second_name, school_id,fourth_name, gender, birth_date, birth_location, address, national_id_type,  type,password,  ', 'required'),
 			array('created_at, updated_at, gender, birth_date, national_id_type, school_id, type, guardian_id, class_id, grade_id', 'numerical', 'integerOnly'=>true),
 			array(' third_name, mobiles, land_line, national_id, password, student_data', 'safe'),
 			// The following rule is used by search().

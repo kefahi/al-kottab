@@ -20,13 +20,6 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'school_id'); ?>
-		<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array('class'=>'selectpicker'  )); ?>
-		<?php echo $form->error($model,'school_id'); ?>
-	</div>
-
-
-	<div class="row">
 		<?php echo $form->labelEx($model,'capacity'); ?>
 		<?php echo $form->textField($model,'capacity'); ?>
 		<?php echo $form->error($model,'capacity'); ?>

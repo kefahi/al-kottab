@@ -16,24 +16,26 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Classes #<?php echo $model->id; ?></h1>
+
+<div class="jumbotron">
+  <div class="container">
+
+  <div class="col-md-8">
+
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions' =>array('class'=>''	),
 	'attributes'=>array(
 		'id',
-		'created_at',
-		'updated_at',
-		'room_id',
-		'grade_id',
-		'school_id',
+		
+		array('label'=>$model->attributeLabels()['room_id'] , 'value' =>  $model->room->details),
+		array('label'=>$model->attributeLabels()['grade_id'] , 'value' =>  $model->grade->name),
 		'capacity',
-		'saturday',
-		'sunday',
-		'monday',
-		'tuesday',
-		'wednesday',
-		'thrusday',
-		'friday',
+		array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
+		array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+
 	),
 )); ?>
+
+</div></div></div>

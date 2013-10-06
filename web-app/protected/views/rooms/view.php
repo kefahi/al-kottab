@@ -16,10 +16,14 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Rooms #<?php echo $model->id; ?></h1>
+<div class="jumbotron">
+  <div class="container">
+
+  <div class="col-md-8">
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
+	'htmlOptions' =>array('class'=>''	),
 	'attributes'=>array(
 		'id',
 		'created_at',
@@ -30,3 +34,4 @@ $this->menu=array(
 		'details',
 	),
 )); ?>
+</div></div></div>

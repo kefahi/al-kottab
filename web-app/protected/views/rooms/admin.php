@@ -26,8 +26,6 @@ $this->menu=array(
 		/*
 		'details',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+		
 	),
 )); 

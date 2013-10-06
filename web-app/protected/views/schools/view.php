@@ -45,20 +45,27 @@ $this->menu=array(
 		</p><p>
 		  <button type="button" class="btn btn-info disabled">الإداريين</button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
 		</p><p>
 		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
+		</p><p>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف </button>
 		</p>
 	</div>
 	
 
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create?Student[school_id]=<?php echo $model->id?>';"  > ادخال طالب جديد </button>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button>
 		 </p><p>
 		  <button type="button" class="btn btn-info disabled ">ادخال معلم</button>
 		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create?Student[school_id]=<?php echo $model->id?>';">ادخال فصل</button>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
+		</p>
+		<p>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/room/create';">ادخال شعبة</button>
+		</p><p>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
 		</p>
 	</div>
 	<hr />

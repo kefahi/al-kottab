@@ -32,7 +32,7 @@ class ClassesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update' , 'adminGrid'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -70,6 +70,10 @@ class ClassesController extends Controller
 		if(isset($_POST['Classes']))
 		{
 			$model->attributes=$_POST['Classes'];
+			$model->created_at =$model->updated_at = time();	
+			$model->capacity = 0;
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -149,6 +153,14 @@ class ClassesController extends Controller
 			'model'=>$model,
 		));
 	}
+
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
+	}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

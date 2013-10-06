@@ -71,6 +71,7 @@ class GradesController extends Controller
 		{
 			$model->attributes=$_POST['Grades'];
 			$model->created_at = $model->updated_at = time();
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		} else 	if(isset($_GET['Student']))	{

@@ -72,6 +72,9 @@ class StudentController extends Controller
 			$model->attributes=$_POST['Student'];
 			$model->created_at = time();	
 			$model->birth_date = strtotime($model->birth_date);
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			
+			// var_dump($model) ; exit;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		} else 	if(isset($_GET['Student']))	{

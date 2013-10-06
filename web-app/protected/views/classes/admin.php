@@ -58,8 +58,5 @@ $('.search-form form').submit(function(){
 		'thrusday',
 		'friday',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
 	),
 )); ?>

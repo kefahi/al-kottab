@@ -20,15 +20,6 @@
 	<?php echo $form->errorSummary($model); ?>
 		
 	<div class="form-group">
-		<?php echo $form->labelEx($model,'school_id' , array('class' =>'col-lg-2 control-label' ) ); ?>
-		<div class="col-lg-10">
-			<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array('class'=>'selectpicker'  , 'data-live-search'=>"true")); ?>
-			<?php echo $form->error($model,'school_id'); ?>
-		</div>
-	</div>
-
-
-	<div class="form-group">
 		<?php echo $form->labelEx($model,'cgroup' ,array('class' =>'col-lg-2 control-label' , )); ?>
 		<div class="col-lg-10">
 			<?php echo $form->dropDownList($model,'cgroup' ,  array('1'=>'حضانة' , '2'=>'أساسي' ,'4'=> 'ابتدائي', '8'=>'إعدادي', '16'=>'ثانوي'  ) , array('class'=>'selectpicker' , 'data-live-search'=>"true") ); ?>

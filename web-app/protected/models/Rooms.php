@@ -108,4 +108,20 @@ class Rooms extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function getList($school_id = null)
+	{
+		if(!isset($school_id ))
+			$school_id  = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+		$model = self::model();
+		$model->school_id = $school_id;
+
+		$data =	$model->search()->data;
+		$result = array();
+		foreach ($data as $value) {
+			$result[$value->id] = $value->details ;			
+		}
+		return $result ;
+	}
+	
 }

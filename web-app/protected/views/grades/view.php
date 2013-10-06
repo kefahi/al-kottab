@@ -51,9 +51,9 @@ $this->menu=array(
 
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create?Student[school_id]=<?php echo $model->id?>';"  > ادخال طالب جديد </button>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create'"  > ادخال طالب جديد </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create?Student[school_id]=<?php echo $model->id?>';">ادخال شعبة</button>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create'">ادخال شعبة</button>
 		</p>
 	</div>
 	<hr />
