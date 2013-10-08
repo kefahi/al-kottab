@@ -1,3 +1,4 @@
+
 <?php
 /* @var $this SiteController */
 /* @var $model LoginForm */
@@ -12,7 +13,7 @@ $this->breadcrumbs=array(
 <h1>تسجيل الدخول</h1>
 
 
-<div class="form">
+<div class=" col-md-6 col-md-offset-3 row">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
 	'htmlOptions' => array('role'=>"form"),
@@ -52,4 +53,5 @@ $this->breadcrumbs=array(
 	</div>
 
 <?php $this->endWidget(); ?>
-</div><!-- form -->
+
+</div>

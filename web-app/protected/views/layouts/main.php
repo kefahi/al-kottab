@@ -8,12 +8,14 @@
  	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	<style>  body {   padding-top: 80px;  } </style>
+	<style>  body {   padding-top: 80px;  background-color: #E6E6E6;} 
+
+  .navbar-default{  background-color: white;}</style>
 </head>
 
 <body dir='rtl' >
 
-<div class="container" id="page">
+<div class="container" id="page" style="">
 
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -109,11 +111,19 @@
 	</div>
 	<div class="clearfix visible-xs"></div>
   
-	<div class="container bs-docs-container" >
+	<div class="container bs-docs-container"  style="">
 			<?php  echo $content; ?>		
 	</div>
 	
+
+  
+
 </div><!-- page -->
+<div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie" id='footer'>
+<br/>
+    <center>  ©2013 جميع الحقوق محفوظة، الكتاب اسم مسجل لشركة الكتاب  </center>
+
+</div><!-- content -->
 </body>
 </html>
 
@@ -127,3 +137,5 @@
  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
  Yii::app()->clientScript->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
  
+ ?>
+ <script> $(function() { $( ".date" ).datepicker();  } );$('.selectpicker').selectpicker(); </script>

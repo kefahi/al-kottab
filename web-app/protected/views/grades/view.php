@@ -38,7 +38,7 @@ $this->menu=array(
 		<p>
 		  <button type="button" class="btn btn-info" onclick="location.href ='/student/?school_id=<?php echo $model->id?>';"  >الطلاب </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info disabled ">المعلمين</button>
+		  <button type="button" class="btn btn-info"  onclick="location.href ='/teacher/?school_id=<?php echo $model->id?>';"   >المعلمين</button>
 		</p><p>
 		  <button type="button" class="btn btn-info disabled">الغرف الصفية</button>
 		</p><p>

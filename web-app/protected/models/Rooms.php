@@ -50,6 +50,7 @@ class Rooms extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'classes' => array(self::HAS_MANY, 'Classes', 'room_id'),
+			'school' => array(self::HAS_MANY, 'Classes', 'school_id'),
 		);
 	}
 

@@ -62,7 +62,7 @@ $('.search-form form').submit(function(){
 <script>
 $('#grades-grid table').addClass('table table-hover' ); 
 $('.pager').removeClass('pager ');
-$('.glyphicon-new-window').click(function(id){ location.href = "/gradesManage Rooms/view/"+$(this).attr('data-original-id');} ) ;
+$('.glyphicon-new-window').click(function(id){ location.href = "/Rooms/view/"+$(this).attr('data-original-id');} ) ;
 
 </script>
 

@@ -2,7 +2,6 @@
 
 class SiteController extends Controller
 {
-	public $layout='//layouts/column2';
 
 
 
@@ -33,8 +32,9 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->layout='//layouts/column2';
-		$this->render('index');
+		//$this->layout='//layouts/column2';
+       $model=new LoginForm;
+		$this->render('index' , array('model'=>$model));
 	}
 
 	/**

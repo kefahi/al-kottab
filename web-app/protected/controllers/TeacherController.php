@@ -70,6 +70,9 @@ class TeacherController extends Controller
 		if(isset($_POST['Teacher']))
 		{
 			$model->attributes=$_POST['Teacher'];
+			$model->created_at = $model->updated_at = time();
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			$model->birth_date = strtotime($model->birth_date ) ;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

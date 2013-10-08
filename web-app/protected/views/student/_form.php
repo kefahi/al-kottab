@@ -133,4 +133,3 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-<script> $(function() { $( ".date" ).datepicker();  } );$('.selectpicker').selectpicker(); </script>

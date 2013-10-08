@@ -108,7 +108,7 @@ class Users extends CActiveRecord
 			'birth_date' => 'تاريخ الولادة',
 			'birth_location' => 'مكان الورادة',
 			'address' => 'العنوان',
-			'mobiles' => 'خولي',
+			'mobiles' => 'خلوي',
 			'land_line' => 'هاتف',
 			'national_id' => 'الإثبات الشخصي',
 			'national_id_type' => 'نوع الاثبات ',

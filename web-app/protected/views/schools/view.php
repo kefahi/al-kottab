@@ -41,7 +41,7 @@ $this->menu=array(
 		<p>
 		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info disabled ">المعلمين</button>
+		  <button type="button" class="btn btn-info"  onclick="location.href ='/teacher/?school_id=<?php echo $model->id?>';"   >المعلمين</button>
 		</p><p>
 		  <button type="button" class="btn btn-info disabled">الإداريين</button>
 		</p><p>

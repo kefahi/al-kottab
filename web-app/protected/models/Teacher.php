@@ -12,6 +12,13 @@ class Teacher extends Users
         ); 
     }
 
+    public function onBeforeValidate ()
+    {
+        $this->type= "1";
+        $this->password = "asd";
+        return parent::beforeSave() ;
+    }
+
     
 	/**
 	 * Returns the static model of the specified AR class.

@@ -17,21 +17,50 @@ $this->menu=array(
 ?>
 
 <div class="jumbotron">
-  <div class="container">
+	<div class="container">
+		<div class="col-md-8">
+			<?php $this->widget('zii.widgets.CDetailView', array(
+				'data'=>$model,
+				'htmlOptions' =>array('class'=>''	),
+				'attributes'=>array(
+					'capacity',
+					'details',
+					array('label'=>$model->attributeLabels()['school_id'] , 'value' => (isset($model->school->name))?$model->school->name:'غير محدد' ),
+					array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
+					array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
+				),
+			)); ?>
+		</div>
+		<div class="col-md-2" >
+			<p>
+			  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
+			 </p><p>
+			  <button type="button" class="btn btn-info disabled ">المعلمين</button>
+			</p><p>
+			  <button type="button" class="btn btn-info disabled">الإداريين</button>
+			</p><p>
+			  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
+			</p><p>
+			  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?room_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
+			</p><p>
+			  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف </button>
+			</p>
+		</div>
 
-  <div class="col-md-8">
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'htmlOptions' =>array('class'=>''	),
-	'attributes'=>array(
-		'id',
-		'created_at',
-		'updated_at',
-		'school_id',
-		'school_year',
-		'capacity',
-		'details',
-	),
-)); ?>
-</div></div></div>
+		<div class="col-md-2" >
+			<p>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button>
+			 </p><p>
+			  <button type="button" class="btn btn-info disabled ">ادخال معلم</button>
+			</p><p>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
+			</p>
+			<p>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/room/create';">ادخال شعبة</button>
+			</p><p>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
+			</p>
+		</div>
+	</div>
+</div>
+<div id='data-area' >  </div>

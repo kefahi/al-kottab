@@ -57,9 +57,7 @@ class Student extends Users
     public function onBeforeValidate ()
     {
         $this->type= "4";
-        $this->created_at = $this->updated_at = time();   
         $this->password = "asd";
-        
         return parent::beforeSave() ;
     }
 
