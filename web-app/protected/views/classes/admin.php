@@ -26,9 +26,8 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Classes</h1>
+<h1>الصفوف الدراسية</h1>
 
-<body dir=rtl
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
@@ -41,6 +40,12 @@ $('.search-form form').submit(function(){
 	'id'=>'classes-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'pager'=>array(
+		'class'=>'CLinkPager',
+		'htmlOptions'=>array('class'=>'pagination'),
+		'header'=>'',
+	),
+
 	'columns'=>array(
 		'id',
 		'created_at',
@@ -48,6 +53,12 @@ $('.search-form form').submit(function(){
 		'room_id',
 		'grade_id',
 		'school_id',
+		array(
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"classes_{$data->id}"' , 'data-original-id'=>'$data->id','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+		),
 		/*
 		'capacity',
 		'saturday',
@@ -60,3 +71,8 @@ $('.search-form form').submit(function(){
 		*/
 	),
 )); ?>
+<script>
+	$('.glyphicon-new-window').click(function(id){ location.href = "/classes/view/"+$(this).attr('data-original-id');} ) ;
+	$('#classes-grid table').addClass('table table-hover' );
+	$('div > .pager').removeClass('pager ');
+</script>

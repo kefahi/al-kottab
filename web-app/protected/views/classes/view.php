@@ -38,4 +38,36 @@ $this->menu=array(
 	),
 )); ?>
 
-</div></div></div>
+</div>
+
+
+	<div class="col-md-2" >
+		<p>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?class_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
+		 </p><p>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/subjectsClasses/adminGrid?class_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المقررات</button>
+		</p>
+
+	</div>
+	
+ </div> 
+</div>
+<?php 
+echo CHtml::beginForm('/subjectsClasses/create', 'post') ;
+echo CHtml::hiddenField('SubjectsClasses[class_id]', $model->id) ;
+echo CHtml::dropDownList('SubjectsClasses[subjects_id]', '', Subjects::getList()) ;
+echo CHtml::submitButton('أضف') ;
+echo CHtml::endForm() ;
+?>
+<div id='data-area' >
+</div>
+
+<script>
+function move_to_div(){
+	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
+	$('.form-group > label').addClass('control-label');
+	$('extarea').addClass('form-control');
+	$('input').addClass('form-control');
+	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
+}
+</script>

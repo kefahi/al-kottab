@@ -57,8 +57,6 @@ CREATE TABLE schools ( -- مدارس
   first_principal  INTEGER NOT NULL,
   second_principal INTEGER NOT NULL,
   third_principal  INTEGER NOT NULL
-
-  
 );
 
 CREATE TABLE marks ( -- علامات
@@ -129,6 +127,24 @@ CREATE TABLE subjects ( -- مقررات
   
 );
 
+
+CREATE TABLE teacher_subjects_classes ( -- شعب مقرر
+  id               INTEGER PRIMARY KEY,
+  subjects_id       INTEGER NOT NULL,
+  class_id         INTEGER NOT NULL,
+  grade_id         INTEGER  NULL, -- Denormalized: student_grades.grade_id  class_id         INTEGER NOT NULL,
+  teacher_id         INTEGER NOT NULL,
+  created_at       INTEGER NOT NULL,
+  updated_at       INTEGER NOT NULL,
+  school_year      INTEGER  NULL, -- Denormalized: student_grades.school_year
+  notes            TEXT     NULL,
+  CONSTRAINT fk_subject_classes_student FOREIGN KEY ( subjects_id ) REFERENCES subjects(id),
+  CONSTRAINT fk_subject_classes_class   FOREIGN KEY ( class_id )   REFERENCES classes(id),
+  CONSTRAINT fk_teacher_classes_class   FOREIGN KEY ( teacher_id )   REFERENCES users(id)
+);
+
+
+
 CREATE TABLE student_classes ( -- شعب الطالب
   student_id       INTEGER NOT NULL,
   class_id         INTEGER NOT NULL,
@@ -167,17 +183,18 @@ CREATE TABLE student_grades ( -- صفوف الطالب
   CONSTRAINT fk_student_grades_grade   FOREIGN KEY ( grade_id )   REFERENCES grades(id)  
 );
 
-CREATE TABLE teacher_classes ( -- شعب المدرس
-  teacher_id       INTEGER NOT NULL,
-  class_id         INTEGER NOT NULL,
-  grade_id         INTEGER NOT NULL,
-  created_at       INTEGER NOT NULL,
-  updated_at       INTEGER NOT NULL,
-  school_year      INTEGER NOT NULL,
-  notes            TEXT    NOT NULL,
-  CONSTRAINT fk_teacher_classes_teacher FOREIGN KEY ( teacher_id ) REFERENCES users(id),
-  CONSTRAINT fk_teacher_classes_class   FOREIGN KEY ( class_id )   REFERENCES classes(id)
-);
+-- CREATE TABLE teacher_classes ( -- شعب المدرس
+--   id               INTEGER PRIMARY KEY,
+--   teacher_id       INTEGER NOT NULL,
+--   class_id         INTEGER NOT NULL,
+--   grade_id         INTEGER NOT NULL,
+--   created_at       INTEGER NOT NULL,
+--   updated_at       INTEGER NOT NULL,
+--   school_year      INTEGER NOT NULL,
+--   notes            TEXT    NOT NULL,
+--   CONSTRAINT fk_teacher_classes_teacher FOREIGN KEY ( teacher_id ) REFERENCES users(id),
+--   CONSTRAINT fk_teacher_classes_class   FOREIGN KEY ( class_id )   REFERENCES classes(id)
+-- );
 
 CREATE TABLE requisits ( -- متطلبات
   id               INTEGER PRIMARY KEY,

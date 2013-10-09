@@ -8,9 +8,9 @@
  	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	<style>  body {   padding-top: 80px;  background-color: #E6E6E6;} 
+	<style>  body {   padding-top: 80px; /*  background-color: #E6E6E6; */} 
 
-  .navbar-default{  background-color: white;}</style>
+  .navbar-default{ /*  background-color: white; */}</style>
 </head>
 
 <body dir='rtl' >
@@ -113,13 +113,11 @@
   
 	<div class="container bs-docs-container"  style="">
 			<?php  echo $content; ?>		
-	</div>
-	
-
-  
+	</div>  
 
 </div><!-- page -->
-<div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie" id='footer'>
+<div class=clear  style="height:100px"></div>
+<div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie; " id='footer'>
 <br/>
     <center>  ©2013 جميع الحقوق محفوظة، الكتاب اسم مسجل لشركة الكتاب  </center>
 

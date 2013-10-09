@@ -37,7 +37,6 @@ $('.search-form form').submit(function(){
 
 <h1>Manage <?php echo $this->pluralize($this->class2name($this->modelClass)); ?></h1>
 
-<body dir=rtl
 
 <?php echo "<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>"; ?>
 

@@ -26,6 +26,7 @@
  * @property Grades $grade
  * @property StudentClasses[] $studentClasses
  * @property TeacherClasses[] $teacherClasses
+ * @property SubjectsClasses[] $subjectsClasses
  */
 class Classes extends CActiveRecord
 {
@@ -68,6 +69,7 @@ class Classes extends CActiveRecord
 			'grade' => array(self::BELONGS_TO, 'Grades', 'grade_id'),
 			'studentClasses' => array(self::HAS_MANY, 'StudentClasses', 'class_id'),
 			'teacherClasses' => array(self::HAS_MANY, 'TeacherClasses', 'class_id'),
+			'subjectsClasses' => array(self::HAS_MANY, 'SubjectsClasses', 'class_id'),
 		);
 	}
 
@@ -142,4 +144,6 @@ class Classes extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+
 }

@@ -28,7 +28,6 @@ $('.search-form form').submit(function(){
 
 <h1>Manage Clubs</h1>
 
-<body dir=rtl
 
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
