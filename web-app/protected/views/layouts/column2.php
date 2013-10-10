@@ -18,11 +18,15 @@
       الإشعارات
     </a>
     </li>  
-    
-    
       <li class="list-group-item"><a href="#"> تسجيل الخروج  </a> </li>
-      <li class="list-group-item">  <a href="<?php echo $this->createUrl('/schools/view'). "?id=". Users::model()->findByPk(Yii::app()->user->id)->school_id ?>">  <?php echo Users::model()->findByPk(Yii::app()->user->id)->school->name  ?>  </a>
-      
+      <li class="list-group-item">
+      <a href="<?php echo $this->createUrl('/schools/view'). "?id=". Users::model()->findByPk(Yii::app()->user->id)->school_id ?>"> 
+        <?php 
+          $user = Users::model()->findByPk(Yii::app()->user->id) ;
+          if(isset($user->school->name))
+          echo $user->school->name ;
+        ?> 
+      </a>
   </li>
 
   </ul>

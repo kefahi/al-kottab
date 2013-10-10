@@ -28,18 +28,11 @@ $('.search-form form').submit(function(){
 
 <h1>الصفوف الدراسية</h1>
 
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'classes-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'htmlOptions'=>array('class'=>''),
 	'pager'=>array(
 		'class'=>'CLinkPager',
 		'htmlOptions'=>array('class'=>'pagination'),

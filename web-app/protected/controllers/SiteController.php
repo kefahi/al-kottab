@@ -34,7 +34,18 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		//$this->layout='//layouts/column2';
        $model=new LoginForm;
-		$this->render('index' , array('model'=>$model));
+       $classes=new Classes('search');
+		$classes->unsetAttributes();  // clear any default values
+		if(isset($_GET['Classes']))
+			$classes->attributes=$_GET['Classes'];
+
+		$teacher =new Teacher('Teacher');
+		$classes->unsetAttributes();  // clear any default values
+		if(isset($_GET['Teacher']))
+			$classes->attributes=$_GET['Teacher'];
+
+		$this->render('index' , array('model'=>$model , 'classes' =>$classes  , 'teacher'=>$teacher ));
+
 	}
 
 	/**

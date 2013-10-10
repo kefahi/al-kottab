@@ -15,9 +15,10 @@ $this->menu=array(
 <div class="panel panel-default">
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
-	'htmlOptions'=>array('class'=>'table'),
+	'htmlOptions'=>array('class'=>''),
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+
 	'selectionChanged'=>'',
 	'pager'=>array(
 		'class'=>'CLinkPager',

@@ -34,6 +34,12 @@ $('.search-form form').submit(function(){
 	'id'=>'teacher-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'htmlOptions'=>array('class'=>''),
+	'pager'=>array(
+		'class'=>'CLinkPager',
+		'htmlOptions'=>array('class'=>'pagination'),
+		'header'=>'',
+	),
 	'columns'=>array(
 		'id',
 		'user_name',
@@ -41,6 +47,12 @@ $('.search-form form').submit(function(){
 		'updated_at',
 		'first_name',
 		'second_name',
+		array(
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"classes_{$data->id}"' , 'data-original-id'=>'$data->id','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+		),
 		/*
 		'third_name',
 		'fourth_name',
@@ -60,8 +72,6 @@ $('.search-form form').submit(function(){
 		'grade_id',
 		'student_data',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+		
 	),
 )); ?>
