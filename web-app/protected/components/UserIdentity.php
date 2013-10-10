@@ -15,7 +15,7 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$user=Users::model()->find('LOWER(user_name)=? AND school_id=?',array(strtolower($this->username ) , $this->school_id ));
+		$user=Users::model()->find('LOWER(user_name)=? ',array(strtolower($this->username )));
 		
 		if($user===null){
 			Yii::log("ERROR_USERNAME_INVALID");

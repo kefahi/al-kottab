@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html  lang="ar">
 <head>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
@@ -8,7 +9,7 @@
  	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/bootstrap/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	<style>  body {   padding-top: 80px; /*  background-color: #E6E6E6; */} 
+	<style>  body {   padding-top: 80px; background-color: #DDDEE0; /*  background-color: #E6E6E6; */} 
 
   .navbar-default{ /*  background-color: white; */}</style>
 </head>
@@ -115,7 +116,6 @@
 			<?php  echo $content; ?>		
 	</div>  
 
-</div><!-- page -->
 <div class=clear  style="height:100px"></div>
 <div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie; " id='footer'>
 <br/>
@@ -130,10 +130,13 @@
  Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
  Yii::app()->clientScript->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ;
  Yii::app()->clientScript->registerCssFile('/bootstrap-pl/bootstrap-select.css') ;
+ Yii::app()->clientScript->registerCssFile('/mockups/less/al-kottab.css') ;
+ 
  Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
  Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
  Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
  Yii::app()->clientScript->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
+ Yii::app()->clientScript->registerScript('bootstrap-input-design', "$(function() { $( '.date' ).datepicker();  } );$('.selectpicker').selectpicker();");
  
- ?>
- <script> $(function() { $( ".date" ).datepicker();  } );$('.selectpicker').selectpicker(); </script>
+ 
+
