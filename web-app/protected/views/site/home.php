@@ -64,10 +64,10 @@ var students ='<li class="active"><a href="#home">النظامين</a></li>'+
   $(function () {
     $('.control-buttons p').click(function(){
       switch($(this).attr('data-button') ){
-        case "admin"    : alert(1);$('#myTab').html( admin ); break;
-        case "teachers" :alert(2);  $('#myTab').html(  students);  break; 
-        case "students" : alert(3); alert("students");  break;
-        case "parents"  : alert(4); alert("parents") ;  break;
+        case "admin"    : $('#myTab').html( admin ); break;
+        case "teachers" :  $('#myTab').html(  students);  break; 
+        case "students" : alert("students");  break;
+        case "parents"  :; alert("parents") ;  break;
       }
     }) ;
     $('#myTab a').click(function(e) { 
