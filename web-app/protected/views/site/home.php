@@ -1,10 +1,11 @@
 <script>
 var admin = '<li class="active"><a href="#home">الصفوف</a></li>'+
-  '<li><a  href="#profile">العلامات</a></li>'+
+  // '<li><a  href="#grads">العلامات</a></li>'+
+  '<li><a href="#teachers">المعلمين</a></li>  ' +
   '<li><a class="tab-buttons" href="#messages">الحافلات</a></li>'+
   '<li><a href="#clubs">النوادي </a></li>'+
-  '<li><a href="#settings">الأنشطة</a></li>'+
-  '<li><a href="#teachers">المعلمين</a></li>  ';
+  '<li><a href="#settings">الأنشطة</a></li>'
+  ;
 
 var students ='<li class="active"><a href="#home">النظامين</a></li>'+
   '<li><a  href="#profile">سنوات سابقة</a></li>'+
@@ -29,7 +30,7 @@ var students ='<li class="active"><a href="#home">النظامين</a></li>'+
 <div class="tab-content">
 <div> 
 </div>
-<div class=' pull-left control-buttons' style=' left:-105px;position:relative; top: -16px;' > 
+<div class=' pull-left control-buttons' style=' left:-115px;position:relative; top: -16px;' > 
 
 <p data-button="admin" > <img src='/mockups/images/orange-tab.png' />   <span > إداريات </span>   </p>
   <p data-button="teachers" > <img src='/mockups/images/blue-tab.png' />  <span > المدرسين </span>     </p>
@@ -60,7 +61,6 @@ var students ='<li class="active"><a href="#home">النظامين</a></li>'+
 </div>
 
 <script>
-
   $(function () {
     $('.control-buttons p').click(function(){
       switch($(this).attr('data-button') ){
@@ -69,6 +69,8 @@ var students ='<li class="active"><a href="#home">النظامين</a></li>'+
         case "students" : alert("students");  break;
         case "parents"  :; alert("parents") ;  break;
       }
+      $('#myTab a').click(function(e) { 
+      $(this).tab('show') ;  } ) ;
     }) ;
     $('#myTab a').click(function(e) { 
     $(this).tab('show') ;  } ) ;
@@ -83,3 +85,4 @@ var students ='<li class="active"><a href="#home">النظامين</a></li>'+
   $('#classes-grid table').addClass('table table-hover' );
   $('div > .pager').removeClass('pager ');
 </script>
+

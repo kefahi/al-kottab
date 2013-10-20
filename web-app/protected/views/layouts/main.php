@@ -126,17 +126,18 @@
 </html>
 
 <?php
- 
- Yii::app()->clientScript->registerScriptFile('/bootstrap/js/bootstrap.js') ;
- Yii::app()->clientScript->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ;
- Yii::app()->clientScript->registerCssFile('/bootstrap-pl/bootstrap-select.css') ;
- Yii::app()->clientScript->registerCssFile('/mockups/less/al-kottab.css') ;
- 
- Yii::app()->clientScript->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
- Yii::app()->clientScript->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
- Yii::app()->clientScript->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
- Yii::app()->clientScript->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
- Yii::app()->clientScript->registerScript('bootstrap-input-design', "$(function() { $( '.date' ).datepicker();  } );$('.selectpicker').selectpicker();");
- 
- 
+  $cs = Yii::app()->clientScript ;
+  $cs->registerCoreScript('jquery.ui');
+  $cs->registerCssFile($cs->getCoreScriptUrl(). '/jui/css/base/jquery-ui.css'); 
 
+  $cs->registerCoreScript('jsdfquery-usddfi');
+  $cs->registerScriptFile('/bootstrap/js/bootstrap.js') ;
+  $cs->registerScriptFile('/bootstrap-pl/bootstrap-select.js') ;
+  $cs->registerCssFile('/bootstrap-pl/bootstrap-select.css') ;
+  $cs->registerCssFile('/mockups/less/al-kottab.css') ;
+  $cs->registerScript('input-to-bootstrap', "$('input').addClass('form-control');");
+  $cs->registerScript('textarea-to-bootstrap', "$('textarea').addClass('form-control');");
+  $cs->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
+  $cs->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
+  //$cs->registerScript('bootstrap-input-design', "$(function() { $( '.date' ).datepicker();  } );$('.selectpicker').selectpicker();");
+ 
