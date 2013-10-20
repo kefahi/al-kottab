@@ -79,20 +79,20 @@ class Classes extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'room_id' => 'Room',
-			'grade_id' => 'Grade',
-			'school_id' => 'School',
-			'capacity' => 'Capacity',
-			'saturday' => 'Saturday',
-			'sunday' => 'Sunday',
-			'monday' => 'Monday',
-			'tuesday' => 'Tuesday',
-			'wednesday' => 'Wednesday',
-			'thrusday' => 'Thrusday',
-			'friday' => 'Friday',
+			'id' => 'الرقم',
+			'created_at' => 'انشأ في',
+			'updated_at' => 'اخر تحديث',
+			'room_id' => 'الغرفة',
+			'grade_id' => 'الصف',
+			'school_id' => 'المدرسة',
+			'capacity' => 'القدرة الاستيعابية',
+			'saturday' => 'السبت ',
+			'sunday' => 'الأحد',
+			'monday' => 'الإثنين',
+			'tuesday' => 'الثلاثاء',
+			'wednesday' => 'الأربعاء',
+			'thrusday' => 'الخميس',
+			'friday' => 'الجمعة',
 		);
 	}
 

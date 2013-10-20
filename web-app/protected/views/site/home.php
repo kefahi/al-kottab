@@ -1,3 +1,18 @@
+<script>
+var admin = '<li class="active"><a href="#home">الصفوف</a></li>'+
+  '<li><a  href="#profile">العلامات</a></li>'+
+  '<li><a class="tab-buttons" href="#messages">الحافلات</a></li>'+
+  '<li><a href="#clubs">النوادي </a></li>'+
+  '<li><a href="#settings">الأنشطة</a></li>'+
+  '<li><a href="#teachers">المعلمين</a></li>  ';
+
+var students ='<li class="active"><a href="#home">النظامين</a></li>'+
+  '<li><a  href="#profile">سنوات سابقة</a></li>'+
+  '<li><a class="tab-buttons" href="#messages">الوضع الأكاديمي</a></li>'+
+  '<li><a href="#clubs">مجلس ضبط </a></li>'+
+  '<li><a href="#clubs">نوادي </a></li>';
+
+</script>
 <!-- style=background:white; -->
 <div class=' col-lg-12'>
 
@@ -14,12 +29,13 @@
 <div class="tab-content">
 <div> 
 </div>
-<div class=' pull-left control-buttons' style=' left:-105px;position:relative; top: -16px;' > <p>
-  <img src='/mockups/images/orange-tab.png' />   <span > إداريات </span> </p> <p>
-  <img src='/mockups/images/blue-tab.png' />  <span > المدرسين </span>  </p> <p>
-  <img src='/mockups/images/purple-tab.png' /> <span > الطلاب </span>  </p> <p>
-  <img src='/mockups/images/green-tab.png' /><span > أولياء الأمور </span>  </p> 
+<div class=' pull-left control-buttons' style=' left:-105px;position:relative; top: -16px;' > 
 
+<p data-button="admin" > <img src='/mockups/images/orange-tab.png' />   <span > إداريات </span>   </p>
+  <p data-button="teachers" > <img src='/mockups/images/blue-tab.png' />  <span > المدرسين </span>     </p>
+  <p data-button="students" > <img src='/mockups/images/purple-tab.png' /> <span > الطلاب </span>      </p>
+  <p data-button="parents" > <img src='/mockups/images/green-tab.png' /><span > أولياء الأمور </span> </p> 
+  
 </div>
   <div class="tab-pane active " id="home">
   <div class="col-md-9">
@@ -30,7 +46,7 @@
     </div>
   </div>
   <div class="tab-pane" id="profile">...profile</div>
-	  <div class="tab-pane" id="messages">.messages..</div>
+    <div class="tab-pane" id="messages">.messages..</div>
   <div class="tab-pane " id="teachers">
     <div class="col-md-9">
     <?php 
@@ -41,18 +57,23 @@
       </div>
   </div>
 </div>
-
-
 </div>
 
 <script>
+
   $(function () {
-    $('.control-buttons').click(function(){
-      alert('d');
+    $('.control-buttons p').click(function(){
+      switch($(this).attr('data-button') ){
+        case "admin"    : alert(1);$('#myTab').html( admin ); break;
+        case "teachers" :alert(2);  $('#myTab').html(  students);  break; 
+        case "students" : alert(3); alert("students");  break;
+        case "parents"  : alert(4); alert("parents") ;  break;
+      }
     }) ;
-   	$('#myTab a').click(function(e) { 
+    $('#myTab a').click(function(e) { 
     $(this).tab('show') ;  } ) ;
   }) ;
+
 </script>
 
 </div>

@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Teachers</h1>
+<h1>المعلمين</h1>
 
 
 
