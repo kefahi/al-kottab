@@ -2,6 +2,41 @@
 <html  lang="ar">
 <head>
 
+<link rel="stylesheet" type="text/css" href="/calendar/calendar.css" />
+<script type="text/javascript" src="/calendar/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/calendar/calendar-min.js" ></script>
+
+
+<style type="text/css">
+  #cal1Container {
+     margin:1em;
+  }
+
+  #caleventlog {
+    float:left;
+    width:35em;
+    margin:1em;
+    background-color:#eee;
+    border:1px solid #000;
+  }
+  #caleventlog .bd {
+    overflow:auto;
+    height:20em;
+    padding:5px;
+  }
+  #caleventlog .hd {
+    background-color:#aaa;
+    border-bottom:1px solid #000;
+    font-weight:bold;
+    padding:2px;
+  }
+  #caleventlog .entry {
+    margin:0; 
+  }
+</style>
+
+
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
@@ -122,6 +157,19 @@
     <center>  ©2013 جميع الحقوق محفوظة، الكتاب اسم مسجل لشركة الكتاب  </center>
 
 </div><!-- content -->
+<div style="-webkit-border-top-left-radius: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-topleft: 20px;
+-moz-border-radius-topright: 20px;
+border-top-left-radius: 20px;
+font-weight:bold;
+-webkit-transform: rotate(-90deg); transform: rotate(-90deg);color: #FFFFFF;border-top-right-radius: 20px;padding-right:12px;padding-left:12px;padding-top:12px; background:#E94E24;position:fixed; right:0px;top:90px; "> 
+المهام 
+</div>
+<div id="task-panel" style="padding-right:12px;padding-left:12px;padding-top:12px; position:fixed; right:0px;top:90px;" >
+sdsd
+</div>
+
 </body>
 </html>
 
