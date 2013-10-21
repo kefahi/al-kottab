@@ -54,7 +54,6 @@ var students = '<li class="active"><a href="#home">النظامين</a></li>'+
       <div class="panel-body">
         <div id="cal1Container"></div>
         <div id="caleventlog" class="eventlog">
-            <div class="hd">Select/Deselect Events</div>
             <div id="evtentries" class="bd"></div>
         </div>
         <div style="clear:both"></div>
@@ -194,7 +193,7 @@ var students = '<li class="active"><a href="#home">النظامين</a></li>'+
     var eCount = 1;
 
     function logEvent(msg) {
-      eLog.innerHTML = '<pre class="entry"><strong>' + eCount + ').</strong> ' + msg + '</pre>' + eLog.innerHTML;
+      eLog.innerHTML = '<pre class="entry"> ' + msg + '</pre>' ;
       eCount++;
     }
 
