@@ -1,16 +1,16 @@
 <script>
-
 var admin = '<li class="active"><a href="#home">الرئيسية</a></li>'+
 '<li ><a href="#classes">الصفوف</a></li>'+
+'<li ><a href="#rooms">الغرف</a></li>'+
   // '<li><a  href="#grads">العلامات</a></li>'+
-  '<li><a href="#teachers">المعلمين</a></li>  ' +
-  '<li><a class="tab-buttons" href="#messages">الحافلات</a></li>'+
-  '<li><a href="#clubs">النوادي </a></li>'+
-  '<li><a href="#settings">الأنشطة</a></li>';
+  '<li><a href="#teachers">المعلمين</a></li>  '  ;
+  // '<li><a class="tab-buttons" href="#messages">الحافلات</a></li>'+
+  // '<li><a href="#clubs">النوادي </a></li>'+
+  // '<li><a href="#settings">الأنشطة</a></li>';
 
 var students = '<li class="active"><a href="#home">النظامين</a></li>'+
   '<li><a  href="#profile">سنوات سابقة</a></li>'+
-  '<li><a class="tab-buttons" href="#messages">الوضع الأكاديمي</a></li>'+
+  '<li><a class="tab-buttons" href="#acade">الوضع الأكاديمي</a></li>'+
   '<li><a href="#clubs">مجلس ضبط </a></li>'+
   '<li><a href="#clubs">نوادي </a></li>'+
   '<li><a href="#addTeacher"> <span class= "glyphicon glyphicon-plus" > </span>مدرس جديد </a></li>';
@@ -23,11 +23,13 @@ var students = '<li class="active"><a href="#home">النظامين</a></li>'+
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#home">الرئيسية</a></li>
   <li ><a href="#classes">الصفوف</a></li>
+  <li ><a href="#rooms">الغرف</a></li>
+  <li><a href="#teachers">المعلمين</a></li>
   <!-- <li><a  href="#profile">العلامات</a></li> -->
-  <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
+  <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
   <li><a href="#clubs">النوادي </a></li>
   <li><a href="#settings">الأنشطة</a></li>
-  <li><a href="#teachers">المعلمين</a></li>  
+     -->
 </ul>
 
 <div class="tab-content">
@@ -39,7 +41,8 @@ var students = '<li class="active"><a href="#home">النظامين</a></li>'+
   <p data-button="parents" > <img src='/mockups/images/green-tab.png' /><span > أولياء الأمور </span> </p> 
   
 </div>
-  <div class="tab-pane active " id="home">
+  <div class="tab-pane active " id="home" style ="height:1000px">
+  <?php $this->renderPartial('/schools/view' , array('model'=>Schools::model()->findByPk(1) ) ) ; ?>
   <div class="col-md-9">
   <div class="panel-group" id="accordion">
   <div class="panel panel-default">
@@ -101,6 +104,14 @@ var students = '<li class="active"><a href="#home">النظامين</a></li>'+
     </div>
   </div>
   <div class="container tab-pane" id="profile"><br/> <div >  <p> العلامات  </p> </div> </div>
+  <div class="container tab-pane" id="classes"><br/>
+  <?php $this->renderPartial('/classes/admin'  , array('model'=>new Classes('search'))) ; ?>
+   <div >  <p> الصفوف  </p> </div> </div>
+  <div class="tab-pane" id="rooms">
+  <div class="nav-bar nav nav-default" style="height:45px;padding:5px;background:#CCCCCC"> 
+  <ul class="nav nav-tabs" id="roomTab"> <li ><a href="#classes">الصفوف</a></li> </ul>
+  إستعراض </div>
+  <br/> <div class="container">  <p> الغرف </p> </div> </div>
     <div class="container tab-pane" id="messages"><br/> <div >  <p> الحافلات </p> </div> </div>
   <div class="tab-pane " id="teachers">
     <div class="col-md-9">
@@ -237,5 +248,3 @@ $cs->registerScriptFile('https://www.google.com/jsapi') ;
 
 // $cs->registerScript('input-to-bootstrap', " 
 //       " );
-
-

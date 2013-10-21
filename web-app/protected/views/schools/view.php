@@ -21,7 +21,7 @@ $this->menu=array(
 <div class="jumbotron">
   <div class="container">
 
-  <div class="col-md-8">
+  <div class="col-md-6">
   <h1>  <?php echo $model->name ;?> </h1>
     <p><?php echo $model->description ;?> </p>
   

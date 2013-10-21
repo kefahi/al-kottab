@@ -53,7 +53,9 @@ class ClassesController extends Controller
 	{
 		$model = $this->loadModel($id);
 		$this->render('view',array(
-			'model'=>$model, 'students'=>$model->studentClasses, 'subjects'=>$model->subjectsClasses , 'teacher'=>$model->teacherClasses , 
+			'model'=>$model, 'students'=>$model->studentClasses, 
+			//'subjects'=>$model->subjectsClasses , 
+			'teacher'=>$model->teacherClasses , 
 		));
 	}
 

@@ -69,7 +69,7 @@ class Classes extends CActiveRecord
 			'grade' => array(self::BELONGS_TO, 'Grades', 'grade_id'),
 			'studentClasses' => array(self::HAS_MANY, 'StudentClasses', 'class_id'),
 			'teacherClasses' => array(self::HAS_MANY, 'TeacherClasses', 'class_id'),
-			'subjectsClasses' => array(self::HAS_MANY, 'SubjectsClasses', 'class_id'),
+			//'subjectsClasses' => array(self::HAS_MANY, 'SubjectsClasses', 'class_id'),
 		);
 	}
 
