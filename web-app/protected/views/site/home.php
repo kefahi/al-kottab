@@ -133,7 +133,7 @@ var students =
     $('.control-buttons p').click(function(){
       switch($(this).attr('data-button') ){
         case "admin"    : $('#myTab').html( admin ); break;
-        case "teachers" :  $('#myTab').html(  students);  break; 
+        case "teachers" :  window.location="/teacher/newhome";  break; 
         case "students" : alert("students");  break;
         case "parents"  :; alert("parents") ;  break;
       }
