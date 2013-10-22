@@ -31,7 +31,7 @@ var students =
 </ul>
 
 <div class="tab-content">
-<div class=' pull-left control-buttons' style=' left:-115px;position:relative; top: -16px;' > 
+<div class=' pull-left control-buttons' style=' left:-110px;position:relative; top: -16px;' > 
 
 <p data-button="admin" > <img src='/mockups/images/orange-tab.png' />   <span > إداريات </span>   </p>
   <p data-button="teachers" > <img src='/mockups/images/blue-tab.png' />  <span > المدرسين </span>     </p>
@@ -132,7 +132,7 @@ var students =
   $(function () {
     $('.control-buttons p').click(function(){
       switch($(this).attr('data-button') ){
-        case "admin"    : $('#myTab').html( admin ); break;
+        case "admin"    :  break; 
         case "teachers" :  window.location="/teacher/newhome";  break; 
         case "students" : alert("students");  break;
         case "parents"  :; alert("parents") ;  break;
@@ -147,53 +147,6 @@ var students =
 </script>
 
 </div>
-
-<script>
-  $('.glyphicon-new-window').click(function(id){ location.href = "/classes/view/"+$(this).attr('data-original-id');} ) ;
-  $('#classes-grid table').addClass('table table-hover' );
-  $('div > .pager').removeClass('pager ');
-      google.load('visualization', '1', {packages:['corechart']});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var student_data = google.visualization.arrayToDataTable([
-          ['الليوم', 'بإذن', 'من دون إذن'],
-          ['Sunday',  1,      4],
-          ['Monday',  1,      4],
-          ['Tuesday',  0,       0],
-          ['Wednesday',  0,      0],
-          ['Thursday',  0,      0]
-
-        ]);
-
-        var stuff_data = google.visualization.arrayToDataTable([
-          ['الليوم', 'بإذن', 'من دون إذن'],
-          ['Sunday',  0,      0],
-          ['Monday',  0,      1],
-          ['Tuesday',  0,       0],
-          ['Wednesday',  0,      0],
-          ['Thursday',  0,      0]
-
-        ]);
-
-        var student_options = {
-          title: 'غياب الطلاب',
-          hAxis: {title: 'الليوم', titleTextStyle: {color: 'red'}}
-        };
-
-        var stuff_options = {
-          title: 'غياب الكادر',
-          hAxis: {title: 'الليوم', titleTextStyle: {color: 'red'}}
-        };
-
-        var student_chart = new google.visualization.ColumnChart(document.getElementById('student_chart_div'));
-        var stuff_chart = new google.visualization.ColumnChart(document.getElementById('stuff_chart_div'));
-        
-
-        student_chart.draw(student_data, student_options);
-        stuff_chart.draw(stuff_data, stuff_options);
-      }  
-</script>
-
 <script type="text/javascript">
   YAHOO.namespace("example.calendar");
 
