@@ -5,7 +5,6 @@
     <ul class="nav nav-tabs" id="myTab">
       <li class="active"><a href="#requisits">الإختبارات</a></li>
       <li class=""><a href="#scores">العلامات</a></li>
-      <li class=""><a href="#teachers">الواجبات</a></li>
       <li class=""><a href="#teachers">رسائل</a></li>
       <!-- <li><a  href="#profile">العلامات</a></li> -->
   <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
@@ -129,7 +128,7 @@
         ]);
 
         var stuff_options = {
-          title: 'غياب الكادر',
+          title: 'مخطط علامات الطلاب لامتحان رقم (1)',
           hAxis: {title: 'العلامات', titleTextStyle: {color: 'red'}}
         };
 
