@@ -70,7 +70,7 @@ $this->menu=array(
 		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
 		</p>
 	</div>
-	<hr />
+	
 
  </div> 
 </div>

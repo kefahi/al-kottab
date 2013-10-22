@@ -8,11 +8,7 @@ var admin = '<li class="active"><a href="#home">الرئيسية</a></li>'+
   // '<li><a href="#clubs">النوادي </a></li>'+
   // '<li><a href="#settings">الأنشطة</a></li>';
 
-var students = '<li class="active"><a href="#home">النظامين</a></li>'+
-  '<li><a  href="#profile">سنوات سابقة</a></li>'+
-  '<li><a class="tab-buttons" href="#acade">الوضع الأكاديمي</a></li>'+
-  '<li><a href="#clubs">مجلس ضبط </a></li>'+
-  '<li><a href="#clubs">نوادي </a></li>'+
+var students = '<li class="active"><a href="#teachers">النظامين</a></li>'+
   '<li><a href="#addTeacher"> <span class= "glyphicon glyphicon-plus" > </span>مدرس جديد </a></li>';
   
 </script>
