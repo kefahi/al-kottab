@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 
 $this->menu=array(
 	array('label'=>'List Classes', 'url'=>array('index')),
-	array('label'=>'Create Classes', 'url'=>array('create')),
+	array('label'=>'إنشاء صف دراسي', 'url'=>array('create')),
 	array('label'=>'Update Classes', 'url'=>array('update', 'id'=>$model->id)),
 	array('label'=>'Delete Classes', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
 	array('label'=>'Manage Classes', 'url'=>array('admin')),
