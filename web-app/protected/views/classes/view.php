@@ -45,21 +45,46 @@ $this->menu=array(
 		<p>
 		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?class_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/subjectsClasses/adminGrid?class_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المقررات</button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/seacherSubjectsClasses/adminGrid?class_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المقررات</button>
 		</p>
 
 	</div>
 	
  </div> 
-</div>
+<hr />
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#taskPanel">
+          مادة جديدة
+        </a>
+      </h4>
+    </div>
+    <div id="taskPanel" class="panel-collapse collapse">
+      <div class="panel-body">
+        
 <?php 
-echo CHtml::beginForm('/subjectsClasses/create', 'post') ;
-echo CHtml::hiddenField('SubjectsClasses[class_id]', $model->id) ;
-echo CHtml::dropDownList('SubjectsClasses[subjects_id]', '', Subjects::getList()) ;
+echo CHtml::beginForm('/teacherSubjectsClasses/create', 'post') ;
+echo '<br />' ; 
+echo CHtml::hiddenField('TeacherSubjectsClasses[class_id]', $model->id) ;
+echo '<br />' ; 
+echo CHtml::label('المادة '  . " \t ", 'المادة') ;
+echo CHtml::dropDownList('TeacherSubjectsClasses[subjects_id]', '', Subjects::getList()) ;
+echo '<br />' ; 
+echo CHtml::label('المدرس ' . " \t " , 'المدرس') ;
+echo CHtml::dropDownList('TeacherSubjectsClasses[Teacher_id]', '', Teacher::getList()) ;
+echo '<br />' ; 
 echo CHtml::submitButton('أضف') ;
+echo '<br />' ; 
 echo CHtml::endForm() ;
 ?>
-<div id='data-area' >
+      </div>
+    </div>
+  </div>
+
+  </div>
 </div>
 
 <script>
