@@ -7,10 +7,9 @@
       <li class=""><a href="#scores">العلامات</a></li>
       <li class=""><a href="#teachers">رسائل</a></li>
       <!-- <li><a  href="#profile">العلامات</a></li> -->
-  <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
-  <li><a href="#clubs">النوادي </a></li>
-  <li><a href="#settings">الأنشطة</a></li>
--->
+      <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
+      <li><a href="#clubs">النوادي </a></li>
+      <li><a href="#settings">الأنشطة</a></li> -->
 </ul>
 
 <div class="tab-content">
@@ -117,29 +116,23 @@
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var stuff_data = google.visualization.arrayToDataTable([
-
           ['العلامة', 'عدد الطلاب' ],
           ['5', 1],
           ['10', 3],
           ['15',  7],
           ['20',  19],
           ['25', 2],
-
         ]);
-
         var stuff_options = {
           title: 'مخطط علامات الطلاب لامتحان رقم (1)',
           hAxis: {title: 'العلامات', titleTextStyle: {color: 'red'}}
         };
-
         
         var stuff_chart = new google.visualization.ComboChart(document.getElementById('stuff_chart_div'));
         
         stuff_chart.draw(stuff_data, stuff_options);
       }  
 </script>
-
 <?php 
-$cs = Yii::app()->clientScript ;
-$cs->registerScriptFile('https://www.google.com/jsapi') ;
-
+  $cs = Yii::app()->clientScript ;
+  $cs->registerScriptFile('https://www.google.com/jsapi') ;
