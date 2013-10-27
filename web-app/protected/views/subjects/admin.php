@@ -41,9 +41,9 @@ $('.search-form form').submit(function(){
 	'id'=>'subjects-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'htmlOptions'=>array('class'=>'pagination'),
 	'pager'=>array(
 		'class'=>'CLinkPager',
-		'htmlOptions'=>array('class'=>'pagination'),
 		'header'=>'',
 		),
 	'columns'=>array(

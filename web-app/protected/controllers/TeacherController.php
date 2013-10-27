@@ -36,7 +36,7 @@ class TeacherController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete' ,'home','newhome'),
+				'actions'=>array('admin','delete' ,'home','newhome' , 'adminGrid'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -193,5 +193,11 @@ class TeacherController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
 	}
 }

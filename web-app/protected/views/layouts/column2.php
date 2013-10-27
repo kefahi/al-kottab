@@ -1,9 +1,8 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="row ">
-	
+<div class="row ">	
 
-	<div class=" col-lg-2" style="">
+<!-- 	<div class=" col-lg-2" style="">
 <?php     if(!Yii::app()->user->isGuest) : ?>
 <ul class=" affix"  >
   <li class="list-group-item" >
@@ -31,9 +30,9 @@
 
   </ul>
 <?php endif?>
-	</div>
+	</div> -->
 
-  <div class="col-lg-10">
+  <div class="col-lg-12 ">
     <?php  echo $content; ?>
   </div>
 

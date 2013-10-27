@@ -4,7 +4,7 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form col-lg-7">
+<div class="form ">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'grades-form',
@@ -15,8 +15,7 @@
 	'htmlOptions'=>array('role'=>'form' , 'class'=>'form-horizontal'),
 	'enableAjaxValidation'=>false,
 )); ?>
-
-
+	<br/>
 	<?php echo $form->errorSummary($model); ?>
 		
 	<div class="form-group">
@@ -35,7 +34,6 @@
 			<?php echo $form->error($model,'ordinal'); ?>
 		</div>
 	</div>
-
 
 	<div class="form-group">
 		<?php echo $form->labelEx($model,'name' , array('class' =>'col-lg-2 control-label' )); ?>
