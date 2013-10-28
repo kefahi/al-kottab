@@ -84,7 +84,8 @@
 
         <!-- <li ><?php echo CHtml::link('الصف', '/classes/home' ) ; ?></li> -->
         
-        <!-- <li class="dropdown"> 
+        <!-- 
+          <li class="dropdown"> 
           <?php echo CHtml::link('المدارس<b class="caret"></b>', '/schools/'  , array('class'=>"dropdown-toggle" ,  'data-toggle'=>"dropdown")) ; ?>
           <ul class="dropdown-menu">
               <li ><?php echo CHtml::link('استعراض', '/schools' ) ; ?></li>

@@ -37,7 +37,7 @@ class TeacherSubjectsClassesController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -69,7 +69,9 @@ class TeacherSubjectsClassesController extends Controller
 
 		if(isset($_POST['TeacherSubjectsClasses']))
 		{
+			// var_dump( $_POST) ; exit;
 			$model->attributes=$_POST['TeacherSubjectsClasses'];
+			$model->created_at = $model->updated_at = time();
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

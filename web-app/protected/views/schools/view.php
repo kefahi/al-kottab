@@ -39,7 +39,7 @@ $this->menu=array(
 	</div>
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog(); /* move_to_div(); */ }} );' >الطلاب </button>
 		 </p><p>
 		 <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >المعلمين </button>
 		  
@@ -89,4 +89,6 @@ function move_to_div(){
 	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
 	
 }
+$('#data-area').hide();
 </script>
+

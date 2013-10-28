@@ -51,9 +51,27 @@ $this->menu=array(
 	</div>
 	
  </div> 
-<hr />
+ </div>
+ <div style="background-color: #FFFFFF;     margin-top: -40px;     position: relative;">
 
 <div class="panel-group" id="accordion">
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#listSubject">
+          قائمة المواد
+        </a>
+      </h4>
+    </div>
+    <div id="listSubject" class="panel-collapse collapse">
+      <div class="panel-body">
+      	<?php
+      		 $this->renderPartial('/teacherSubjectsClasses/admin' ,array('model'=>TeacherSubjectsClasses::model()));
+      	?>      	
+      </div>
+  	</div>
+  </div>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -74,7 +92,7 @@ echo CHtml::label('المادة '  . " \t ", 'المادة') ;
 echo CHtml::dropDownList('TeacherSubjectsClasses[subjects_id]', '', Subjects::getList()) ;
 echo '<br />' ; 
 echo CHtml::label('المدرس ' . " \t " , 'المدرس') ;
-echo CHtml::dropDownList('TeacherSubjectsClasses[Teacher_id]', '', Teacher::getList()) ;
+echo CHtml::dropDownList('TeacherSubjectsClasses[teacher_id]', '', Teacher::getList()) ;
 echo '<br />' ; 
 echo CHtml::submitButton('أضف') ;
 echo '<br />' ; 
