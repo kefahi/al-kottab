@@ -39,36 +39,33 @@ $this->menu=array(
 	</div>
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $("#overlay").show(); $( "#data-area" ).html( result.responseText );$("#data-area").dialog({  "z-index":2147483647, maxWidth:1100, maxHeight: 500,  width: 1100,  height: 300, close: function() { $("#overlay").hide(); } });  /* move_to_div(); */ }} );' >الطلاب </button>
-		 </p><p>
-		 <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({      z-index: 2147483647, maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /*move_to_div(); */}} );' >المعلمين </button>
-		  
+			<button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $("#overlay").show(); $( "#data-area" ).html( result.responseText );$("#data-area").dialog({ marginTop:118 , top:118 ,"z-index":2147483647, maxWidth:1100,   width: "auto",  height: "auto", close: function() { $("#overlay").hide(); } , });  /* move_to_div(); */ }} );' >الطلاب </button>
 		</p><p>
-		  <button type="button" class="btn btn-info disabled">الإداريين</button>
+			<button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) { $("#overlay").show(); $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({ marginTop:118 ,   "z-index":2147483647, maxWidth:1100,   width: "auto",  height: "auto", close: function() { $("#overlay").hide(); } , });  /*move_to_div(); */}} );' >المعلمين </button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({   z-index: 2147483647, maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /* move_to_div() ;*/ }});' >المراحل الصفية</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {$("#overlay").show();  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({ marginTop:118 ,"z-index":2147483647, maxWidth:1100,   width: "auto",  height: "auto", close: function() { $("#overlay").hide(); } , });  /* move_to_div() ;*/ }});' >المراحل الصفية</button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /*move_to_div() ; */}});' >الغرف الصفية</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({ marginTop:118 , maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});' >الغرف الصفية</button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف </button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {$("#overlay").show();  $( "#data-area" ).html( result.responseText );  $("#data-area").dialog({ marginTop:118 , maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});' > الصفوف </button>
 		</p><p>
-		  <button type="button" class="btn btn-info"   onclick='$.ajax({url: "/subjects/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});'  >المقررات</button>
+		  <button type="button" class="btn btn-info"   onclick='$.ajax({url: "/subjects/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) { $("#overlay").show(); $( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  maxHeight:118  ,marginTop:118 , maxWidth:1100,   width: "auto",  height: 500, close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});' >المقررات</button>
 		</p>
 	</div>
 	
 
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});'  > ادخال طالب جديد </button>
 		 </p><p>
 		  <button type="button" class="btn btn-info disabled ">ادخال معلم</button>
 		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/grades/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});'  >ادخال مرحلة دراسية</button>
 		</p>
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">ادخال شعبة</button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/rooms/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});'  >ادخال شعبة</button>
 		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/classes/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});' >ادخال صف دراسي</button>
 		</p>
 	</div>
 	
@@ -85,15 +82,10 @@ function move_to_div(){
 	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
 	$('.form-group > label').addClass('control-label');
 	$('extarea').addClass('form-control');
-	$('input').addClass('form-control');
-	
-	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
-	
+	$('input').addClass('form-control');	
+	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 	
 }
 $('#data-area').hide();
 $('#overlay').hide();
 //var overlay = jQuery('');
-
 </script>
-
-

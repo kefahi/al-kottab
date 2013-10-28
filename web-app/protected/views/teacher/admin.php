@@ -42,9 +42,7 @@ $('.search-form form').submit(function(){
 	),
 	'columns'=>array(
 		'id',
-		'user_name',
 		'created_at',
-		'updated_at',
 		'first_name',
 		'second_name',
 		array(

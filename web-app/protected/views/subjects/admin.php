@@ -45,14 +45,13 @@ $('.search-form form').submit(function(){
 	'pager'=>array(
 		'class'=>'CLinkPager',
 		'header'=>'',
-		),
+	),
 	'columns'=>array(
 		'id',
-		'created_at',
 		'updated_at',
 		'name',
 		'description',
-		'class_id',
+		
 		/*
 		'id_string',
 		*/

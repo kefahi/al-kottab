@@ -45,7 +45,6 @@ $('.search-form form').submit(function(){
 		'updated_at',
 		'room_id',
 		'grade_id',
-		'school_id',
 		array(
             'class'=>'DataColumn',
             'evaluateHtmlOptions'=>true,
