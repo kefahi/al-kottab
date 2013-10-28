@@ -39,16 +39,16 @@ $this->menu=array(
 	</div>
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog(); /* move_to_div(); */ }} );' >الطلاب </button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $("#overlay").show(); $( "#data-area" ).html( result.responseText );$("#data-area").dialog({  "z-index":2147483647, maxWidth:1100, maxHeight: 500,  width: 1100,  height: 300, close: function() { $("#overlay").hide(); } });  /* move_to_div(); */ }} );' >الطلاب </button>
 		 </p><p>
-		 <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >المعلمين </button>
+		 <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({      z-index: 2147483647, maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /*move_to_div(); */}} );' >المعلمين </button>
 		  
 		</p><p>
 		  <button type="button" class="btn btn-info disabled">الإداريين</button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText ); $("#data-area").dialog({   z-index: 2147483647, maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /* move_to_div() ;*/ }});' >المراحل الصفية</button>
 		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
+		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  maxWidth:1100, maxHeight: 500,  width: 1100, height: 300,}); /*move_to_div() ; */}});' >الغرف الصفية</button>
 		</p><p>
 		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف </button>
 		</p><p>
@@ -77,8 +77,9 @@ $this->menu=array(
 </div>
 
 <div id='data-area' >
-</div>
 
+</div>
+<div id="overlay"> </div>
 <script>
 function move_to_div(){
 	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
@@ -90,5 +91,9 @@ function move_to_div(){
 	
 }
 $('#data-area').hide();
+$('#overlay').hide();
+//var overlay = jQuery('');
+
 </script>
+
 
