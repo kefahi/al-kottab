@@ -60,12 +60,12 @@ class Rooms extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_id' => 'School',
-			'capacity' => 'Capacity',
-			'details' => 'Details',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_id' => 'المدرسة',
+			'capacity' => 'القدرة الإستيعابية',
+			'details' => 'الوصف',
 		);
 	}
 

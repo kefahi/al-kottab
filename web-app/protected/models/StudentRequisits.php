@@ -61,12 +61,12 @@ class StudentRequisits extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'student_id' => 'Student',
-			'requisit_id' => 'Requisit',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'earned_marks' => 'Earned Marks',
-			'attachements' => 'Attachements',
+			'student_id' => 'الطالب',
+			'requisit_id' => 'المتطلب',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'earned_marks' => 'التحصيل',
+			'attachements' => 'المرفقات',
 		);
 	}
 

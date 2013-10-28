@@ -67,13 +67,13 @@ class Grades extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_id' => 'School',
-			'name' => 'Name',
-			'ordinal' => 'Ordinal',
-			'cgroup' => 'Cgroup',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تدحديث',
+			'school_id' => 'المدرسة',
+			'name' => 'الإسم',
+			'ordinal' => 'الترتيب',
+			'cgroup' => 'المجموعة الدراسية',
 		);
 	}
 

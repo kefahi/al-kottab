@@ -66,15 +66,15 @@ class TeacherSubjectsClasses extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'subjects_id' => 'Subjects',
-			'class_id' => 'Class',
-			'grade_id' => 'Grade',
-			'teacher_id' => 'Teacher',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_year' => 'School Year',
-			'notes' => 'Notes',
+			'id' => 'الرقم',
+			'subjects_id' => 'المادة',
+			'class_id' => 'الشعبة',
+			'grade_id' => 'الصف',
+			'teacher_id' => 'الأستاذ',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_year' => 'السنة الدراسيى',
+			'notes' => 'الملاحظات',
 		);
 	}
 

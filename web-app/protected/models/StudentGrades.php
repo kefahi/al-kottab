@@ -60,12 +60,12 @@ class StudentGrades extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'student_id' => 'Student',
-			'grade_id' => 'Grade',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_year' => 'School Year',
-			'notes' => 'Notes',
+			'student_id' => 'الطاب',
+			'grade_id' => 'الصف',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_year' => 'السنة الدراسية',
+			'notes' => 'ملاحظات',
 		);
 	}
 

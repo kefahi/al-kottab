@@ -52,10 +52,10 @@ class StudentDays extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'school_id' => 'School',
-			'student_id' => 'Student',
-			'type' => 'Type',
-			'day' => 'Day',
+			'school_id' => 'المدرسة',
+			'student_id' => 'الطاب',
+			'type' => 'النوع',
+			'day' => 'الليوم',
 		);
 	}
 
