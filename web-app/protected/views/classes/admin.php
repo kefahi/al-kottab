@@ -25,46 +25,47 @@ $('.search-form form').submit(function(){
 });
 ");
 ?>
+<div class="white"  style="padding:25px">
+	<h1>الشعب الدراسية</h1>
 
-<h1>الصفوف الدراسية</h1>
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'classes-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'htmlOptions'=>array('class'=>''),
-	'pager'=>array(
-		'class'=>'CLinkPager',
-		'htmlOptions'=>array('class'=>'pagination'),
-		'header'=>'',
-	),
-
-	'columns'=>array(
-		'id',
-		'created_at',
-		'updated_at',
-		'room_id',
-		'grade_id',
-		array(
-            'class'=>'DataColumn',
-            'evaluateHtmlOptions'=>true,
- 			'value'=>'',
-			'htmlOptions'=>array('id'=> '"classes_{$data->id}"' , 'data-original-id'=>'$data->id','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+	<?php $this->widget('zii.widgets.grid.CGridView', array(
+		'id'=>'classes-grid',
+		'dataProvider'=>$model->search(),
+		'filter'=>$model,
+		'htmlOptions'=>array('class'=>''),
+		'pager'=>array(
+			'class'=>'CLinkPager',
+			'htmlOptions'=>array('class'=>'pagination'),
+			'header'=>'',
 		),
-		/*
-		'capacity',
-		'saturday',
-		'sunday',
-		'monday',
-		'tuesday',
-		'wednesday',
-		'thrusday',
-		'friday',
-		*/
-	),
-)); ?>
-<script>
-	$('.glyphicon-new-window').click(function(id){ location.href = "/classes/view/"+$(this).attr('data-original-id');} ) ;
-	$('#classes-grid table').addClass('table table-hover' );
-	$('div > .pager').removeClass('pager ');
-</script>
+
+		'columns'=>array(
+			'id',
+			'created_at',
+			'updated_at',
+			'room_id',
+			'grade_id',
+			// array(
+	  //           'class'=>'DataColumn',
+	  //           'evaluateHtmlOptions'=>true,
+	 	// 		'value'=>'',
+			// 	'htmlOptions'=>array('id'=> '"classes_{$data->id}"' , 'data-original-id'=>'$data->id','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+			// ),
+			/*
+			'capacity',
+			'saturday',
+			'sunday',
+			'monday',
+			'tuesday',
+			'wednesday',
+			'thrusday',
+			'friday',
+			*/
+		),
+	)); ?>
+	<script>
+		$('.glyphicon-new-window').click(function(id){ location.href = "/classes/view/"+$(this).attr('data-original-id');} ) ;
+		$('#classes-grid table').addClass('table table-hover' );
+		$('div > .pager').removeClass('pager ');
+	</script>
+</div>

@@ -37,8 +37,6 @@ $this->menu=array(
 			 </p><p>
 			  <button type="button" class="btn btn-info disabled ">المعلمين</button>
 			</p><p>
-			  <button type="button" class="btn btn-info disabled">الإداريين</button>
-			</p><p>
 			  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
 			</p><p>
 			  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?room_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
@@ -56,7 +54,7 @@ $this->menu=array(
 			  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
 			</p>
 			<p>
-			  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">ادخال شعبة</button>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">تعريف قاعة</button>
 			</p><p>
 			  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
 			</p>

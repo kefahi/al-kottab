@@ -13,7 +13,7 @@
 	);
 ?>
 <div class="white" style="background:white;">
-<center>
+<center style="padding-top:5px">
 	<h1>تسجيل طالب </h1>
 </center>
 <br/>

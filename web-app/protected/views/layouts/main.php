@@ -1,5 +1,5 @@
-  <!DOCTYPE html>
-  <html  lang="ar">
+<!DOCTYPE html>
+<html  lang="ar">
   <head>
 
   <link rel="stylesheet" type="text/css" href="/calendar/calendar.css" />
@@ -75,23 +75,12 @@
       <a class="navbar-brand" href="/"><b> <?php echo Yii::app()->name ?> </b></a>
       <?php $this->widget('zii.widgets.CMenu',array(
        'htmlOptions'=>array('class'=>'nav navbar-nav'),
-
        'items'=>array(
          array('label'=>'الرئيسية', 'url'=>array('/site/index') ),
-         array('label'=>'المدرسة', 'url'=>array('/schools') ),
-         array('label'=>'المدرسة', 'url'=>array('/schools') ),
-         array('label'=>'الطلاب', 'url'=>array('/student' )),
-         array('label'=>'الشعارات', 'url'=>array('/students' )),
-         array('label'=>'الرسائل ',
-           'url'=>array('/messages" class="dropdown-toggle dropdown') ,
-           'submenuOptions'=>array(
-           'class'=>'dropdown-menu', 
-          ),
-          'items'=>array(
-           array('label'=>'SubItem1', 'url'=>array('site/anot','id'=>'12')),
-           array('label'=>'SubItem2', 'url'=>array('site/anot','id'=>'13')),
-           )
-         ) ,
+         array('label'=>'المدرسة', 'url'=>array('/schools/admin') ),
+         array('label'=>'الطلاب', 'url'=>array('/student/admin' )),
+         array('label'=>'الشعارات', 'url'=>array('/students/admin' )),
+         array('label'=>'الرسائل ', 'url'=>array('/messages/admin')) ,
          array('label'=>'خروج', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
        ),
      ));
@@ -160,4 +149,3 @@
     $cs->registerScript('bootstrap-label-design', "$('.form-group > label').addClass('control-label');");
     $cs->registerScript('bootstrap-input-design', "$('.form-group > input').addClass('form-control');");
     //$cs->registerScript('bootstrap-input-design', "$(function() { $( '.date' ).datepicker();  } );$('.selectpicker').selectpicker();");
-   
