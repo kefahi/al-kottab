@@ -156,12 +156,12 @@
   	</div>  
 
   <div class=clear  style="height:100px"></div>
-  <div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie; " id='footer'>
+  <!-- <div class="container  navbar navbar-default navbar-bottom   navbar-default navbar-fixed-bottom   footer" style="background:whtie; " id='footer'>
   <br/>
       <center>  ©2013 جميع الحقوق محفوظة، الكتاب اسم مسجل لشركة الكتاب  </center>
 
   </div><!-- content -->
-
+ 
   </body>
   </html>
 
