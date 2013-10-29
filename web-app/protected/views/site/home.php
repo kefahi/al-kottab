@@ -1,28 +1,12 @@
-<script>
-var admin = '<li class="active"><a href="#home">الرئيسية</a></li>'+
-'<li ><a href="#classes">الصفوف</a></li>'+
-'<li ><a href="#rooms">الغرف</a></li>'+
-  // '<li><a  href="#grads">العلامات</a></li>'+
-  '<li><a href="#teachers">المعلمين</a></li>  '  ;
-  // '<li><a class="tab-buttons" href="#messages">الحافلات</a></li>'+
-  // '<li><a href="#clubs">النوادي </a></li>'+
-  // '<li><a href="#settings">الأنشطة</a></li>';
-
-var students = 
-  '<li class="active"><a href="#requisits">الإختبارات</a></li>'+
-  '<li class=""><a href="#teachers">العلامات</a></li>'+
-  '<li class=""><a href="#teachers">الواجبات</a></li> ';
-  
-</script>
 <!-- style=background:white; -->
 <div class=' col-lg-12'>
 
 <div class=' col-lg-12 ' >
 <ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#home">الرئيسية</a></li>
+  <!-- <li class="active"><a href="#home">الرئيسية</a></li>
   <li ><a href="#classes">الصفوف</a></li>
   <li ><a href="#rooms">الغرف</a></li>
-  <li><a href="#teachers">المعلمين</a></li>
+  <li><a href="#teachers">المعلمين</a></li> -->
   <!-- <li><a  href="#profile">العلامات</a></li> -->
   <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
   <li><a href="#clubs">النوادي </a></li>
@@ -33,13 +17,8 @@ var students =
 <div class="tab-content">
 <div class=' pull-left control-buttons' style=' left:-110px;position:relative; top: -16px;' > 
 
-<p data-button="admin" > <img src='/mockups/images/orange-tab.png' />   <span > إداريات </span>   </p>
-  <p data-button="teachers" > <img src='/mockups/images/blue-tab.png' />  <span > المدرسين </span>     </p>
-  <p data-button="students" > <img src='/mockups/images/purple-tab.png' /> <span > الطلاب </span>      </p>
-  <p data-button="parents" > <img src='/mockups/images/green-tab.png' /><span > أولياء الأمور </span> </p> 
-  
 </div>
-  <div class="tab-pane active " id="home" style ="height:1000px">
+  
   <?php $this->renderPartial('/schools/view' , array('model'=>Schools::model()->findByPk(1) ) ) ; ?>
   <div class="col-md-9">
   <div class="panel-group" id="accordion">
@@ -100,7 +79,7 @@ var students =
   //     'model'=>$classes,
   //  )); ?>
     </div>
-  </div>
+  
   <div class="container tab-pane" id="profile"><br/> <div >  <p> العلامات  </p> </div> </div>
   <div class="container tab-pane" id="classes"><br/>
   <?php $this->renderPartial('/classes/admin'  , array('model'=>new Classes('search'))) ; ?>

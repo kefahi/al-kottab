@@ -56,7 +56,7 @@ $this->menu=array(
 
 	<div class="col-md-2" >
 		<p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , }); /*move_to_div() ; */}});'  > ادخال طالب جديد </button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/create?school_id=<?php echo $model->id?>",    complete: function(result) {  $("#overlay").show();$( "#data-area" ).html( result.responseText );  $("#data-area").dialog({  height: 500,  maxWidth:1100,   width: "auto", height: "auto", close: function() { $("#overlay").hide(); } , } ,   "ﺇﺪﺧﺎﻟ ﻁﺎﻠﺑ") ; /*move_to_div() ; */}});'  > ادخال طالب جديد </button>
 		 </p><p>
 		  <button type="button" class="btn btn-info disabled ">ادخال معلم</button>
 		</p><p>
