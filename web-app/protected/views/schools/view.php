@@ -41,7 +41,7 @@ $this->menu=array(
 		<p>
 		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
 		 </p><p>
-		  <button type="button" class="btn btn-info"  onclick="location.href ='/teacher/?school_id=<?php echo $model->id?>';"   >المعلمين</button>
+		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المعلمين</button>
 		</p><p>
 		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
 		</p><p>
@@ -63,27 +63,28 @@ $this->menu=array(
 		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
 		</p>
 		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/room/create';">تعريف قاعة</button>
+	  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">تعريف قاعة</button>
 		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
+		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال شعبة </button>
 		</p>
 	</div>
 	
 
  </div> 
 </div>
+<span class="white" > 
+	<div id='data-area' >
+	</div>
 
-<div id='data-area' >
-</div>
-
-<script>
-function move_to_div(){
-	var target = $(this.hash); target = target.length ? target : $("#data-area"); 
-	$('.form-group > label').addClass('control-label');
-	$('extarea').addClass('form-control');
-	$('input').addClass('form-control');
-	
-	if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
-	
-}
-</script>
+	<script>
+	function move_to_div(){
+		var target = $(this.hash); target = target.length ? target : $("#data-area"); 
+		$('.form-group > label').addClass('control-label');
+		$('extarea').addClass('form-control');
+		$('input').addClass('form-control');
+		
+		if (target.length) {$("html,body").animate({scrollTop: target.offset().top - 100}, 750 );} 
+		
+	}
+	</script>
+</span>

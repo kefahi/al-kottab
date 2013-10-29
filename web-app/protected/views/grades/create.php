@@ -14,7 +14,7 @@ $this->menu=array(
 ?>
 <div class="white" style="background:white;">
 	<center>
-		<h1>الصفوف</h1>
+		<h1>انشاء مرحلة دراسية</h1>
 	</center>
 	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
 </div>

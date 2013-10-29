@@ -1,27 +1,7 @@
 <!-- style=background:white; -->
-<div class=' col-lg-12'>
-
-<div class=' col-lg-12 ' >
-<ul class="nav nav-tabs" id="myTab">
-  <!-- <li class="active"><a href="#home">الرئيسية</a></li>
-  <li ><a href="#classes">الصفوف</a></li>
-  <li ><a href="#rooms">الغرف</a></li>
-  <li><a href="#teachers">المعلمين</a></li> -->
-  <!-- <li><a  href="#profile">العلامات</a></li> -->
-  <!-- <li><a class='tab-buttons' href="#messages">الحافلات</a></li>
-  <li><a href="#clubs">النوادي </a></li>
-  <li><a href="#settings">الأنشطة</a></li>
-     -->
-</ul>
-
-<div class="tab-content">
-<div class=' pull-left control-buttons' style=' left:-110px;position:relative; top: -16px;' > 
-
-</div>
-  
+<div class="tab-content white" >
   <?php $this->renderPartial('/schools/view' , array('model'=>Schools::model()->findByPk(1) ) ) ; ?>
-  <div class="col-md-9">
-  <div class="panel-group" id="accordion">
+  <div class="col-md-12 white panel-group" id="accordion">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -73,12 +53,7 @@
 
 
   </div>
-  <?php 
-
-  // $this->renderPartial('/classes/admin',array(
-  //     'model'=>$classes,
-  //  )); ?>
-    </div>
+  
   
   <div class="container tab-pane" id="profile"><br/> <div >  <p> العلامات  </p> </div> </div>
   <div class="container tab-pane" id="classes"><br/>
@@ -88,23 +63,7 @@
   <div class="nav-bar nav nav-default" style="height:45px;padding:5px;background:#CCCCCC"> 
   <ul class="nav nav-tabs" id="roomTab"> <li ><a href="#classes">الصفوف</a></li> </ul>
   إستعراض </div>
-  <br/> <div class="container">  <p> الغرف </p> </div> </div>
-    <div class="container tab-pane" id="messages"><br/> <div >  <p> الحافلات </p> </div> </div>
-  <div class="tab-pane " id="teachers">
-    <div class="col-md-9">
-    <?php 
-     $this->renderPartial('/teacher/admin',array(
-         'model'=>$teacher,
-       )); 
-      ?>
-      </div>
-  </div>
-  <div class="container tab-pane " id="addTeacher">
-    <div class="col-md-9">
-      <?php   echo $this->renderPartial('/teacher/_form' ,array( 'model'=>Teacher::model() ));  ?> 
-    </div>
-  </div>
-</div>
+  <br/> <div class="container">  <p> الغرف </p> </div> </div>    
 </div>
 
 <script>
@@ -125,7 +84,7 @@
 
 </script>
 
-</div>
+
 <script type="text/javascript">
   YAHOO.namespace("example.calendar");
 

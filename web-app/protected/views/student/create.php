@@ -18,5 +18,5 @@
 </center>
 <br/>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('/users/_form', array('model'=>$model)); ?>
 </div>

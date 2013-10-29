@@ -120,7 +120,7 @@
   	</div>
   	<div class="clearfix visible-xs"></div>
     
-  	<div class="container bs-docs-container"  style="">
+  	<div class="container white bs-docs-container"  style="">
   			<?php  echo $content; ?>		
   	</div>  
 

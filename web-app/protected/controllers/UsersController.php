@@ -137,6 +137,11 @@ class UsersController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Users']))
 			$model->attributes=$_GET['Users'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

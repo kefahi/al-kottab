@@ -161,6 +161,11 @@ class TeacherController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Teacher']))
 			$model->attributes=$_GET['Teacher'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

@@ -139,6 +139,11 @@ class SchoolsController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Schools']))
 			$model->attributes=$_GET['Schools'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

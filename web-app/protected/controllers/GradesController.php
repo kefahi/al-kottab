@@ -141,6 +141,11 @@ class GradesController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Grades']))
 			$model->attributes=$_GET['Grades'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

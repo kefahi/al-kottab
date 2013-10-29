@@ -56,7 +56,7 @@ $this->menu=array(
 			<p>
 			  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">تعريف قاعة</button>
 			</p><p>
-			  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال صف دراسي</button>
+			  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال شعبة </button>
 			</p>
 		</div>
 	</div>

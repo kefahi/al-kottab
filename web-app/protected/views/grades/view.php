@@ -40,7 +40,7 @@ $this->menu=array(
 		 </p><p>
 		  <button type="button" class="btn btn-info"  onclick="location.href ='/teacher/?school_id=<?php echo $model->id?>';"   >المعلمين</button>		  
 		</p><p>
-		<button type="button"  onclick="location.href ='/classes/admin/?grades_id=<?php echo $model->id?>';"   class="btn btn-info ">الشعب</button>
+		<button type="button"  onclick="location.href ='/classes/admin/?grade_id=<?php echo $model->id?>';"   class="btn btn-info ">الشعب</button>
 		</p>
 		  
 		</p>

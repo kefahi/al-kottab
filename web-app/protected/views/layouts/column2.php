@@ -1,6 +1,6 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="row ">	
+
 
 <!-- 	<div class=" col-lg-2" style="">
 <?php     if(!Yii::app()->user->isGuest) : ?>
@@ -32,10 +32,9 @@
 <?php endif?>
 	</div> -->
 
-  <div class="col-lg-12 ">
-    <?php  echo $content; ?>
-  </div>
 
-</div>
+    <?php  echo $content; ?>
+
+
 
 <?php $this->endContent(); ?>
