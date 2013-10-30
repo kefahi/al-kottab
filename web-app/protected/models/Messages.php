@@ -66,7 +66,7 @@ class Messages extends CActiveRecord
 	{
 		return array(
 			'id' => 'الرقم',
-			'created_at' => 'تاريخ الإنشاء',
+			'created_at' => 'تاريخ الإرسال',
 			'updated_at' => 'اخر تعديل',
 			'priority' => 'الأهمية',
 			'severity' => 'Severity',

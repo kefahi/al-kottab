@@ -78,7 +78,7 @@
        'items'=>array(
          array('label'=>'الرئيسية', 'url'=>array('/site/index') ),
          array('label'=>'الطلاب', 'url'=>array('/student/admin' )),
-         array('label'=>'الشعارات', 'url'=>array('/students/admin' )),
+//         array('label'=>'الشعارات', 'url'=>array('/students/admin' )),
          array('label'=>'الرسائل ', 'url'=>array('/messages/admin')) ,
          array('label'=>'خروج', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
        ),

@@ -3,8 +3,8 @@
 /* @var $model Messages */
 
 $this->breadcrumbs=array(
-	'Messages'=>array('index'),
-	$model->id,
+	'الرسائل'=>array('index'),
+	$model->subject,
 );
 
 $this->menu=array(
@@ -16,21 +16,33 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Messages #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'created_at',
-		'updated_at',
-		'priority',
-		'severity',
-		'sender_id',
-		'recipient_id',
-		'body',
-		'subject',
-		'delivery_status',
-		'delivery_method',
-	),
-)); ?>
+
+<div class="container">
+	<h1><?php 		echo $model->subject  ; ?> </h1>
+
+<?php 
+	echo 'المرسل: ', $model->sender->first_name .' '.$model->sender->fourth_name  ;?>
+
+	<!-- 	<?php $this->widget('zii.widgets.CDetailView', array(
+			'data'=>$model,
+			'htmlOptions' =>array('class'=>''	),
+			'attributes'=>array(
+				array('name'=>'created_at' ,'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at))  ,
+				array('name'=>'sender_id' ,'value' => $model->sender->first_name .' '.$model->sender->fourth_name )  ,
+				// 'priority',
+				// 'severity',
+				// 'sender_id',
+				// 'recipient_id',
+
+				// 'subject',
+				// 'body',
+
+			),
+		)); ?> -->
+		<hr />
+		
+		<br />
+		<?php 		echo $model->body  ; ?>
+	</div> 
+<br />

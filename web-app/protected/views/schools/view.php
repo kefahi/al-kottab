@@ -68,7 +68,6 @@ $this->menu=array(
 		</p>
 	</div>
 	
-
  </div> 
 </div>
 <span class="white" > 
