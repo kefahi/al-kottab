@@ -1,4 +1,3 @@
-<!-- style=background:white; -->
 <div class="tab-content white" >
   <?php $this->renderPartial('/schools/view' , array('model'=>Schools::model()->findByPk(1) ) ) ; ?>
   <div class="col-md-12 white panel-group" id="accordion">

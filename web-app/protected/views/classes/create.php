@@ -3,8 +3,8 @@
 /* @var $model Classes */
 
 $this->breadcrumbs=array(
-	'Classes'=>array('index'),
-	'Create',
+	'الشعب'=>array('admin'),
+	'إدارة',
 );
 
 $this->menu=array(

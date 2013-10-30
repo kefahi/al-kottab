@@ -48,7 +48,7 @@
 			echo $form->labelEx($model,'birth_date' , array('class'=>'col-lg-2 control-label'  )  ) ;  ?>
 			<div class='col-lg-2' > 
 				<?php 
-				$this->widget('zii.widgets.jui.CJuiDatePicker',array('name'=>'Student[birth_date]',));  
+				$this->widget('zii.widgets.jui.CJuiDatePicker',array('name'=>get_class($model).'[birth_date]',));  
 				echo $form->error($model,'birth_date');
 				?>
 			</div>

@@ -101,6 +101,7 @@ class StudentController extends Controller
 		if(isset($_POST['Student']))
 		{
 			$model->attributes=$_POST['Student'];
+			$model->birth_date = strtotime($model->birth_date);
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}

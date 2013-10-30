@@ -2,10 +2,10 @@
 /* @var $this ClassesController */
 /* @var $model Classes */
 
-$this->breadcrumbs=array(
-	'Classes'=>array('index'),
-	'Manage',
-);
+// $this->breadcrumbs=array(
+// 	'الشعب'=>array('admin'),
+// 	'إدارة',
+// );
 
 $this->menu=array(
 	array('label'=>'List Classes', 'url'=>array('index')),

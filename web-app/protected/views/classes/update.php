@@ -3,7 +3,7 @@
 /* @var $model Classes */
 
 $this->breadcrumbs=array(
-	'Classes'=>array('index'),
+	'الشعب'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );

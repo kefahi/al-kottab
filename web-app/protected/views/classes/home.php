@@ -1,3 +1,9 @@
+<?php
+$this->breadcrumbs=array(
+	'الشعب'=>array('admin'),
+	'إدارة***',
+);
+?>
 <div class=' jumbotron ' >
   <div class=" container">
 	<div class="dropdown col-md-2 container">

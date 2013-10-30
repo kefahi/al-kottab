@@ -3,8 +3,8 @@
 /* @var $model Student */
 
 $this->breadcrumbs=array(
-	'Students'=>array('index'),
-	$model->id,
+	'الطلاب'=>array('index'),
+	$model->first_name ." " .$model->fourth_name,
 );
 
 $this->menu=array(
@@ -17,7 +17,7 @@ $this->menu=array(
 ?>
 
 <h1><?php echo $model->first_name . ' '.$model->fourth_name ; ?></h1>
-
+<button class="pull-left btn btn-primary btn-lg " onclick="location.href = '<?php echo $this->createUrl('/student/update')?>?id=<?php echo $model->id ?>'" > تعديل </button>
 <div class="jumbotron">
   <div class="container ">
 	<?php $this->widget('zii.widgets.CDetailView', array(
@@ -30,12 +30,11 @@ $this->menu=array(
 			array('label'=>$model->attributeLabels()['created_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->created_at) ),
 			array('label'=>$model->attributeLabels()['updated_at'] , 'value' => Yii::app()->dateFormatter->format('EEE، d LLLL، yyyy ', $model->updated_at) ),
 	
-	
 		),
 	)); ?>
   <div class='col-md-offset-7'  > <img src="http://marketing.yourcolor.net/wp-content/themes/1/framework/scripts/timthumb.php?src=http://marketing.yourcolor.net/wp-content/uploads/yourcolor-224-221x300.jpg&h=193&w=215&zc=1" /></div>
-	</div>
 
+	</div>
 </div>
 
 

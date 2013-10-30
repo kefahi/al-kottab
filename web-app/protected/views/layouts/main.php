@@ -77,7 +77,6 @@
        'htmlOptions'=>array('class'=>'nav navbar-nav'),
        'items'=>array(
          array('label'=>'الرئيسية', 'url'=>array('/site/index') ),
-         array('label'=>'المدرسة', 'url'=>array('/schools/admin') ),
          array('label'=>'الطلاب', 'url'=>array('/student/admin' )),
          array('label'=>'الشعارات', 'url'=>array('/students/admin' )),
          array('label'=>'الرسائل ', 'url'=>array('/messages/admin')) ,
@@ -87,6 +86,12 @@
      ?>
     </div>
   </nav>
+  <?php
+      if(isset($this->breadcrumbs))
+        $this->widget('zii.widgets.CBreadcrumbs', array(
+          'links'=>$this->breadcrumbs,
+        ));
+    ?>
   <?php
    // <nav class="navbar navbar-default navbar-fixed-top " >
    //    <a class="navbar-brand" href="#"> <?php echo Yii::app()->name ; 
@@ -120,8 +125,10 @@
   	</div>
   	<div class="clearfix visible-xs"></div>
     
-  	<div class="container white bs-docs-container"  style="">
-  			<?php  echo $content; ?>		
+    <div class="container white bs-docs-container"  style="">
+    <?php        
+      echo $content; 
+    ?>
   	</div>  
 
   <div class=clear  style="height:100px"></div>

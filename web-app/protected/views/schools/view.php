@@ -3,8 +3,7 @@
 /* @var $model Schools */
 
 $this->breadcrumbs=array(
-	'Schools'=>array('index'),
-	$model->name,
+	$model->name => array('/'),
 );
 
 $this->menu=array(
