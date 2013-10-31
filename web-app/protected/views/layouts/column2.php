@@ -1,12 +1,10 @@
 <?php /* @var $this Controller */ ?>
 <?php $this->beginContent('//layouts/main'); ?>
-<div class="row ">
-	<div class="col-md-10">
-		<?php  echo $content; ?>
-	</div>
 
-	<div class="affix  col-md-offset-9 col-md-2" style="float:left;">
-<ul class=" list-group"  >
+
+<!-- 	<div class=" col-lg-2" style="">
+<?php     if(!Yii::app()->user->isGuest) : ?>
+<ul class=" affix"  >
   <li class="list-group-item" >
     <a href="#">
       <span class="badge pull-left	">42</span>
@@ -18,16 +16,25 @@
       <span class="badge pull-left	">42</span>
       الإشعارات
     </a>
-    </li>  <li class="list-group-item">
-    <a href="#">
-      
-      تسجيل الخروج
-    </a>
+    </li>  
+      <li class="list-group-item"><a href="#"> تسجيل الخروج  </a> </li>
+      <li class="list-group-item">
+      <a href="<?php echo $this->createUrl('/schools/view'). "?id=". Users::model()->findByPk(Yii::app()->user->id)->school_id ?>"> 
+        <?php 
+          $user = Users::model()->findByPk(Yii::app()->user->id) ;
+          if(isset($user->school->name))
+          echo $user->school->name ;
+        ?> 
+      </a>
   </li>
 
-</ul>
+  </ul>
+<?php endif?>
+	</div> -->
 
 
-	</div>
-</div>
+    <?php  echo $content; ?>
+
+
+
 <?php $this->endContent(); ?>

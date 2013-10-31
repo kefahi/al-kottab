@@ -2,6 +2,9 @@
 
 class SiteController extends Controller
 {
+
+
+
 	/**
 	 * Declares class-based actions.
 	 */
@@ -29,7 +32,20 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		//$this->layout='//layouts/column2';
+       $model=new LoginForm;
+       $classes=new Classes('search');
+		$classes->unsetAttributes();  // clear any default values
+		if(isset($_GET['Classes']))
+			$classes->attributes=$_GET['Classes'];
+
+		$teacher =new Teacher('Teacher');
+		$classes->unsetAttributes();  // clear any default values
+		if(isset($_GET['Teacher']))
+			$classes->attributes=$_GET['Teacher'];
+
+		$this->render('index' , array('model'=>$model , 'classes' =>$classes  , 'teacher'=>$teacher ));
+
 	}
 
 	/**

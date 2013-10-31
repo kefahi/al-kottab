@@ -12,6 +12,13 @@ class Teacher extends Users
         ); 
     }
 
+    public function onBeforeValidate ()
+    {
+        $this->type= "1";
+        $this->password = "asd";
+        return parent::beforeSave() ;
+    }
+
     
 	/**
 	 * Returns the static model of the specified AR class.
@@ -23,4 +30,16 @@ class Teacher extends Users
 	{
 		return parent::model($className);
 	}
+
+
+    public static function getList()
+    {
+        $data = self::model()->search()->data;
+        $result = array();
+        foreach ($data as $value) {
+            $result[$value->id] = $value->first_name . ' ' . $value->second_name ;            
+        }
+        return $result ;
+    }
+
 }

@@ -54,12 +54,12 @@ class Clubs extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'name' => 'Name',
-			'description' => 'Description',
-			'restrictions' => 'Restrictions',
+			'id' => 'الرقم',
+			'created_at' => 'انشأ في',
+			'updated_at' => 'اخر تحديث',
+			'name' => 'الإسم',
+			'description' => 'الوصف',
+			'restrictions' => 'القيود',
 		);
 	}
 

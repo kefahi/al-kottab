@@ -15,16 +15,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
 	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'school_id'); ?>
-		<?php echo $form->dropDownList($model,'school_id' , Schools::getList() , array('class'=>'selectpicker'  )); ?>
-		<?php echo $form->error($model,'school_id'); ?>
-	</div>
-
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'capacity'); ?>
@@ -39,7 +30,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'إنشاء' : 'حفظ'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

@@ -22,7 +22,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1 > المددارس </h1>
+<h1 > المدارس </h1>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'htmlOptions'=>array('class'=>'table table-hover'),
 	//''=>'table' ,

@@ -37,7 +37,6 @@ $('.search-form form').submit(function(){
 
 <h1>Manage <?php echo $this->class2name($modelClass,true); ?></h1>
 
-<body dir=rtl
 
 <?php echo "<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>"; ?>
 

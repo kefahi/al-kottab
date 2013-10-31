@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Rooms</h1>
+<h1>غرفة صفية</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

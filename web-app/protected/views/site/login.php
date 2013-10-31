@@ -1,49 +1,59 @@
-<?php
-/* @var $this SiteController */
-/* @var $model LoginForm */
-/* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
-$this->breadcrumbs=array(
-	'Login',
-);
-?>
-
-<h1>تسجيل الدخول</h1>
-
-
-<div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
+  <div class="container " >
+  
+  
+  <?php if(Yii::app()->user->isGuest) :
+   $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
-	'htmlOptions' => array('role'=>"form"),
+	'htmlOptions' => array('role'=>"form"  ,  'class' =>'login  col-lg-3' , 'action'=>'/site/login'),
 	'enableClientValidation'=>true,
+	'action'=>'/site/login',
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
 	),
 )); ?>
 
-	<div class="row form-group">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username' , array('class'=>'form-control' , 'placeholder'=>$model->attributeLabels()['username'] )); ?>
-		<?php echo $form->error($model,'username'); ?>
+  	
+  	<br/>
+
+
+	<div class=" form-group">
+		<?php echo $form->labelEx($model,'username' , array('class'=>'sr-only' )); ?>
+		<?php echo $form->textField($model,'username' , array('class'=>'' , 'placeholder'=>$model->attributeLabels()['username'] )); ?>
 	</div>
 
-	<div class="row form-group">
-		<?php echo $form->labelEx($model,'password'); ?>
+	<div class=" form-group">
+		<?php echo $form->labelEx($model,'password' , array('class'=>'sr-only' )); ?>
 		<?php echo $form->passwordField($model,'password' , array('class'=>'form-control' , 'placeholder'=>$model->attributeLabels()['password'] )); ?>
-		<?php echo $form->error($model,'password'); ?>
 		
 	</div>
 
-	<div class="row rememberMe  checkbox">
-		<?php echo $form->checkBox($model,'rememberMe'); ?>
-		<?php echo $form->label($model,'rememberMe' ) ; ?>
-		<?php echo $form->error($model,'rememberMe'); ?>
+	<div class=" rememberMe  ">
+		<?php echo $form->checkBox($model,'rememberMe'  , array('class' =>'login-checkbox')); ?>
 	</div>
+	<button  type="submit" class="btn btn-default login-submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+	  
+<?php echo $form->errorSummary($model); ?>
 
-	<div class="row ">
-		<?php echo CHtml::submitButton('تسجيل الدخول' , array('class'=>'btn btn-default')); ?>
+<?php $this->endWidget();  
+else:
+echo 'لوحة التحكم الرئيسية' ;
+endif ; 
+
+
+?>
+  
+  <div   class='container col-lg-4 col-lg-offset-2 '>
+    <div class="slide-image">
+			<img src="/mockups/images/slide-img.jpg">
 	</div>
+	  <div class="slide-bottom">
+			<img class="pull-left" src="/mockups/images/slide-prev.png">
+			<img class="pull-right" src="/mockups/images/slide-next.png">
+			<p>نص يأتي هنا عن الموقع</p>
+			<div class="clear"></div>
+		</div>
+  </div>
 
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+</div>
+

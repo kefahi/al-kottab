@@ -50,6 +50,7 @@ class Rooms extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'classes' => array(self::HAS_MANY, 'Classes', 'room_id'),
+			'school' => array(self::HAS_MANY, 'Classes', 'school_id'),
 		);
 	}
 
@@ -59,12 +60,12 @@ class Rooms extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_id' => 'School',
-			'capacity' => 'Capacity',
-			'details' => 'Details',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_id' => 'المدرسة',
+			'capacity' => 'القدرة الإستيعابية',
+			'details' => 'الوصف',
 		);
 	}
 
@@ -108,4 +109,20 @@ class Rooms extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public static function getList($school_id = null)
+	{
+		if(!isset($school_id ))
+			$school_id  = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+		$model = self::model();
+		$model->school_id = $school_id;
+
+		$data =	$model->search()->data;
+		$result = array();
+		foreach ($data as $value) {
+			$result[$value->id] = $value->details ;			
+		}
+		return $result ;
+	}
+	
 }

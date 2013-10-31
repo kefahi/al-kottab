@@ -10,7 +10,6 @@ class LoginForm extends CFormModel
 	public $username;
 	public $password;
 	public $rememberMe;
-
 	private $_identity;
 
 	/**
@@ -22,7 +21,7 @@ class LoginForm extends CFormModel
 	{
 		return array(
 			// username and password are required
-			array('username, password', 'required'),
+			array('username,  password', 'required'),
 			// rememberMe needs to be a boolean
 			array('rememberMe', 'boolean'),
 			// password needs to be authenticated
@@ -73,4 +72,10 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+
+	public function relations()
+	{
+		return array('school' => array(self::BELONGS_TO, 'Schools', 'school_id')) ;
+	}
+	
 }

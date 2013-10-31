@@ -3,8 +3,8 @@
 /* @var $model Classes */
 
 $this->breadcrumbs=array(
-	'Classes'=>array('index'),
-	'Create',
+	'الشعب'=>array('admin'),
+	'إدارة',
 );
 
 $this->menu=array(
@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Manage Classes', 'url'=>array('admin')),
 );
 ?>
-
-<h1>Create Classes</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	<center>
+		<h1>إنشاء صف دراسي</h1>
+	</center>
+	<?php $this->renderPartial('_form', array('model'=>$model)); ?>

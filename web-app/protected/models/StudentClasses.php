@@ -61,13 +61,13 @@ class StudentClasses extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'student_id' => 'Student',
-			'class_id' => 'Class',
-			'grade_id' => 'Grade',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_year' => 'School Year',
-			'notes' => 'Notes',
+			'student_id' => 'الطابل',
+			'class_id' => 'الشعبة',
+			'grade_id' => 'الصف	',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_year' => 'السنة الدراسية',
+			'notes' => 'ملاحظات',
 		);
 	}
 

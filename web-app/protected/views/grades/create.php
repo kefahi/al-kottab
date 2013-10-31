@@ -12,8 +12,9 @@ $this->menu=array(
 	array('label'=>'Manage Grades', 'url'=>array('admin')),
 );
 ?>
-
-<h1>الصفوف</h1>
-<p>ادخال صف جديد</p>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="white" style="background:white;">
+	<center>
+		<h1>انشاء مرحلة دراسية</h1>
+	</center>
+	<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</div>

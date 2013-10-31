@@ -36,7 +36,7 @@ class TeacherController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete' ,'home'),
+				'actions'=>array('admin','delete' ,'home','newhome' , 'adminGrid'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -70,6 +70,9 @@ class TeacherController extends Controller
 		if(isset($_POST['Teacher']))
 		{
 			$model->attributes=$_POST['Teacher'];
+			$model->created_at = $model->updated_at = time();
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			$model->birth_date = strtotime($model->birth_date ) ;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -140,6 +143,16 @@ class TeacherController extends Controller
 
 
 	/**
+	 * Lists all models.
+	 */
+	public function actionNewhome()
+	{
+		$dataProvider=new CActiveDataProvider('Teacher');
+		$this->render('newhome',array(	) );
+	}
+
+
+	/**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
@@ -148,6 +161,11 @@ class TeacherController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Teacher']))
 			$model->attributes=$_GET['Teacher'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -180,5 +198,11 @@ class TeacherController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
 	}
 }

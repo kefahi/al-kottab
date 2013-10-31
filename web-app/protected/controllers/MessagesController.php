@@ -137,6 +137,11 @@ class MessagesController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Messages']))
 			$model->attributes=$_GET['Messages'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

@@ -3,8 +3,7 @@
 /* @var $model Messages */
 
 $this->breadcrumbs=array(
-	'Messages'=>array('index'),
-	'Manage',
+	'الرسائل'
 );
 
 $this->menu=array(

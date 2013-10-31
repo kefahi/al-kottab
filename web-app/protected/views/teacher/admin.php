@@ -26,28 +26,33 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Teachers</h1>
+<h1>المعلمين</h1>
 
-<body dir=rtl
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
+<p class=pull-left >
+		  <button type="button" class="btn btn-info "  onclick="location.href ='/teacher/create';"   >ادخال معلم</button>
+		</p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'teacher-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
+	'htmlOptions'=>array('class'=>''),
+	'pager'=>array(
+		'class'=>'CLinkPager',
+		'htmlOptions'=>array('class'=>'pagination'),
+		'header'=>'',
+	),
 	'columns'=>array(
 		'id',
-		'user_name',
 		'created_at',
-		'updated_at',
 		'first_name',
 		'second_name',
+		array(
+            'class'=>'DataColumn',
+            'evaluateHtmlOptions'=>true,
+ 			'value'=>'',
+			'htmlOptions'=>array('id'=> '"classes_{$data->id}"' , 'data-original-id'=>'$data->id','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+		),
 		/*
 		'third_name',
 		'fourth_name',
@@ -67,8 +72,6 @@ $('.search-form form').submit(function(){
 		'grade_id',
 		'student_data',
 		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
+		
 	),
 )); ?>

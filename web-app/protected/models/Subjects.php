@@ -55,12 +55,12 @@ class Subjects extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'name' => 'Name',
-			'description' => 'Description',
-			'class_id' => 'Class',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'name' => 'الإسم',
+			'description' => 'الوصف',
+			'class_id' => 'الصف',
 		);
 	}
 
@@ -103,5 +103,15 @@ class Subjects extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	public static function getList()
+	{
+		$data = self::model()->search()->data;
+		$result = array();
+		foreach ($data as $value) {
+			$result[$value->id] = $value->name ;			
+		}
+		return $result ;
 	}
 }

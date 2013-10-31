@@ -71,6 +71,7 @@ class GradesController extends Controller
 		{
 			$model->attributes=$_POST['Grades'];
 			$model->created_at = $model->updated_at = time();
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		} else 	if(isset($_GET['Student']))	{
@@ -140,6 +141,11 @@ class GradesController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Grades']))
 			$model->attributes=$_GET['Grades'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,

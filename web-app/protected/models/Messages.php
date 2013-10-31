@@ -65,8 +65,8 @@ class Messages extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'تاريخ الإنشاء',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإرسال',
 			'updated_at' => 'اخر تعديل',
 			'priority' => 'الأهمية',
 			'severity' => 'Severity',

@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Classes', 'url'=>array('create')),
+	array('label'=>'إنشاء صف دراسي', 'url'=>array('create')),
 	array('label'=>'Manage Classes', 'url'=>array('admin')),
 );
 ?>

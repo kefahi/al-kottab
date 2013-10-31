@@ -3,8 +3,8 @@
 /* @var $model Student */
 
 $this->breadcrumbs=array(
-	'Students'=>array('index'),
-	'Manage',
+	'الطلاب'=>array('index'),
+	'إدارة',
 );
 
 $this->menu=array(
@@ -13,12 +13,13 @@ $this->menu=array(
 ); ?>
 
 <div class="panel panel-default">
+<p class="pull-left"><button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button></p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
-	'htmlOptions'=>array('class'=>'table'),
+	'htmlOptions'=>array('class'=>''),
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
-	'selectionChanged'=>'',
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/student/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
 	'pager'=>array(
 		'class'=>'CLinkPager',
 		'htmlOptions'=>array('class'=>'pagination'),
@@ -33,12 +34,12 @@ $this->menu=array(
 			'name'=>'school_id',
 			'value'=>'isset($data->school->name)?$data->school->name:""',
 		),
-		array(
-            'class'=>'DataColumn',
-            'evaluateHtmlOptions'=>true,
- 			'value'=>'',
-			'htmlOptions'=>array('id'=> '"student_{$data->id}"' , 'data-original-id'=>'$data->id', 'data-original-title'=>' $data->first_name . "	" . $data->fourth_name ','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
-		),
+		// array(
+  //           'class'=>'DataColumn',
+  //           'evaluateHtmlOptions'=>true,
+ 	// 		'value'=>'',
+		// 	'htmlOptions'=>array('id'=> '"student_{$data->id}"' , 'data-original-id'=>'$data->id', 'data-original-title'=>' $data->first_name . "	" . $data->fourth_name ','class'=>' glyphicon glyphicon-new-window input-group toggle'  ),
+		// ),
 	),
 )); ?>
 </div>
@@ -63,4 +64,17 @@ $this->menu=array(
 // });
 $('#student-grid table').addClass('table table-hover' );
 $('div > .pager').removeClass('pager ');
+
+$('.glyphicon-new-window').popover(
+{
+	trigger: 'hover',
+	html: true,
+	placement: 'left',
+	content:function(){
+		var html = '<a class="glyphicon glyphicon-new-window input-group" href=/student/?school_id='+  $(this).attr('data-original-id') +' > الطلاب </a>'    ;
+		return html;
+	} 
+});
+$('#students-grid table').addClass('table table-hover' );
+
 </script>

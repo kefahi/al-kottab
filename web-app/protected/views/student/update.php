@@ -3,9 +3,9 @@
 /* @var $model Student */
 
 $this->breadcrumbs=array(
-	'Students'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
+	'الطلاب'=>array('index'),
+	$model->first_name ." " .$model->fourth_name=>array('view','id'=>$model->id),
+	'تحديث',
 );
 
 $this->menu=array(
@@ -16,6 +16,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Student <?php echo $model->id; ?></h1>
+<h1>تعديل معلومات طالب </h1>
+<br />
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

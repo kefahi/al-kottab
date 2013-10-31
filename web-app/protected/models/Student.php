@@ -54,12 +54,12 @@ class Student extends Users
         ); 
     }
 
-    // public function beforeSave()
-    // {
-    // 	$this->type= "4";
-    // }
-
-
+    public function onBeforeValidate ()
+    {
+        $this->type= "4";
+        $this->password = "asd";
+        return parent::beforeSave() ;
+    }
 
 
     

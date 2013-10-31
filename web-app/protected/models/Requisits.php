@@ -64,15 +64,15 @@ class Requisits extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'teacher_id' => 'Teacher',
-			'grade_id' => 'Grade',
-			'marks_credit' => 'Marks Credit',
-			'due_date' => 'Due Date',
-			'title' => 'Title',
-			'description' => 'Description',
-			'type' => 'Type',
-			'attachements' => 'Attachements',
+			'id' => 'الرقم',
+			'teacher_id' => 'المعلم',
+			'grade_id' => 'العلامة',
+			'marks_credit' => 'العلامة الممنوحة',
+			'due_date' => 'التاريخ',
+			'title' => 'العنوان',
+			'description' => 'شرح',
+			'type' => 'النوع',
+			'attachements' => 'مرفقات',
 		);
 	}
 

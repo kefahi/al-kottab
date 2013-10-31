@@ -67,13 +67,13 @@ class Grades extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_id' => 'School',
-			'name' => 'Name',
-			'ordinal' => 'Ordinal',
-			'cgroup' => 'Cgroup',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تدحديث',
+			'school_id' => 'المدرسة',
+			'name' => 'الإسم',
+			'ordinal' => 'الترتيب',
+			'cgroup' => 'المجموعة الدراسية',
 		);
 	}
 
@@ -125,5 +125,26 @@ class Grades extends CActiveRecord
 
 	public function getCGroup(){
 		return $this->CGroupList[$this->ordinal];
+	}
+
+	public function onBeforeValidate ()
+    {
+        $this->created_at = time();   
+        return parent::beforeSave() ;
+    }
+
+    public static function getList($school_id = null)
+	{
+		if(!isset($school_id ))
+			$school_id  = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+		$model = self::model();
+		$model->school_id = $school_id;
+
+		$data =	$model->search()->data;
+		$result = array();
+		foreach ($data as $value) {
+			$result[$value->id] = $value->name ;			
+		}
+		return $result ;
 	}
 }

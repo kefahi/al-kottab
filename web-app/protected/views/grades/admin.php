@@ -37,12 +37,15 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
+		<p class=pull-left >
+		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
+		</p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'grades-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'htmlOptions'=>array('class'=>'table table-hover'),
-	'selectionChanged'=>'function(id){alert("s"); location.href = "'.$this->createUrl('/grades/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
+	'selectionChanged'=>'function(id){ location.href = "'.$this->createUrl('/grades/view').'?id="+$.fn.yiiGridView.getSelection(id);}',
 	'columns'=>array(
 		'id',
 		'created_at',
@@ -62,7 +65,7 @@ $('.search-form form').submit(function(){
 <script>
 $('#grades-grid table').addClass('table table-hover' ); 
 $('.pager').removeClass('pager ');
-$('.glyphicon-new-window').click(function(id){ location.href = "/gradesManage Rooms/view/"+$(this).attr('data-original-id');} ) ;
+$('.glyphicon-new-window').click(function(id){ location.href = "/Rooms/view/"+$(this).attr('data-original-id');} ) ;
 
 </script>
 

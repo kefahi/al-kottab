@@ -69,15 +69,15 @@ class Marks extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'created_at' => 'Created At',
-			'updated_at' => 'Updated At',
-			'school_id' => 'School',
-			'grade_id' => 'Grade',
-			'class_id' => 'Class',
-			'teacher_id' => 'Teacher',
-			'student_id' => 'Student',
-			'school_year' => 'School Year',
+			'id' => 'الرقم',
+			'created_at' => 'تاريخ الإنشاء',
+			'updated_at' => 'اخر تحديث',
+			'school_id' => 'المدرسة',
+			'grade_id' => 'الصف',
+			'class_id' => 'الشعبة',
+			'teacher_id' => 'الأستاذ',
+			'student_id' => 'الطالب',
+			'school_year' => 'السنة الدراسية',
 		);
 	}
 

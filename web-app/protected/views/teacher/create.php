@@ -13,6 +13,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Teacher</h1>
+<div class="white" style="background:white;">
+<center style="padding-top:5px">
+	<h1>تسجيل معلم </h1>
+</center>
+<br/>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('/users/_form', array('model'=>$model)); ?>
+</div>

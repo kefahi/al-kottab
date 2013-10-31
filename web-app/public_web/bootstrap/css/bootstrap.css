@@ -4373,7 +4373,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-default {
-  background-color: #f8f8f8;
+  background-image: url('/mockups/images/header-bg.jpg');
   border-color: #e7e7e7;
 }
 
@@ -4915,7 +4915,7 @@ a.list-group-item.active > .badge,
 .nav-pills > li > a > .badge {
   margin-right: 3px;
 }
-
+.btn   { font-weight: bold;}
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
@@ -4923,7 +4923,8 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
+  background-color: white;
 }
 
 .jumbotron h1 {

@@ -32,7 +32,7 @@ class ClassesController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update' , 'adminGrid' , 'addSubject'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -51,11 +51,37 @@ class ClassesController extends Controller
 	 */
 	public function actionView($id)
 	{
+		$model = $this->loadModel($id);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'model'=>$model, 'students'=>$model->studentClasses, 
+			//'subjects'=>$model->subjectsClasses , 
+			'teacher'=>$model->teacherClasses , 
 		));
 	}
 
+
+	// public function actionAddSubject()
+	// {
+		
+	// 	// Uncomment the following line if AJAX validation is needed
+	// 	// $this->performAjaxValidation($model);
+
+	// 	if(isset($_POST['SubjectsClasses']))
+	// 	{
+	// 		$model=new SubjectsClasses;
+	// 		$class=Classes::model()->findByPk($_POST['Classes']['id']);
+	// 		var_dump($class->attributes);
+	// 		var_dump($_REQUEST) ; exit;
+	// 		$model->attributes=$_POST['SubjectsClasses'];
+	// 		$model->created_at =$model->updated_at = time();	
+	// 		$model->capacity = 0;
+	// 		$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			
+	// 		if($model->save())
+	// 			$this->redirect(array('view','id'=>$model->id));
+	// 	}
+		
+	// }
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
@@ -70,6 +96,10 @@ class ClassesController extends Controller
 		if(isset($_POST['Classes']))
 		{
 			$model->attributes=$_POST['Classes'];
+			$model->created_at =$model->updated_at = time();	
+			$model->capacity = 0;
+			$model->school_id = Users::model()->findByPk(Yii::app()->user->id)->school_id ;
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -144,11 +174,24 @@ class ClassesController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Classes']))
 			$model->attributes=$_GET['Classes'];
+		else foreach ($_GET as $key => $value) {
+			$key = strtolower($key);
+			if($model->hasAttribute( $key ) )
+				$model->$key  = $value;
+		}  
 
 		$this->render('admin',array(
 			'model'=>$model,
 		));
 	}
+
+
+	public function actionAdminGrid()
+	{
+		$this->layout = 'api';
+		$this->actionAdmin();
+	}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

@@ -51,9 +51,9 @@ class ClubMembers extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'club_id' => 'Club',
-			'user_id' => 'User',
-			'role' => 'Role',
+			'club_id' => 'نادي',
+			'user_id' => 'المستخدم',
+			'role' => 'الدور',
 		);
 	}
 
