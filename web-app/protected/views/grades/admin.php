@@ -37,6 +37,9 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
+		<p class=pull-left >
+		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
+		</p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'grades-grid',
 	'dataProvider'=>$model->search(),

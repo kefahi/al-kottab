@@ -20,7 +20,7 @@
 	z-index: 1000;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #D7A753 !important;
+    background-color: #ffebc9 !important;
 }
 
 .container{border-radius:25px;}

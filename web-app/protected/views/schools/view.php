@@ -19,7 +19,7 @@ $this->menu=array(
 <p class=lead ><?php echo  $model->description  ; ?> </p> -->
 <div class="jumbotron">
   <div class="container">
-
+<div class="col-md-12">
   <div class="col-md-6">
   <h1>  <?php echo $model->name ;?> </h1>
     <p><?php echo $model->description ;?> </p>
@@ -36,37 +36,24 @@ $this->menu=array(
 				// array('label'=>'المحرر' , 'value' => $model->admin->first_name  .' ' . $model->admin->fourth_name),				
 			))); ?>
 	</div>
-	<div class="col-md-2" >
-		<p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
-		 </p><p>
-		  <button type="button" class="btn btn-info"  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المعلمين</button>
-		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
-		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
-		</p><p>
-		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الصفوف </button>
-		</p><p>
-		  <button type="button" class="btn btn-info"   onclick='$.ajax({url: "/subjects/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});'  >المقررات</button>
-		</p>
-	</div>
 	
 
-	<div class="col-md-2" >
-		<p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button>
-		 </p><p>
-		  <button type="button" class="btn btn-info "  onclick="location.href ='/teacher/create';"   >ادخال معلم</button>
-		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/grades/create';">ادخال مرحلة دراسية</button>
-		</p>
-		<p>
-	  <button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">تعريف قاعة</button>
-		</p><p>
-		  <button type="button" class="btn btn-info" onclick="location.href ='/classes/create';">ادخال شعبة </button>
-		</p>
-	</div>
+		
+		  <button type="button" class=" btn "  onclick='$.ajax({url: "/student/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );' >الطلاب </button>
+	
+		  <button type="button" class="btn "  onclick='$.ajax({url: "/teacher/adminGrid?school_id=<?php echo $model->id?>", complete: function(result) {  $( "#data-area" ).html( result.responseText ); move_to_div(); }} );'  >المعلمين</button>
+	
+		  <button type="button" class=" btn "  onclick='$.ajax({url: "/grades/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >المراحل الصفية</button>
+	
+		  <button type="button" class=" btn "  onclick='$.ajax({url: "/rooms/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' >الغرف الصفية</button>
+	
+<!-- 		  <button type="button" class="btn btn-info "  onclick='$.ajax({url: "/classes/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});' > الشعب</button>
+		</p><p> -->
+		  <button type="button" class="btn"   onclick='$.ajax({url: "/subjects/adminGrid?school_id=<?php echo $model->id?>",    complete: function(result) {  $( "#data-area" ).html( result.responseText );  move_to_div() ; }});'  >المقررات</button>
+		  </div>
+
+	
+</div>	
 	
  </div> 
 </div>

@@ -74,13 +74,15 @@
       </button>
       <a class="navbar-brand" href="/"><b> <?php echo Yii::app()->name ?> </b></a>
       <?php $this->widget('zii.widgets.CMenu',array(
-       'htmlOptions'=>array('class'=>'nav navbar-nav'),
+       'htmlOptions'=>array('class'=>'nav navbar-nav' ),
        'items'=>array(
          array('label'=>'الرئيسية', 'url'=>array('/site/index') ),
          array('label'=>'الطلاب', 'url'=>array('/student/admin' )),
 //         array('label'=>'الشعارات', 'url'=>array('/students/admin' )),
          array('label'=>'الرسائل ', 'url'=>array('/messages/admin')) ,
-         array('label'=>'خروج', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+         array('label'=>'الباصات ', 'url'=>array('/buses')) ,
+         array('label'=>'خروج', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest ,             'itemOptions' => array( 'class' => 'pull-left' ),),
+         array('label'=>'تسجيل الدخول', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest, array('class' => 'pull-left')),
        ),
      ));
      ?>

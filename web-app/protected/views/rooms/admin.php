@@ -14,20 +14,19 @@ $this->menu=array(
 
 <h1>الغرف الصفية</h1>
 <div class="panel panel-default">
+<p class=pull-left >
+	<button type="button" class="btn btn-info" onclick="location.href ='/rooms/create';">تعريف قاعة</button>
+</p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'rooms-grid',
 	'htmlOptions'=>array('class'=>'pagination'),
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-		'id',
-		'created_at',
-		'updated_at',
-		'school_id',
 		'capacity',
-		/*
+		
 		'details',
-		*/		
+				
 	),
 )); 
 

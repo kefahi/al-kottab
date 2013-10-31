@@ -13,6 +13,7 @@ $this->menu=array(
 ); ?>
 
 <div class="panel panel-default">
+<p class="pull-left"><button type="button" class="btn btn-info" onclick="location.href ='/student/create';"  > ادخال طالب جديد </button></p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'student-grid',
 	'htmlOptions'=>array('class'=>''),

@@ -29,7 +29,9 @@ $('.search-form form').submit(function(){
 <h1>المعلمين</h1>
 
 
-
+<p class=pull-left >
+		  <button type="button" class="btn btn-info "  onclick="location.href ='/teacher/create';"   >ادخال معلم</button>
+		</p>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'teacher-grid',
 	'dataProvider'=>$model->search(),
